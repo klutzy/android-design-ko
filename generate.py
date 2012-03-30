@@ -106,16 +106,32 @@ def extract_titles(filename, newfilename, fullfilename):
             title = ''
         TITLES[fullfilename] = title
 
+YAML_HEADER = """---
+layout: default
+title: {title}
+---
+"""
 def extract(filename, newfilename, *_):
     if filename.endswith('html'):
-        p = parse(file(filename).read())
-        file(newfilename, 'w').write(p)
+        text = file(filename).read()
+        p = parse(text)
+        h = html.fromstring(text)
+        title = h.head.find('title')
+        title = title.text.strip()
+        if ' - ' in title:
+            title = title.split(' - ',1)[1]
+        else:
+            title = ''
+        f = file(newfilename, 'w')
+        f.write(YAML_HEADER.format(title=title))
+        f.write(p)
     else:
         shutil.copyfile(filename, newfilename)
 
-template = file('template.html').read().decode('utf8')
+template = None
 siteroot = None # "http://root.of/main/page/"index.html
 def make(filename, newfilename, fullfilename):
+    template = file('template.html').read().decode('utf8')
     if filename.endswith('html'):
         text = file(filename).read().decode('utf8')
         title = TITLES[fullfilename]
