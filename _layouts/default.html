@@ -100,9 +100,36 @@
         </div>
 
         <div id="content">
-{{navtop}}
+{%assign enable_navigation = false %}
+{%if page.url contains 'index.html' %}
+{%if page.url contains 'downloads/index.html'%}
+{%assign enable_navigation = true %}
+{%endif%}
+{%else%}
+{%assign enable_navigation = true %}
+{%endif%}
+{%if enable_navigation %}
+<div class="layout-content-row content-header ">
+  <div class="layout-content-col span-9">
+    <h2>{{page.title}}</h2>
+    
+  </div>
+  <div class="paging-links layout-content-col span-4" itemscope itemtype="http://schema.org/SiteNavigationElement">
+    <a href="#" class="prev-page-link">이전</a>
+    <a href="#" class="next-page-link">다음</a>
+  </div>
+</div>
+{%endif%}
 {{content}}
-{{navbottom}}
+{%if enable_navigation %}
+<div class="layout-content-row content-footer" itemscope itemtype="http://schema.org/SiteNavigationElement">
+  <div class="paging-links layout-content-col span-9">&nbsp;</div>
+  <div class="paging-links layout-content-col span-4">
+    <a href="#" class="prev-page-link">이전</a>
+    <a href="#" class="next-page-link">다음</a>
+  </div>
+</div>
+{%endif%}
         </div>
 
       </div>
