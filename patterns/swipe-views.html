@@ -1,41 +1,40 @@
 ---
 layout: default
-title: Swipe Views
+title: 뷰 스와이프
 ---
-<p>Efficient navigation is one of the cornerstones of a well-designed app. While apps are generally
-built in a hierarchical fashion, there are instances where horizontal navigation can flatten
-vertical hierarchies and make access to related data items faster and more enjoyable. Swipe views
-allow the user to efficiently move from item to item using a simple gesture and thereby make
-browsing and consuming data a more fluent experience.</p>
+<p>효율적인 탐색은 잘 설계된 앱의 초석 중 하나입니다. 
+앱은 일반적으로 계층적인 방식으로 구축되기 때문에, 
+수평 탐색은 수직 구조를 평평하게 만들어 관련 항목들을 더 빠르고 더 즐겁게 접근하도록 도와줄 것입니다.
+뷰 스와이프는 유저가 간단한 제스쳐로 효율적으로 항목과 항목 사이를 이동할 수 있게 함으로
+더 유려한 느낌으로 데이터를 열람하고 소비할 수 있게 해 줍니다.</p>
 
-<h2 id="detail-views">Swiping Between Detail Views</h2>
+<h2 id="detail-views">디테일 뷰 간에 스와이프하기</h2>
 
 
-<p>An app's data is often organized in a master/detail relationship: The user can view a list of
-related data items, such as images, chats, or emails, and then pick one of the items to see the
-detail contents in a separate screen.</p>
+<p>앱 데이터는 보통 마스터(master)/디테일(detail) 관계로 구성됩니다. 사용자는 관련 데이터 항목들 이를테면 이미지, 채팅, 또는 이메일 목록 등이 나타나면 그 중 하나를 선택해 별도의 화면에서 디테일 컨텐트를 보게 됩니다.</p>
 
 
 <img src="../media/swipe_views.png">
 <div class="figure-caption">
-  Master (left) and detail (right) views.
+  마스터 뷰(왼쪽)와 디테일 뷰(오른쪽).
 </div>
 
 
-<p>On a phone, since the master and detail are on separate screens, this typically requires the user to
-jump back and forth between the list and the detail view, aka "pogo-sticking".</p>
+<p>마스터와 디테일 뷰는 폰에서는 각각 다른 화면에 표시 되기 때문에, 
+일반적으로 사용자로 하여금 목록과 디테일 뷰 사이에서 다시 뒤로 이동해 다시 앞으로 이동하는,
+이른바 "포고 스티킹(pogo-sticking)"을 요구하게 됩니다.</p>
 
-<p>In cases where users will want to view multiple detail items in succession, avoid pogo-sticking by
-using the swipe gesture to navigate to the next/previous detail view.</p>
+<p>사용자가 연속해서 여러 항목을 보고 싶어하는 경우,
+다음/이전 디테일 뷰를 탐색하는데 스와이프 제스쳐를 사용함으로 포고 스티킹을 방지할 수 있습니다.</p>
 
 
 <img src="../media/swipe_views2.png">
 <div class="figure-caption">
-  Navigating between consecutive Email messages using the swipe gesture.
+  스와이프 제스쳐를 사용해 이메일 메시지를 연속으로 훑어봅니다.
 </div>
 
 
-<h2 id="between-tabs">Swiping Between Tabs</h2>
+<h2 id="between-tabs">탭 간에 스와이프하기</h2>
 
 
 <div class="layout-content-row">
@@ -45,33 +44,32 @@ using the swipe gesture to navigate to the next/previous detail view.</p>
       <video class="play-on-hover" autoplay><source src="/design/media/swipe_tabs.mp4" type="video/mp4"><source src="/design/media/swipe_tabs.webm" type="video/webm"><source src="/design/media/swipe_tabs.ogv" type="video/ogg"></source></source></source></video>
 </div>
     <div class="figure-caption">
-      People app with swipe gesture navigation between top-level screens.
+      탑 레벨 화면에서 스와이프 제스쳐를 사용하는 주소록(People) 앱.
       <div class="video-instructions">&#160;</div>
     </div>
 
   </div>
   <div class="layout-content-col span-8">
 
-<p>If your app uses action bar tabs, use swipe to navigate between the different views.</p>
+<p>앱에서 액션바 탭을 사용하고 있다면, 뷰와 뷰 사이를 이동하기 위해 스와이프를 사용하세요.</p>
 <div class="vspace size-2">&#160;</div>
 
-<h2 id="checklist">Checklist</h2>
+<h2 id="checklist">체크리스트</h2>
 
 <ul>
 <li>
-<p>Use swipe to quickly navigate between detail views or tabs.</p>
+<p>디테일 뷰 혹은 탭 간을 빠르게 이동하기 위해 스와이프를 사용하세요.</p>
 </li>
 <li>
-<p>Transition between the views as the user performs the swipe gesture. Do not wait for the
-  gesture to complete and then transition between views.</p>
+<p>사용자가 스와이프 제스쳐를 하는 그대로 뷰 사이를 이동시키세요.
+ 뷰 사이의 전환하기 위해 제스쳐가 끝나는 걸 기다리지 마세요.</p>
 </li>
 <li>
-<p>If you used buttons in the past for previous/next navigation, replace them with
-  the swipe gesture.</p>
+<p>이전에 이전/다음 탐색을 위해 버튼을 사용해왔다면, 스와이프 제스쳐로 교체하세요.</p>
 </li>
 <li>
-<p>Consider adding contextual information in your detail view that informs the user about the
-  relative list position of the currently visible item.</p>
+<p>디테일 뷰에서 사용자가 현재 표시되는 항목의 상대 목록 위치가 어딘지 알 수 있도록
+ 문맥 정보를 추가하는 것도 검토해보세요.</p>
 </li>
 </ul>
 </div>
