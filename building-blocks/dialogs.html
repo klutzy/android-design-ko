@@ -2,9 +2,9 @@
 layout: default
 title: Dialogs
 ---
-<p>Dialogs prompt the user for decisions or additional information required by the app to continue a
-task. Such requests can range from simple Cancel/OK decisions to more complex layouts asking the
-user to adjust settings or enter text.</p>
+<p>Dialogs는 앱에서 작업을 계속 진행하기 위해 결정사항이나 필요한 추가
+정보를 사용자에게 묻습니다. 이런 요청들은 단순한 확인/취소 결정부터,
+좀 더 복잡한 조절 설정이나 텍스트 입력까지의 범위에 들 수 있습니다.</p>
 
 
 <img src="../media/dialogs_main.png">
@@ -13,23 +13,24 @@ user to adjust settings or enter text.</p>
 <ol>
 <li>
 <h4>Optional title region</h4>
-<p>The title introduces the content of your dialog. It can, for example, identify the name of a
- setting that the user is about to change, or request a decision.</p>
+<p> title을 여러분의 dialog에 도입하였습니다. 예를 들자면 사용자가 바꾸려는
+설정의 이을 식별하거나 결정을 요구할 수 있습니다.</p>
 </li>
 <li>
 <h4>Content area</h4>
-<p>Dialog content varies widely. For settings dialogs, a dialog may contain UI elements such as
- sliders, text fields, checkboxes, or radio buttons that allow the user to change app or system
- settings. In other cases, such as alerts, the content may consist solely of text that provides
- further context for a user decision.</p>
+<p>Dialog의 내용은 다양하게 달라집니다. 설정 dialog에서는 앱이나 시스템의 
+설정을 사용자가 바꿀 수 있게 하는 slider, text field, checkbox, or radio 
+buttons과 같은 UI 요소를 포함할 것입니다. 경고와 같은 다른 경우에는 사용자가
+결정한 이후의 상황으로 진행하기 위한 단독적인 문구를 내용으로 포함할 것입니다.
+</p>
 </li>
 <li>
 <h4>Action buttons</h4>
-<p>Action buttons are typically Cancel and/or OK, with OK indicating the preferred or most likely
- action. However, if the options consist of specific actions such as Close or Wait rather than
- a confirmation or cancellation of the action described in the content, then all the buttons
- should be active verbs. As a rule, the dismissive action of a dialog is always on the left
- whereas the affirmative actions are on the right.</p>
+<p>Action button은 전형적으로 준비된 대부분의 동작과 같은 것들을 나타내는
+취소 혹은 확인입니다. 그러나, 옵션들이 닫기, 확인 보다 대기, 내용에 설명한
+동작 취소와 같은 특정 동작으로 이루어졌다면, 모든 buttons는 동작 단어가 될
+것입니다. 이런 규칙에 따라, dialog의 무시 동작은 왼쪽에 두고, 긍정적인 동작
+들은 오른쪽에 둡니다.</p>
 </li>
 </ol>
 </div>
@@ -37,16 +38,15 @@ user to adjust settings or enter text.</p>
 
 <img src="../media/dialogs_examples.png">
 <div class="figure-caption">
-  Samples of typical dialog use in Android.
+  안드로이드에서의 전형적인 dialog 사용 예시입니다.
 </div>
 
 
-<h2 id="alerts">Alerts</h2>
+<h2 id="alerts">경고</h2>
 
 
-<p>Alerts inform the user about a situation that requires their confirmation or acknowledgement before
-proceeding. They differ slightly in appearance based upon the severity and impact of the message
-conveyed.</p>
+<p>경고는 무언가를 진행하기 전에 확인이나 승인을 필요로 하는 상황을 사용자에게 알려줍니다.
+이들은 심각성과 전달하는 메시지의 강조 모양새에 따라 약간 다릅니다.</p>
 
 
 <div class="layout-content-row">
@@ -57,9 +57,9 @@ conveyed.</p>
   <div class="layout-content-col span-5">
 
 <h4>Alerts without title bars</h4>
-<p>Most alerts don't need titles. Usually the decision doesn't have a severe impact and can be summed
-up succinctly in a sentence or two. The content area should either ask a question (such as "Delete
-this conversation?") or make a clear statement whose relationship to the action buttons is obvious.</p>
+<p>대부분의 경고는 제목이 필요 없습니다. 일반적인 결정들은 심각한 영향을 받지 않으며 하나 또는 두 가지의
+문장으로 간결하게 요약할 수 있습니다. 내용 영역은 질문을 하거나("이 대화를 지우시겠습니까?" 와 같은 것들)
+명백한 동작 buttons와 관련한 명확한 문장으로 구성합니다.</p>
 
   </div>
 </div>
@@ -89,9 +89,9 @@ available based on the title and the text of the action buttons.</p>
 <h2 id="popups">Popups</h2>
 
 
-<p>Popups are lightweight version of dialogs that require a single selection from the user. Popups
-don't have have explicit buttons that accept or cancel the operation. Instead, making a selection
-advances the workflow, and simply touching outside the popup dismisses it.</p>
+<p>Popups은 사용자로부터 단일 선택을 요구하는 dialogs의 가벼운 형태입니다. Popups은 동작을 허용하거나
+취소하는 명확한 buttons를 가지고 있지 않습니다. 대신, 동작을 진행하기 전에 선택의 여지를 만들며, popup
+의 바깥쪽을 터치하여 popup을 없앨 수 있습니다.</p>
 
 
 <img src="../media/dialogs_popups_example.png">
@@ -104,9 +104,9 @@ advances the workflow, and simply touching outside the popup dismisses it.</p>
 
     <div class="vspace size-6"></div>
 
-<p>Toasts provide lightweight feedback about an operation in a small popup. For example, navigating
-away from an email before you send it triggers a "Draft saved" toast to let you know that you can
-continue editing later. Toasts automatically disappear after a timeout.</p>
+	<p>Toasts는 작은 popup의 처리에 대해 가벼운 피드백을 제공합니다. 예를 들어, 여러분이 이메일을
+	보내기 전에 이메일 외부에서 탐색하면 여러분이 나중에 계속 편집할 수 있다는 것을 알려주는
+	"Draft 저장힘" toast를 띄웁니다. Toasts는 시간이 지나면 자동으로 사라집니다.</p>
 
   </div>
   <div class="layout-content-col span-7">
