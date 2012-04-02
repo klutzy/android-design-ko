@@ -1,140 +1,131 @@
 ---
 layout: default
-title: Navigation with Back and Up
+title: 이전(Back) 및 상위(Up) 탐색
 ---
-<p>Consistent navigation is an essential component of the overall user experience. Few things frustrate
-users more than basic navigation that behaves in inconsistent and unexpected ways. Android 3.0
-introduced significant changes to the global navigation behavior. Thoughtfully following the
-guidelines for Back and Up will make your app's navigation predictable and reliable for your users.</p>
+<p>일관된 탐색은 전반적인 사용자 경험에 있어 필수 요소라 할 수 있습니다.
+모순되고 예상치 못한 방향으로 동작하는 기본 탐색은 사용자를 방해합니다.
+안드로이드 3.0은 전체적인 탐색 동작에 있어서 큰 변화를 소개했습니다.
+주의 깊게 계속해서 이어지는 이전(Back) 및 상위(Up)에 대한 가이드 라인을 따른다면
+당신의 앱은 사용자가 예측 가능하고 믿을 수 있는 탐색을 수행하게 도울 수 있을 것입니다.</p>
 
-<p>Android 2.3 and earlier relied upon the system <em>Back</em> button for supporting navigation within an
-app. With the introduction of action bars in Android 3.0, a second navigation mechanism appeared:
-the <em>Up</em> button, consisting of the app icon and a left-point caret.</p>
+<p>안드로이드 2.3 및 이전 버전은 앱 내의 탐색을 지원하는데 시스템 <em>이전</em> 버튼에 의존하고 있었습니다.
+안드로이드 3.0에서 소개된 액션 바와 함께 두번째 탐색 방식이 나타났습니다:
+바로 앱 아이콘과 왼쪽 방향 표시로 이루어져 있는 <em>상위</em> 버튼입니다.</p>
 
 
 <img src="../media/navigation_with_back_and_up.png">
-<h2 id="up-vs-back">Up vs. Back</h2>
+<h2 id="up-vs-back">상위 vs. 이전</h2>
 
 
-<p>The Up button is used to navigate within an application based on the hierarchical relationships
-between screens. For instance, if screen A displays a list of items, and selecting an item leads to
-screen B (which presents that item in more detail), then screen B should offer an Up button that
-returns to screen A.</p>
+<p>상위 버튼은 애플리케이션 내 화면 간 계층 의존적 탐색에 사용됩니다.
+예를 들어, 화면 A가 항목 목록을 표시하고 있을 때,
+항목을 선택하는 것으로 (선택한 항목에 대해 더 자세한 내역이 표시되는) 화면 B로 이동하게 되며,
+화면 B는 화면 A로 돌아갈 수 있도록 상위 버튼을 제공해야 할 것입니다.</p>
 
-<p>If a screen is the topmost one in an app (i.e. the home of the app), it should not present an Up
-button.</p>
+<p>만약 현재 화면이 앱 최상위라면(즉 앱의 홈이라면), 상위 버튼을 표시해선 안됩니다.</p>
 
-<p>The system Back key is used to navigate based on the history of screens the user has recently seen,
-in reverse chronological order&#8212;in effect, the temporal relationships between screens.</p>
+<p>시스템 이전 키는 사용자가 최근에 본 화면 기록을 기초로 시간 역순&#8212;사실 상 화면 간 시간 의존적&#8212;으로
+탐색하는데 사용됩니다.</p>
 
-<p>When the previously viewed screen is also the hierarchical parent of the current screen, pressing
-the Back key will have the same result as pressing an Up button -- this is a common occurrence.
-However, unlike the Up button, which ensures the user remains within your app, the Back key can
-return the user to the Home screen, or even to a different application.</p>
+<p>이전에 봤던 화면이 현재 화면의 계층적 부모이기도 하다면,
+이전 키를 누르는 것은 상위 버튼을 누르는 것과 동일한 결과를 낼 것입니다 -- 이것은 흔한 일입니다.
+하지만 앱 내에 사용자가 남아 있는 것을 보증하는 상위 버튼과는 달리, 이전 키는 유저가 홈 화면이나
+다른 애플리케이션으로 사용자를 이동시킬 수 있습니다.</p>
 
 
 <img src="../media/navigation_up_vs_back_gmail.png">
-<p>The Back key also supports a few behaviors not directly tied to screen-to-screen navigation:</p>
+<p>이전 키는 또한 화면과 화면 간 탐색에 직접적으로 영향 받지 않는 몇가지 동작을 지원합니다:</p>
 
 <ul>
-<li>Back dismisses floating windows (dialogs, popups)</li>
-<li>Back dismisses contextual action bars, and removes the highlight from the selected items</li>
-<li>Back hides the onscreen keyboard (IME)</li>
+<li>이전 키는 떠 있는 윈도우(대화상자, 팝업)를 닫습니다.</li>
+<li>이전 키는 문맥 액션 바와 선택된 항목 표시를 지웁니다.</li>
+<li>이전 키는 온스크린 키보드(IME)를 감춥니다.</li>
 </ul>
-<h2 id="within-app">Navigation Within Your App</h2>
+<h2 id="within-app">앱 내의 탐색</h2>
 
 
-<h4>Navigating to screens with multiple entry points</h4>
+<h4>여러 진입점에서의 화면 이동</h4>
 
-<p>Sometimes a screen doesn't have a strict position within the app's hierarchy, and can be reached
-from multiple entry points&#8212;e.g., a settings screen which can be navigated to from any screen
-in your app. In this case, the Up button should choose to return to the referring screen, behaving
-identically to Back.</p>
+<p>간혹 어떤 화면은 앱 계층 구조 내에서 엄격한 위치를 갖고 있지 않고 다양한 진입점을 통해 도달할 수 있습니다&#8212;예를 들어
+설정 화면은 앱 내의 어떤 화면에서든 실행될 수 있습니다. 이 경우, 상위 버튼은 이전 버튼과 동일하게 자신을 참조했던 화면으로
+돌아가도록 선택해야 합니다.</p>
 
-<h4>Changing view within a screen</h4>
+<h4>화면 내의 뷰 변경</h4>
 
-<p>Changing view options for a screen does not change the behavior of Up or Back: the screen is still
-in the same place within the app's hierarchy, and no new navigation history is created.</p>
+<p>화면 내에서 뷰 옵션을 변경했을 경우 상위 혹은 이전 키의 동작을 변경하지 않습니다: 화면은 여전히 앱 계층 내의 동일한 곳에
+있으며, 새로운 탐색 기록이 만들어지지 않았기 때문입니다.</p>
 
-<p>Examples of such view changes are:</p>
+<p>이와 비슷한 뷰 변경의 예제를 살펴보자면:</p>
 
 <ul>
-<li>Switching views using tabs and/or left-and-right swipes</li>
-<li>Switching views using a dropdown (aka collapsed tabs)</li>
-<li>Filtering a list</li>
-<li>Sorting a list</li>
-<li>Changing display characteristics (e.g. zooming)</li>
+<li>탭을 사용해 그리고/또는 좌우 스와이프로 뷰를 전환하는 경우</li>
+<li>드롭다운(접힌 탭으로도 알려진)을 사용해 뷰를 전환하는 경우</li>
+<li>목록 필터링</li>
+<li>목록 정렬</li>
+<li>디스플레이 스타일 변경(확대 등)</li>
 </ul>
-<h4>Navigating between sibling screens</h4>
+<h4>동일 계층 화면 간의 탐색</h4>
 
-<p>When your app supports navigation from a list of items to a detail view of one of those items, it's
-often desirable to support direction navigation from that item to another one which precedes or
-follows it in the list. For example, in Gmail, it's easy to swipe left or right from a conversation
-to view a newer or older one in the same Inbox. Just as when changing view within a screen, such
-navigation does not change the behavior of Up or Back.</p>
+<p>앱에서 항목 목록에서 그 중 한 항목의 세부 뷰를 표시하는 탐색을 지원하는 경우,
+현재 항목에서 목록의 이전 혹은 다음 항목으로 이동하는 기능을 지원하는 것은 가치 있는 일입니다.
+예를 들어, Gmail에서는 같은 받은 편지함의 대화 내역에서 좌나 우로 스와이프해
+신규 혹은 이전 내역을 쉽게 볼 수 있습니다.
+화면 내의 뷰를 변경할 때와 동일하게, 이러한 탐색은 상위 혹은 이전 버튼의 동작을 변경하지 않습니다.</p>
 
 
 <img src="../media/navigation_between_siblings_gmail.png">
-<p>However, a notable exception to this occurs when browsing between "related" detail views not tied
-together by the referring list&#8212;for example, when browsing on Google Play between apps from
-the same developer, or albums by the same artist. In these cases, following each link does create
-history, causing the Back button to step through each screen of related content which has been
-viewed. Up should continue to bypass these related screens and navigate to the most recently viewed
-container screen.</p>
+<p>그러나 주목할만한 예외가 "관련된" 세부 뷰를 열람할 때와 같은 경우&#8212;예를 들어
+Google Play에서 같은 개발자의 다른 앱들을 열람하는 경우, 혹은 같은 아티스트의 다른 앨범들을 열람하는 경우&#8212;에
+발생할 수 있습니다.
+이와 같은 경우에는 각 링크를 따라갈 때 기록을 남김으로 이전 버튼을 눌렀을 때, 본 적이 있는 각 연관된 컨텐트로
+이동하게 됩니다.
+상위 버튼은 이전과 마찬가지로 이러한 관련 화면들을 무시하고 가장 최근에 봤던 컨테이너 화면으로 이동해야 합니다.</p>
 
 
 <img src="../media/navigation_between_siblings_market1.png">
-<p>You have the ability to make the Up behavior even smarter based on your knowledge of detail
-view. If we extend our Google Play sample from above, imagine the user has navigated from the last Book
-viewed to the details for the Movie adaptation. In that case, Up can return to a container (Movies)
-which the user had not previously navigated through.</p>
+<p>세부 뷰에 대한 정보량에 따라 상위 버튼이 더 깔끔하게 동작하게 할 수도 있습니다.
+위에 언급된 Google Play 예제를 확장해, 사용자가 책을 살펴 본 후에 책을 각색한 영화 내역을 열람했다고 가정해봅시다.
+이 경우에, 상위 버튼은 사용자가 이전에 열람한 적이 없었다 해도 컨테이너(영화)로 돌아가게 할 수 있습니다.</p>
 
 
 <img src="../media/navigation_between_siblings_market2.png">
-<h2 id="from-outside">Navigation From Outside Your App</h2>
+<h2 id="from-outside">앱 외부로부터의 탐색</h2>
 
 
-<p>There are two categories of navigation from outside your app to screens deep within the app's
-hierarchy:</p>
+<p>앱 외부에서 앱 계층 내로 깊숙히 들어오는 탐색에는 두가지 종류가 있습니다:</p>
 
 <ul>
-<li>App-to-app navigation, such as via intent completion.</li>
-<li>System-to-app navigation, such as via notifications and home screen widgets.</li>
+<li>인텐트 실행등을 통한, 앱에서 앱으로의 탐색.</li>
+<li>알림과 홈 화면 위젯과 같은, 시스템에서 앱으로의 탐색.</li>
 </ul>
-<p>Gmail provides examples of each of these. For app-to-app navigation, a "Share" intent goes directly
-to the compose screen. For system-to-app navigation, both a new message notification and a home
-screen widget can bypass the Inbox screen, taking the user directly to a conversation view.</p>
+<p>Gmail은 이러한 사례 모두를 제공합니다. "공유" 인텐트를 누르면 곧바로 메일 작성 화면으로 이동해, 앱에서 앱으로의 탐색을 수행합니다.
+새 메시지 알림과 홈 스크린 위젯은 받은 편지함 화면을 건너 뛰어 사용자가 곧바로 대화 뷰로 진입하게 하는 것에서
+시스템에서 앱으로의 탐색을 볼 수 있습니다.</p>
 
-<h4>App-to-app navigation</h4>
+<h4>앱에서 앱으로의 탐색</h4>
 
-<p>When navigating deep into your app's hierarchy directly from another app via an intent, Back will
-return to the referring app.</p>
+<p>인텐트를 통해 다른 앱에서 당신의 앱 계층 깊숙히 곧바로 들어왔을 때, 이전 버튼을 누르면 참조했던 앱으로 돌아가게 될 것입니다.</p>
 
-<p>The Up button is handled as follows:
-- If the destination screen is typically reached from one particular screen within your app, Up
-  should navigate to that screen.
-- Otherwise, Up should navigate to the topmost ("Home") screen of your app.</p>
+<p>상위 버튼은 다음과 같이 다루어집니다:
+- 앱 내에 다다랐던 화면이 일반적으로 특정한 하나의 화면에서 불리는 경우라면, 상위 버튼을 누르면 그 화면으로 이동해야 합니다.
+- 그 외의 경우에는, 상위 버튼을 누르면 앱의 최상위("홈") 화면으로 이동해야 합니다.</p>
 
-<p>For example, after choosing to share a book being viewed on Google Play, the user navigates directly to
-Gmail's compose screen. From there, Up returns to the Inbox (which happens to be both the
-typical referrer to compose, as well as the topmost screen of the app), while Back returns to
-Google Play.</p>
+<p>예를 들어, Google Play에서 보고 있던 책의 공유를 선택하면 사용자는 Gmail 내의 작성 화면으로 곧바로 이동하게 됩니다.
+이 때, 상위 버튼을 누르면 (일반적으로 메일을 새로 쓰기 위해 참조되는 화면이면서 이 앱의 시작 화면이기도 한) 받은 편지함으로 이동하며,
+이전 버튼을 누르면 Google Play로 돌아가게 됩니다.</p>
 
 
 <img src="../media/navigation_from_outside_up.png">
-<h4>System-to-app navigation</h4>
+<h4>시스템에서 앱으로의 탐색</h4>
 
-<p>If your app was reached via the system mechanisms of notifications or home screen widgets, Up
-behaves as described for app-to-app navigation, above.</p>
+<p>알림이나 홈 화면 위젯과 같은 시스템 장치에 의해 앱으로 들어온 경우,
+상위 버튼은 위에서 언급한 앱에서 앱으로의 탐색과 동일하게 동작할 것입니다.</p>
 
-<p>For the Back key, you should make navigation more predictably by inserting into the task's back
-stack the complete upward navigation path to the app's topmost screen. This way, a user who has
-forgotten how they entered your app can safely navigate to the app's topmost screen before exiting
-it.</p>
+<p>이전 키를 누르면 탐색이 예상대로 수행되도록 작업 백스택에 앱의 최상위 화면으로 상위 이동을 할 수 있는 경로를 삽입해야 합니다.
+이 경우, 사용자는 어떻게 이 앱에 들어왔는지 잊고 앱에서 빠져나가기 전에 편안하게 앱 최상위 화면을 열람하게 될 것입니다.</p>
 
-<p>For example, Gmail's Home screen widget has a button for diving directly to its compose screen.
-After following that path, the Back key first returns to the Inbox, and from there continues to
-Home.</p>
+<p>예를 들어 Gmail의 홈 화면 위젯은 메일 작성 화면으로 바로 들어가는 버튼을 가지고 있습니다.
+해당 경로로 진입한 후에, 이전 키를 누르면 먼저 받은 편지함으로 돌아가고, 그 후에 계속해서 홈으로 돌어가게 됩니다.</p>
 
 
 <img src="../media/navigation_from_outside_back.png">
