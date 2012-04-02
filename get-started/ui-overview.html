@@ -1,18 +1,17 @@
 ---
 layout: default
-title: UI Overview
+title: UI 개요
 ---
-<p>Android's system UI provides the framework on top of which you build your app. Important aspects
-include the Home screen experience, global device navigation, and notifications.</p>
+<p>애플리케이션을 만드면 그 위에 안드로이드의 시스템 UI의 프레임워크가 제공됩니다.
+시스템 UI의 주요 부분으로 홈스크린 경험, 글로벌 디바이스 내비게이션, 그리고 알림이 있습니다.</p>
 
-<p>Your app will play an important part in keeping the overall Android experience consistent and
-enjoyable to use. At the end of this chapter we introduce the main elements for achieving this goal
-in your app.</p>
+<p>귀하의 애플리케이션은 전반적인 안드로이드 경험에 있어서 일관성과 즐거운 사용 면에서 중요한 역할을 차지하게 될 수 있습니다.
+따라서 우리는 이 장 끝 부분에서 애플리케이션이 이러한 목표를 달성하기 위해 필요한 주요 사항들을 소개하겠습니다.</p>
 
-<p>Read on for a quick overview of the most important aspects of the Android user interface.</p>
+<p>먼저 안드로이드 사용자 인터페이스의 주요 측면에 대해 간단히 개요를 훑어보도록 하겠습니다.</p>
 
 
-<h2 id="home-all-apps-recents">Home, All Apps, and Recents</h2>
+<h2 id="home-all-apps-recents">홈, 모든 애플리케이션, 그리고 최근 사용한 앱</h2>
 
 
 <div class="vspace size-1">&#160;</div>
@@ -21,45 +20,42 @@ in your app.</p>
 <div class="layout-content-row">
   <div class="layout-content-col span-4">
 
-    <img src="../media/ui_overview_home_screen.png"><h4>Home screen</h4>
-<p>Home is a customizable space that houses app shortcuts, folders and widgets. Navigate between
-different home screen panels by swiping left and right.</p>
-<p>The Favorites Tray at the bottom always keeps your most important shortcuts and folders in view
-regardless of which panel is currently showing.</p>
-<p>Access the entire collection of apps and widgets by touching the All Apps button at the center of
-the Favorites Tray.</p>
+    <img src="../media/ui_overview_home_screen.png"><h4>홈 화면</h4>
+<p>홈은 앱 바로가기, 폴더와 위젯을 올려둘 수 있는 사용자 정의 가능 공간입니다.
+홈 화면에서 좌우로 스와이프하는 것으로 다른 홈 화면 패널을 살펴볼 수 있습니다.</p>
+<p>언제나 아랫쪽에 표시되고 있는 즐겨찾기 트레이는
+지금 표시되고 있는 패널과 관계 없이 
+가장 중요한 바로 가기 및 폴더를 고정해 표시해줍니다.</p>
+<p>즐겨찾기 트레이 중앙에 위치한 모든 애플리케이션 버튼을 터치해 전체 애플리케이션 및 위젯 목록에 접근할 수 있습니다.</p>
 
   </div>
   <div class="layout-content-col span-4">
 
-    <img src="../media/ui_overview_all_apps.png"><h4>All apps screen</h4>
-<p>The All Apps screen lets you browse the entire set of apps and widgets that are installed on your
-device.</p>
-<p>Users can drag an app or widget icon from the All Apps screen and place it in any empty location on
-any Home screen.</p>
+    <img src="../media/ui_overview_all_apps.png"><h4>모든 애플리케이션 화면</h4>
+<p>모든 애플리케이션 화면에서 디바이스에 설치되어 있는 모든 앱과 위젯 전체 항목을 열람할 수 있습니다.</p>
+<p>사용자는 모든 애플리케이션 화면에서 애플리케이션이나 위젯 아이콘을 끌어 임의의 홈 화면 아무 빈 곳에나 배치할 수 있습니다.</p>
 
   </div>
   <div class="layout-content-col span-4">
 
-    <img src="../media/ui_overview_recents.png"><h4>Recents screen</h4>
-<p>Recents provides an efficient way of switching between recently used applications. It provides a
-clear navigation path between multiple ongoing tasks.</p>
-<p>The Recents button at the right side of the navigation bar displays the apps that the user has
-interacted with most recently. They are organized in reverse chronological order with the most
-recently used app at the bottom.</p>
-<p>Switch to an app by touching it. Remove an item by swiping left or right.</p>
+    <img src="../media/ui_overview_recents.png"><h4>최근 앱(Recents) 화면</h4>
+<p>최근 앱은 최근에 사용했던 애플리케이션 간을 이동하는 효율적인 방법을 제공합니다.
+최근 앱은 여러 진행중인 작업 사이의 명확한 탐색 경로 또한 제공합니다.</p>
+<p>네비게이션 바 오른쪽에 위치한 최근 앱 버튼은 사용자가 최근에 작업한 순으로 애플리케이션 목록이 표시됩니다.
+이 목록은 가장 아랫쪽부터 가장 나중에 작업했던 애플리케이션이 역순으로 표시되어 구성됩니다.</p>
+<p>애플리케이션을 터치해 해당 앱으로 전환할 수 있습니다. 좌나 우로 스와이프해서 항목을 지울 수도 있습니다.</p>
 
   </div>
 </div>
 
 
-<h2 id="system-bars">System Bars</h2>
+<h2 id="system-bars">시스템 바</h2>
 
 
-<p>The system bars are screen areas dedicated to the display of notifications, communication of device
-status, and device navigation. Typically the system bars are displayed concurrently with your app.
-Apps that display immersive content, such as movies or images, can temporarily hide the system bars
-to allow the user to enjoy full screen content without distraction.</p>
+<p>시스템 바는 알림 표시, 디바이스 상태 안내 및 디바이스 네비게이션 전용 영역입니다.
+일반적으로 시스템 바는 우리의 앱과 동시에 표시됩니다.
+영화나 이미지와 같이 몰입형 컨텐트를 제공하는 애플리케이션인 경우
+임시로 시스템 바를 숨겨 사용자가 혼란 없이 전체 화면으로 컨텐트를 즐길 수 있도록 할 수도 있습니다.</p>
 
 
 <img src="../media/ui_overview_system_ui.png">
@@ -67,32 +63,31 @@ to allow the user to enjoy full screen content without distraction.</p>
 
 <ol>
 <li>
-<h4>Status Bar</h4>
-<p>Displays pending notifications on the left and status, such as time, battery level, or signal
-  strength, on the right. Swipe down from the status bar to show notification details.</p>
+<h4>상태 표시줄</h4>
+<p>좌측에는 확인이 필요한 알림들이, 우측에는 시간이나 배터리 레벨, 혹은 신호 강도 상태 등이 표시됩니다.
+상태 표시줄에서 아래로 스와이프해 세부 알림 사항을 볼 수 있습니다.</p>
 </li>
 <li>
-<h4>Navigation Bar</h4>
-<p>New for phones in Android 4.0, the navigation bar is present only on devices that don't have
-  the traditional hardware keys. It houses the device navigation controls Back, Home, and
-  Recents, and also displays a menu for apps written for Android 2.3 or earlier.</p>
+<h4>네비게이션 바</h4>
+<p>안드로이드 4.0에서 폰 용으로 추가된 네비게이션 바는 전통적인 하드웨어 키가 없는 디바이스에만 표시됩니다.
+이전, 홈, 최근 앱이 배치되어 있으며 안드로이드 2.3 이하의 버전용으로 만들어진 앱의 메뉴 컨트롤도 표시됩니다.</p>
 </li>
 <li>
-<h4>Combined Bar</h4>
-<p>On tablet form factors the status and navigation bars are combined into a single bar at the
-  bottom of the screen.</p>
+<h4>결합 바(Combined Bar)</h4>
+<p>타블렛 형태의 기기에서는 화면 아래에 상태 표시줄과 네비게이션 바가 결합되어 하나의 바로 배치되어 있습니다.</p>
 </li>
 </ol>
 </div>
 
 
-<h2 id="notifications">Notifications</h2>
+<h2 id="notifications">알림(Notifications)</h2>
 
 
-<p>Notifications are brief messages that users can access at any time from the status bar. They
-provide updates, reminders, or information that's important, but not critical enough to warrant
-interrupting the user. Open the notifications drawer by swiping down on the status bar. Touching a
-notification opens the associated app. <a href="../patterns/notifications.html">More on Notifications</a></p>
+<p>알림은 사용자가 상태 표시줄을 통해 언제든지 접근할 수 있는 짧은 메시지입니다.
+알림은 업데이트나 일정 알림, 또는 중요하지만 사용자를 방해할 정도는 아닌 정보를 제공합니다.
+상태 표시줄을 아래로 스와이프해 알림 서랍(notifications drawer)을 엽니다.
+알림을 터치하면 해당 알림과 연관되어 있는 애플리케이션을 열게 됩니다.
+<a href="../patterns/notifications.html">알림에 대한 세부 사항</a></p>
 
 
 <div class="layout-content-row">
@@ -102,16 +97,17 @@ notification opens the associated app. <a href="../patterns/notifications.html">
 </div>
   <div class="layout-content-col span-9">
 
-    <img src="../media/notifications_dismiss.png"><p>Most notifications have a one-line title and a one-line message. The recommended layout for a
-notification includes two lines. If necessary, you can add a third line. Timestamps are optional.</p>
-<p>Swiping a notification right or left removes it from the notification drawer.</p>
+    <img src="../media/notifications_dismiss.png"><p>대부분의 알림은 한 줄에 제목과 다른 한 줄에 메시지가 있습니다.
+알림을 위한 권장 레이아웃은 두 줄을 포함합니다. 만약 필요하다면, 세번째 줄도 추가할 수 있습니다.
+알림 시간 표시는 선택 사항입니다.</p>
+<p>좌나 우로 알림을 스와이프해 알림 서랍에서 알림을 지울 수 있습니다.</p>
 
   </div>
 </div>
 
 
 
-<h2 id="app">Common App UI</h2>
+<h2 id="app">일반적인 애플리케이션 UI</h2>
 
 
 
@@ -122,28 +118,27 @@ notification includes two lines. If necessary, you can add a third line. Timesta
 </div>
   <div class="layout-content-col span-6 with-callouts">
 
-<p>A typical Android app consists of action bars and the app content area.</p>
+<p>전형적인 안드로이드 애플리케이션은 액션바 및 애플리케이션 켠텐트 영역으로 구성되어 있습니다.</p>
 <ol>
 <li>
-<h4>Main Action Bar</h4>
-<p>The command and control center for your app. The main action bar includes elements for
-  navigating your app's hierarchy and views, and also surfaces the most important actions.</p>
-<p><a href="../patterns/actionbar.html">More on the Action Bar</a></p>
+<h4>메인 액션 바</h4>
+<p>애플리케이션의 명령 및 통제 센터입니다. 메인 액션 바에는 애플리케이션의 계층과 뷰를 탐색하고
+중요한 작업들을 다루는 요소들이 담겨 있습니다.</p>
+<p><a href="../patterns/actionbar.html">액션 바에 대한 세부 사항</a></p>
 </li>
 <li>
-<h4>View Control</h4>
-<p>Allows users to switch between the different views that your app provides. Views typically
-  consist of different arrangements of your data or different functional aspects of your app.</p>
+<h4>뷰 컨트롤</h4>
+<p>사용자가 애플리케이션이 제공하는 여러 뷰를 전환하도록 합니다.
+뷰는 일반적으로 애플리케이션의 데이터를 다양하게 배치한 것이거나 다양한 기능적 측면으로 이루어져 있습니다.</p>
 </li>
 <li>
-<h4>Content Area</h4>
-<p>The space where the content of your app is displayed.</p>
+<h4>컨텐트 영역</h4>
+<p>이 공간은 애플리케이션의 컨텐트가 표시되는 공간입니다.</p>
 </li>
 <li>
-<h4>Split Action Bar</h4>
-<p>Split action bars provide a way to distribute actions across additional bars located below
-  the main action bar or at the bottom of the screen. In this example, a split action bar moves
-  important actions that won't fit in the main bar to the bottom.</p>
+<h4>분할 액션 바</h4>
+<p>분할 액션 바는 메인 액션바 아래 혹은 화면 하단에 표시되는 추가 바입니다.
+이 예제의 분할 액션 바에는 메인 액션 바에 들어가지 못한 중요한 액션들이 옮겨져 있습니다.</p>
 </li>
 </ol>
 </div>
