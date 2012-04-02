@@ -2,14 +2,15 @@
 layout: default
 title: Metrics and Grids
 ---
-<p>Devices vary not only in physical size, but also in screen density (<acronym title="Dots per
-inch">DPI</acronym>). To simplify the way you design for multiple screens, think of each device as
-falling into a particular size bucket and density bucket. The size buckets are <em>handset</em> (smaller than
-600<acronym title="Density-independent pixels. One dp is one pixel on a 160 dpi
-screen.">dp</acronym>) and <em>tablet</em> (larger than or equal 600dp). The density buckets are <acronym title="Low density (120 dpi)">LDPI</acronym>, <acronym title="Medium density (160
-dpi)">MDPI</acronym>, <acronym title="High density (240 dpi)">HDPI</acronym>, and <acronym title="Extra-high density (320 dpi)">XHDPI</acronym>. Optimize your application's UI by designing
-alternative layouts for some of the different size buckets, and provide alternative bitmap images
-for different density buckets.</p>
+<p>
+기기들은 겉보기 크기만 다양한 것이 아니라, 화면 밀도(<acronym title="도트 퍼 인치">DPI</acronym>)도 다양합니다.
+여러가지 화면을 한번에 간단히 디자인하기 위해서는, 각 기기를 특정 크기와 밀도에 대해 몇 종류로 구분하는 것이 좋습니다.
+크기 기준의 경우 <em>전화기</em>(600<acronym title="밀도 독립 화소(Density-independent pixel). 1dp는 160 dpi의 경우 1화소가 됩니다.">dp</acronym> 미만)와
+<em>태블릿</em>(600dp 이상)으로 나눌 수 있습니다.
+밀도 기준의 경우 <acronym title="저해상도(120 dpi)">LDPI</acronym>, <acronym title="중해상도(160 dpi)">MDPI</acronym>,
+<acronym title="고해상도(240 dpi)">HDPI</acronym>, <acronym title="초고해상도(320 dpi)">XHDPI</acronym>으로 나뉩니다.
+앱 UI를 디자인할 때는 여러 크기 기준에 대해 다른 배치를 구상하고 밀도 기준에 대비해 여러 비트맵 그림을 준비하는 방식으로 UI를 최적화하세요.
+</p>
 
 
 <div class="layout-content-row">
@@ -19,50 +20,62 @@ for different density buckets.</p>
 </div>
   <div class="layout-content-col span-5">
 
-<h4>Space considerations</h4>
-<p>Devices vary in the amount of density-independent pixels (dp) they can display.</p>
-<p>To see more, visit the
-<a href="http://developer.android.com/resources/dashboard/screens.html" target="_blank">
-Screen Sizes and Densities Device Dashboard</a>.</p>
+<h4>공간 고려사항</h4>
+<p>
+기기가 표현할 수 있는 밀도 독립 화소(dp) 수는 기기마다 다릅니다.
+</p>
+<p>
+자세한 내용은
+<a href="http://developer.android.com/resources/dashboard/screens.html" target="_blank">기기 대시보드: 화면 크기 및 밀도</a>
+문서를 참고하세요.
+</p>
 
   </div>
 </div>
 
 
-<h2 id="48dp-rhythm">48dp Rhythm</h2>
+<h2 id="48dp-rhythm">48dp 리듬</h2>
 
 
-<p>Touchable UI components are generally laid out along 48dp units.</p>
+<p>
+만질 수 있는 UI 요소의 경우, 일반적으로 48dp 단위를 기준으로 합니다.
+</p>
 
 
 <img src="../media/metrics_48.png">
 <div class="vspace size-2">&#160;</div>
 
 
-<h4>Why 48dp?</h4>
+<h4>왜 48dp인가요?</h4>
 
-<p>On average, 48dp translate to a physical size of about 9mm (with some variability). This is
-comfortably in the range of recommended target sizes (7-10 mm) for touchscreen objects and users
-will be able to reliably and accurately target them with their fingers.</p>
+<p>
+평균적으로, 48dp는 실제 기기에서 9mm 정도(기기에 따라 다름)가 됩니다.
+이 크기는 터치스크린에서 편하게 사용할 수 있는 추천 크기(7~10mm)에 속하며,
+사용자들이 손가락으로 원하는 행동을 믿을 만하고 정확하게 수행할 수 있습니다.
+</p>
 
-<p>If you design your elements to be at least 48dp high and wide you can guarantee that:</p>
+<p>
+여러분의 디자인 요소를 최소 가로세로 48dp로 잡을 경우 좋은 점은 다음과 같습니다.
+</p>
 
 <ul>
-<li>your targets will never be smaller than the minimum recommended target size of 7mm regardless of
-  what screen they are displayed on.</li>
-<li>you strike a good compromise between overall information density on the one hand, and
-  targetability of UI elements on the other.</li>
+<li>
+여러분의 앱을 어떤 기기에서 사용하든, 최소 추천 크기인 7mm보다 작아지지는 않습니다.
+</li>
+<li>
+가능한 모든 정보 밀도에 대해 대응할 수 있으면서 동시에 UI 요소에 대한 목표를 잡을 수 있습니다.
+</li>
 </ul>
 <img src="../media/metrics_closeup.png">
 <div class="vspace size-2">&#160;</div>
 
 
-<h4>Mind the gaps</h4>
+<h4>틈을 신경쓰세요</h4>
 
-<p>Spacing between each UI element is 8dp.</p>
+<p>각 UI 요소간의 공백은 8dp로 주세요.</p>
 
 
-<h2 id="examples">Examples</h2>
+<h2 id="examples">예제</h2>
 
 
 <img src="../media/metrics_forms.png">
