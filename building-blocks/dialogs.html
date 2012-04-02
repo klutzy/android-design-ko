@@ -2,9 +2,9 @@
 layout: default
 title: Dialogs
 ---
-<p>Dialogs는 앱에서 작업을 계속 진행하기 위해 결정사항이나 필요한 추가
+<p>다이얼로그(dialog)는 앱에서 작업을 계속 진행하기 위해 결정사항이나 필요한 추가
 정보를 사용자에게 묻습니다. 이런 요청들은 단순한 확인/취소 결정부터,
-좀 더 복잡한 조절 설정이나 텍스트 입력까지의 범위에 들 수 있습니다.</p>
+좀 더 복잡한 조절 설정이나 텍스트 입력까지의 범위에 듭니다.</p>
 
 
 <img src="../media/dialogs_main.png">
@@ -12,21 +12,21 @@ title: Dialogs
 
 <ol>
 <li>
-<h4>Optional title region</h4>
-<p> title을 여러분의 dialog에 도입하였습니다. 예를 들자면 사용자가 바꾸려는
+<h4>선택 타이틀 영역</h4>
+<p>타이틀(title)이 다이얼로그에 도입하였습니다. 예를 들자면 사용자가 바꾸려는
 설정의 이름을 식별하거나 결정을 요구할 수 있습니다.</p>
 </li>
 <li>
-<h4>Content area</h4>
-<p>Dialog의 내용은 다양하게 달라집니다. 설정 dialog에서는 앱이나 시스템의 
-설정을 사용자가 바꿀 수 있게 하는 slider, text field, checkbox, or radio 
-buttons과 같은 UI 요소를 포함할 것입니다. 경고와 같은 다른 경우에는 사용자가
-결정한 이후의 상황으로 진행하기 위한 단독적인 문구를 내용으로 포함할 것입니다.
+<h4>컨텐츠 영역</h4>
+<p>다이얼로그의 내용은 다양하게 달라집니다. 설정 다이얼로그에서 앱이나 시스템의 
+설정을 사용자가 바꿀 수 있게 하는 슬라이더(slider), 텍스트 필드(text field), 체크박스(checkbox), 라디오 버튼(radio 
+buttons)과 같은 사용자 인터페이스 요소를 포함합니다. 경고와 같은 다른 경우에는 사용자가
+결정한 이후의 상황으로 진행하기 위한 단독적인 문구를 내용으로 포함합니다.
 </p>
 </li>
 <li>
-<h4>Action buttons</h4>
-<p>Action button은 전형적으로 준비된 대부분의 동작과 같은 것들을 나타내는
+<h4>액션 버튼</h4>
+<p>액션 버튼(action button)은 전형적으로 준비된 대부분의 동작과 같은 것들을 나타내는
 취소 혹은 확인입니다. 그러나, 옵션들이 닫기, 확인 보다 대기, 내용에 설명한
 동작 취소와 같은 특정 동작으로 이루어졌다면, 모든 buttons는 동작 단어가 될
 것입니다. 이런 규칙에 따라, dialog의 무시 동작은 왼쪽에 두고, 긍정적인 동작
@@ -38,7 +38,7 @@ buttons과 같은 UI 요소를 포함할 것입니다. 경고와 같은 다른 �
 
 <img src="../media/dialogs_examples.png">
 <div class="figure-caption">
-  안드로이드에서의 전형적인 dialog 사용 예시입니다.
+  안드로이드에서의 전형적인 다이럴로그 사용 예시입니다.
 </div>
 
 
@@ -56,10 +56,10 @@ buttons과 같은 UI 요소를 포함할 것입니다. 경고와 같은 다른 �
 </div>
   <div class="layout-content-col span-5">
 
-<h4>Alerts without title bars</h4>
+<h4>타이틀 바 없는 경고</h4>
 <p>대부분의 경고는 제목이 필요 없습니다. 일반적인 결정들은 심각한 영향을 받지 않으며 하나 또는 두 가지의
 문장으로 간결하게 요약할 수 있습니다. 내용 영역은 질문을 하거나("이 대화를 지우시겠습니까?" 와 같은 것들)
-명백한 동작 buttons와 관련한 명확한 문장으로 구성합니다.</p>
+명백한 동작 버튼과 관련한 명확한 문장으로 구성합니다.</p>
 
   </div>
 </div>
@@ -73,7 +73,7 @@ buttons과 같은 UI 요소를 포함할 것입니다. 경고와 같은 다른 �
 </div>
   <div class="layout-content-col span-5">
 
-<h4>Alerts with title bars</h4>
+<h4>타이틀 바가 있는 경고</h4>
 <p>Use alerts with title bars sparingly. They are appropriate only when a high-risk operation involving
 potential loss of data, connectivity, extra charges, and so on requires a clear question or
 statement (the title) and some additional explanation (in the content area).</p>
@@ -86,16 +86,15 @@ available based on the title and the text of the action buttons.</p>
 
 
 
-<h2 id="popups">Popups</h2>
+<h2 id="popups">팝업</h2>
 
 
-<p>Popups은 사용자로부터 단일 선택을 요구하는 dialogs의 가벼운 형태입니다. Popups은 동작을 허용하거나
-취소하는 명확한 buttons를 가지고 있지 않습니다. 대신, 동작을 진행하기 전에 선택의 여지를 만들며, popup
-의 바깥쪽을 터치하여 popup을 없앨 수 있습니다.</p>
+<p>팝업(popup)은 사용자로부터 단일 선택을 요구하는 다이얼로그의 가벼운 형태입니다. 팝업은 동작을 허용하거나
+취소하는 명확한 버튼이 없습니다. 대신, 동작을 진행하기 전에 선택의 여지를 만들며, 팝업 바깥쪽을 터치하여 팝업을 없앨 수 있습니다.</p>
 
 
 <img src="../media/dialogs_popups_example.png">
-<h2 id="toasts">Toasts</h2>
+<h2 id="toasts">토스트</h2>
 
 
 
@@ -104,9 +103,9 @@ available based on the title and the text of the action buttons.</p>
 
     <div class="vspace size-6"></div>
 
-	<p>Toasts는 작은 popup의 처리에 대해 가벼운 피드백을 제공합니다. 예를 들어, 여러분이 이메일을
+	<p>토스트는 작은 팝업의 처리에 대해 가벼운 피드백을 제공합니다. 예를 들어, 여러분이 이메일을
 	보내기 전에 이메일 외부에서 탐색하면 여러분이 나중에 계속 편집할 수 있다는 것을 알려주는
-	"Draft 저장힘" toast를 띄웁니다. Toasts는 시간이 지나면 자동으로 사라집니다.</p>
+	"임시보관함" 토스트를 띄웁니다. 토스트는 시간이 지나면 자동으로 사라집니다.</p>
 
   </div>
   <div class="layout-content-col span-7">
