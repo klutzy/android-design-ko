@@ -3,26 +3,26 @@ layout: default
 title: 액션 바 
 ---
 <img src="../media/action_bar_pattern_overview.png">
-<p><em>액션 바</em>가 안드로이드 앱의 가장 중요한 구조 요소라는 것은 대부분 동의합니다.
-액션바는 대게 앱을 사용하는 동안 영속적으로 화면 상단 지역에 위치합니다.</p>
+<p>아마도 안드로이드 애플리케이션의 가장 중요한 구조적 요소는 <em>액션 바</em>일 것입니다.
+대개 액션 바는 애플리케이션을 사용하는 내내 계속 각 화면 상단에 위치하게 됩니다.</p>
 
-<p><strong>액션 바의 주 용도는 아래와 같습니다.</strong></p>
+<p><strong>액션 바의 주 용도는 다음과 같습니다:</strong></p>
 
 <ul>
-<li>Make important actions (such as <em>New</em> or <em>Search</em>, etc) prominent and accessible in a predictable
-   way.</li>
-<li>Support consistent navigation and view switching within apps.</li>
-<li>Reduce clutter by providing an action overflow for rarely used actions.</li>
-<li>Provide a dedicated space for giving your app an identity.</li>
+<li>(<em>새로 만들기</em>나 <em>검색</em> 등과 같은) 중요한 동작을 눈에 띄게 하고 기대대로 사용할 수 있게 합니다.</li>
+<li>앱 내의 일관된 네비게이션과 뷰 전환을 지원합니다.</li>
+<li>별로 사용되지 않는 액션을 액션 오버플로우로 제공함으로 산만함을 줄입니다.</li>
+<li>앱에 아이덴티티를 부여하는 전용 공간을 제공합니다.</li>
 </ul>
-<p>If you're new to writing Android apps, note that the action bar is one of the most important design
-elements you can implement. Following the guidelines described here will go a long way toward making
-your app's interface consistent with the core Android apps.</p>
+<p>새로운 안드로이드 앱을 개발하고 있다면,
+액션 바는 당신이 구현할 수 있는 가장 중요한 디자인 요소 중 하나라는 점을 기억해주세요.
+ 여기서 설명하는 가이드라인에 따른다면 당신의 애플리케이션의 인터페이스가 핵심 안드로이드 애플리케이션들과 같은
+일관성을 제공하는데 많은 도움이 될 것입니다.</p>
 
-<h2 id="organization">General Organization</h2>
+<h2 id="organization">일반 구성</h2>
 
 
-<p>The action bar is split into four different functional areas that apply to most apps.</p>
+<p>대부분의 애플리케이션에서 액션 바는 네가지 다른 기능 영역으로 분할됩니다.</p>
 
 <img src="../media/action_bar_basics.png">
 <div class="layout-content-row">
@@ -30,19 +30,18 @@ your app's interface consistent with the core Android apps.</p>
 
     <ol>
 <li class="value-1">
-<h4>App icon</h4>
+<h4>애플리케이션 아이콘</h4>
         <p>
 
-The app icon establishes your app's identity. It can be replaced with a different logo or branding
-if you wish.
-Important: If the app is currently not displaying the top-level screen, be sure to display the Up
-caret to the left of the app icon, so the user can navigate up the hierarchy. For more discussion of
-Up navigation, see the <a href="navigation.html">Navigation</a> pattern.
+애플리케이션 아이콘은 애플리케이션에 아이덴티티를 부여합니다. 원할 경우 다른 로고나 브랜드로 교체할 수도 있습니다.
+중요: 만약 애플리케이션이 현재 최상위 화면을 표시하고 있지 않다면, 사용자가 상위 계층으로 이동할 수 있도록
+애플리케이션 왼쪽에 상위 기호(Up caret)를 표시해야 합니다.
+상위 네비게이션에 대한 더 자세한 내용은 <a href="navigation.html">네비게이션</a> 패턴을 보시기 바랍니다.
 
 </p>
 <div class="figure">
   <img src="../media/action_bar_pattern_up_app_icon.png"><div class="figure-caption">
-    App icon with and without "up" affordance.
+    "상위"로 유도하지 않는/하는 애플리케이션 아이콘.
   </div>
 </div>
 
@@ -54,34 +53,34 @@ Up navigation, see the <a href="navigation.html">Navigation</a> pattern.
 
     <ol>
 <li class="value-2">
-<h4>View control</h4>
+<h4>뷰 컨트롤</h4>
         <p>
 
-If your app displays data in different views, this segment of the action bar allows users to switch
-views. Examples of view-switching controls are drop-down menus or tab controls. 
+만약 애플리케이션이 여러가지 뷰에서 데이터를 표시하고 있다면, 액션 바의 이 부분은 사용자가 뷰 간을 전활할 수 있도록 해줍니다.
+뷰 전환 컨트롤에는 드롭다운 메뉴나 탭 컨트롤 등이 있습니다.
 
         </p>
         <p>
 
-If your app doesn't support different views, you can also use this space to display non-interactive
-content, such as an app title or longer branding information.
+만약 애플리케이션이 여러가지 뷰를 지원하지 않는다면, 이 영역을 애플리케이션 타이틀이나 더 긴 브랜드 정보 등을 표시하는데
+사용할 수도 있습니다.
 
         </p>
       </li>
       <li class="value-3">
-<h4>Action buttons</h4>
+<h4>액션 버튼</h4>
         <p>
 
-Show the most important actions of your app in the actions section. Actions that don't fit in the
-action bar are moved automatically to the action overflow.
+액션 섹션에서 애플리케이션의 중요한 액션들을 표시합니다.
+액션 바에 들어갈 공간이 없는 액션들은 자동으로 액션 오버플로우 속으로 이동됩니다.
 
         </p>
       </li>
       <li class="value-4">
-<h4>Action overflow</h4>
+<h4>액션 오버플로우</h4>
         <p>
 
-Move less often used actions to the action overflow.
+조금 덜 사용되는 액션은 액션 오버플로우에 배치하세요.
 
         </p>
       </li>
@@ -90,40 +89,37 @@ Move less often used actions to the action overflow.
 </div>
 
 
-<h2 id="adapting-rotation">Adapting to Rotation and Different Screen Sizes</h2>
+<h2 id="adapting-rotation">회전 및 다양한 화면 크기에 대응하기</h2>
 
 
-<p>One of the most important UI issues to consider when creating an app is how to adjust to screen
-rotation on different screen sizes.</p>
+<p>애플리케이션을 만들 때 고려해야 할 중요한 UI 이슈 중 하나는
+  어떻게 다양한 디바이스의 화면 크기와 화면 회전에 맞출 것인가 하는 점입니다.</p>
 
-<p>You can adapt to such changes by using <em>split action bars</em>, which allow you to distribute action bar
-content across multiple bars located below the main action bar or at the bottom of the screen.</p>
+<p><em>분할 액션 바</em>를 사용해 이런 변경에 대응할 수 있는데,
+  분할 액션 바는 메인 액션 바 밑 혹은 화면 하단 등에 배치되는 다중 바로 액션 바 컨텐트를 분배할 수 있도록 해줍니다.</p>
 
 
 <img src="../media/action_bar_pattern_rotation.png">
 <div class="figure-caption">
-  Split action bar showing action buttons at the bottom of the screen in vertical orientation.
+  세로 방향에서 화면 하단에 액션 버튼을 표시하는 분할 액션 바.
 </div>
 
 
-<h2 id="considerations-split-action-bars">Layout Considerations for Split Action Bars</h2>
+<h2 id="considerations-split-action-bars">분할 액션 바 레이아웃 고려 사항</h2>
 
 
 <div class="layout-content-row">
   <div class="layout-content-col span-8 with-callouts">
 
-<p>When splitting up content across multiple action bars, you generally have three possible locations
-for action bar content:</p>
+<p>여러 액션 바로 컨텐트를 분리할 때, 일반적으로 액션 바 컨텐트를 배치할 수 있는 세 곳의 위치가 있습니다:</p>
 <ol>
-<li><strong>Main action bar</strong></li>
-<li><strong>Top bar</strong></li>
-<li><strong>Bottom bar</strong></li>
+<li><strong>메인 액션 바</strong></li>
+<li><strong>상단 바</strong></li>
+<li><strong>하단 바</strong></li>
 </ol>
-<p>If the user can navigate up the hierarchy from a given screen, the main action bar contains the up
-caret, at a minimum.</p>
-<p>To allow the user to quickly switch between the views your app provides, use tabs or a spinner in
-the top bar.</p>
-<p>To display actions and, if necessary, the action overflow, use the bottom bar.</p>
+<p>만약 사용자가 현재 화면에서 상위 계층으로 이동할 수 있다면, 메인 액션 바에는 최소한 상위 기호는 표시하고 있어야 합니다.</p>
+<p>사용자가 빠르게 애플리케이션에서 제공하는 뷰 간을 전환할 수 있도록, 상단 바에 탭이나 스피너를 사용하세요.</p>
+<p>액션, 필요할 경우, 액션 오버 플로우를 표시하려면 하단 바를 사용하세요.</p>
 
   </div>
   <div class="layout-content-col span-3">
@@ -133,67 +129,63 @@ the top bar.</p>
 </div>
 
 
-<h2 id="contextual">Contextual Action Bars</h2>
+<h2 id="contextual">문맥 액션 바(Contextual Action Bars)</h2>
 
 
-<p>A <em>contextual action bar (CAB)</em> is a temporary action bar that overlays the app's action bar for the
-duration of a particular sub-task. CABs are most typically used for tasks that involve acting on
-selected data or text.</p>
+<p><em>문맥 액션 바(CAB)</em>는 어떤 하위 작업을 수행하는 동안에만 임시로 애플리케이션 액션 바 위에 덮어져 표시되는 액션 바입니다.
+  CAB는 대부분 데이터나 텍스트 선택 시의 작업에 사용됩니다.</p>
 
 
 <img src="../media/action_bar_cab.png">
 <div class="figure-caption">
-  Contextual action bar shown in Browser and Gmail
+  브라우저와 Gmail에 표시 중인 문맥 액션 바
 </div>
 
 
-<p>The selection CAB appears after a long press on a selectable data item triggers selection mode.</p>
+<p>선택 CAB는 선택 가능한 데이터를 길게 눌러(long press) 선택 모드가 시작되면 표시됩니다.</p>
 
-<p><strong>From here the user can</strong>:</p>
+<p><strong>이 시점에서 사용자는</strong>:</p>
 
 <ul>
-<li>Select additional elements by touching them.</li>
-<li>Trigger an action from the CAB that applies to all selected data items. The CAB then
-   automatically dismisses itself.</li>
-<li>Dismiss the CAB via the navigation bar's Back button or the CAB's checkmark button. This removes
-   the CAB along with all selection highlights.</li>
+<li>항목을 더 터치해 추가 요소를 선택할 수 있습니다.</li>
+<li>선택 중인 모든 데이터 항목에 적용되는 액션을 CAB에서 실행할 수 있습니다. 작업이 끝난 후 CAB는 자동으로 사라집니다.</li>
+<li>네비게이션 바의 백 버튼이나 CAB의 체크마크 버튼으로 CAB를 없앨 수 있습니다. 이 작업은 모든 선택 표시와 함께 CAB를 제거합니다.</li>
 </ul>
-<p>Use CABs whenever you allow the user to select data via long press. You can control the action
-content of a CAB in order to insert the actions you would like the user to be able to perform.</p>
+<p>애플리케이션이 사용자가 데이터를 길게 눌러 선택하는 동작을 지원하고 있다면 언제나 CAB를 사용해주세요.
+ 당신은 사용자가 수행하도록 하고 싶은 작업을 삽입하기 위해 CAB의 액션 컨텐트를 조정할 수도 있습니다.</p>
 
-<p>For more information, refer to the "Selection" pattern.</p>
+<p>더 자세한 정보는, <a href="selection.html">선택</a> 패턴을 참조해주세요.</p>
 
-<h2 id="elements">Action Bar Elements</h2>
+<h2 id="elements">액션 바 요소</h2>
 
 
-<h4>Tabs</h4>
+<h4>탭</h4>
 
-<p><em>Tabs</em> display app views concurrently and make it easy to explore and switch between them. Use tabs
-if you expect your users to switch views frequently.</p>
+<p><em>탭</em>은 애플리케이션의 뷰와 함께 표시되며 뷰의 탐색과 전환을 수월하게 해줍니다.
+사용자가 빈번하게 뷰를 전환할 것으로 예상될 경우 탭을 사용하세요.</p>
 
 
 <img src="../media/tabs_youtube.png">
-<p>There are two types of tabs: fixed and scrollable.</p>
+<p>두가지 타입의 탭이 있습니다: 고정 탭 및 스크롤 탭.</p>
 
 
 <div class="layout-content-row">
   <div class="layout-content-col span-6">
 
-<h4>Scrollable tabs</h4>
-<p><em>Scrollable tabs</em> always take up the entire width of the bar, with the currently active view item in
-the center, and therefore need to live in a dedicated bar. Scrollable tabs can themselves be
-scrolled horizontally to bring more tabs into view.</p>
-<p>Use scrollable tabs if you have a large number of views or if you're unsure how many views will be
-displayed because your app inserts views dynamically (for example, open chats in a messaging app
-that the user can navigate between). Scrollable tabs should always allow the user to navigate
-between the views by swiping left or right on the content area as well as swiping the tabs
-themselves.</p>
+<h4>스크롤 탭(Scrollable tabs)</h4>
+<p><em>스크롤 탭</em>은 언제나 바 전체를 차지해 중앙에 현재 활성화된 뷰 항목을 표시하기 때문에
+독립된 바 안에 표시될 필요가 있습니다.
+스크롤 탭은 많은 탭을 뷰로 표시하기 위해 수평 방향으로 스스로 스크롤 될 수 있습니다.</p>
+<p>많은 뷰가 필요하거나 애플리케이션에서 뷰를 동적으로 추가하기 때문에 뷰가 얼마나 많이 필요한지 확실하지 않을 때
+(예를 들어, 메시징 애플리케이션에서 사용자가 각 대화를 오갈 수 있습니다) 스크롤 탭을 사용하세요.
+스크롤 탭은 언제나 사용자가 탭 위에서 뿐만 아니라 컨텐트 영역 내에서도 좌나 우로 스와이프하는 것으로
+뷰 간을 탐색할 수 있도록 허용해야 합니다.</p>
 
   </div>
   <div class="layout-content-col span-7">
 
     <video width="400" class="with-shadow play-on-hover" autoplay><source src="/design/media/tabs_scrolly.mp4" type="video/mp4"><source src="/design/media/tabs_scrolly.webm" type="video/webm"><source src="/design/media/tabs_scrolly.ogv" type="video/ogg"></source></source></source></video><div class="figure-caption">
-      Scrolling tabs in Google Play.
+      Google Play의 스크롤 탭.
       <div class="video-instructions">&#160;</div>
     </div>
 
@@ -204,15 +196,15 @@ themselves.</p>
 <div class="layout-content-row">
   <div class="layout-content-col span-6">
 
-<h4>Fixed tabs</h4>
-<p><em>Fixed tabs</em> are always visible on the screen, and can't be moved out of the way like scrollable
-tabs. Fixed tabs in the main action bar can move to the top bar when the screen orientation changes.</p>
+<h4>고정 탭(Fixed tabs)</h4>
+<p><em>고정 탭</em>은 항상 화면 상에 표시되며, 스크롤 탭과 같은 방식으로 이동할 수 없습니다.
+메인 액션 바의 고정 탭은 화면 방향이 바뀔 때 상단 바로 이동될 수 있습니다.</p>
 
   </div>
   <div class="layout-content-col span-7">
 
     <img src="../media/action_bar_pattern_default_tabs.png"><div class="figure-caption">
-      Default fixed tabs shown in Holo Dark &amp; Light.
+      Holo Dark 및 Light로 표시되고 있는 기본 고정 탭.
     </div>
 
   </div>
@@ -222,89 +214,86 @@ tabs. Fixed tabs in the main action bar can move to the top bar when the screen 
 <div class="layout-content-row">
   <div class="layout-content-col span-6">
 
-<h4>Spinners</h4>
-<p>A <em>spinner</em> is a drop-down menu that allows users to switch between views of your app. </p>
-<p><strong>Use spinners rather than tabs in the main action bar if</strong>:</p>
+<h4>스피너(Spinners)</h4>
+<p><em>스피너</em>는 사용자가 애플리케이션에서 뷰 간을 전활할 수 있도록 해주는 드롭다운 메뉴입니다.</p>
+<p><strong>이런 경우에 메인 액션 바에 탭 대신 스피너를 사용하세요</strong>:</p>
 <ul>
-<li>You don't want to give up the vertical screen real estate for a dedicated tab bar.</li>
-<li>You expect your app's users to switch views infrequently.</li>
+<li>탭 바를 표시하기 위해 수직 화면 표시 공간을 줄이고 싶지 않아요.</li>
+<li>사용자가 뷰를 자주 전환할 것 같지 않아요.</li>
 </ul>
 </div>
   <div class="layout-content-col span-7">
 
     <img src="../media/action_bar_pattern_spinner.png"><div class="figure-caption">
-      Action bar spinner from Calendar application.
+      캘린더 애플리케이션의 액션 바 스피너.
     </div>
 
   </div>
 </div>
 
 
-<h4>Action buttons</h4>
+<h4>액션 버튼</h4>
 
-<p><em>Action buttons</em> on the action bar surface your app's most important activities. Think about which
-buttons will get used most often, and order them accordingly. Depending on available screen real
-estate, the system shows your most important actions as action buttons and moves the rest to the
-action overflow. The action bar and the action overflow should only present actions to the user that
-are available. If an action is unavailable in the current context, hide it. Do not show it as
-disabled.</p>
+<p>액션 바 위의 <em>액션 버튼</em>은 애플리케이션의 중요한 활동들을 포괄합니다.
+어떤 버튼이 더 자주 사용될지 생각해보고 그에 맞춰 순서를 구성하세요.
+사용 가능한 화면 공간에 따라, 시스템은 더 중요한 액션을 액션 버튼으로 보여주고 나머지는 액션 오버플로우로 이동시킵니다.
+액션바 및 액션 오버플로우는 언제나 사용 가능한 액션들만을 표시해야 합니다.
+만일 현재 어떤 액션을 사용할 수 없는 경우라면, 감추세요. 사용 불가 상태로 표시하지 마세요.</p>
 
 
 <img src="../media/action_bar_pattern_action_icons.png">
 <div class="figure-caption">
-  A sampling of action buttons used throughout the Gmail application.
+  Gmail 애플리케이션 전역에 사용되는 액션 버튼의 샘플링.
 </div>
 
 
-<p>For guidance on prioritizing actions, use the FIT scheme.</p>
+<p>어떤 액션이 우선 순위인지에 대한 가이드로, FIT 방식을 사용하세요.</p>
 
 
 <div class="layout-content-row">
   <div class="layout-content-col span-4">
 
-<p><strong>F &#8212; Frequent</strong></p>
+<p><strong>F &#8212; 빈도(Frequent)</strong></p>
 <ul>
-<li>Will people use this action at least 7 out of 10 times they visit the screen?</li>
-<li>Will they typically use it several times in a row?</li>
-<li>Would taking an extra step every time truly be burdensome?</li>
+<li>사용자가 이 화면에 들어왔을 때 이 액션을 적어도 7할 이상 사용할까요?</li>
+<li>사용자가 이 액션을 일반적으로 연달아 사용할까요?</li>
+<li>이 액션을 매번 여러 단계에 걸쳐 실행되게 한다면 사용하기 부담스러울까요?</li>
 </ul>
 </div>
   <div class="layout-content-col span-4">
 
-<p><strong>I &#8212; Important</strong></p>
+<p><strong>I &#8212; 중요성(Important)</strong></p>
 <ul>
-<li>Do you want everyone to discover this action because it's especially cool or a selling point?</li>
-<li>Is it something that needs to be effortless in the rare cases it's needed?</li>
+<li>이 액션이 진짜 멋진 기능 혹은 장점이라고 생각하기 때문에 모두가 쉽게 알아채도록 하고 싶나요?</li>
+<li>이례적인 경우라 해도 필요할 때 쉽게 접근할 수 있어야 하는 어떤 이유가 있나요?</li>
 </ul>
 </div>
   <div class="layout-content-col span-4">
 
-<p><strong>T &#8212; Typical</strong></p>
+<p><strong>T &#8212; 대표성(Typical)</strong></p>
 <ul>
-<li>Is it typically presented as a first-class action in similar apps?</li>
-<li>Given the context, would people be surprised if it were buried in the action overflow?</li>
+<li>이 액션은 비슷한 애플리케이션들에서 일반적으로 가장 먼저 표시되고 있는 액션인가요?</li>
+<li>해당 상황에, 이 액션이 액션 오버플로우 속에 묻혀 있다면 사람들이 당황할 수도 있나요?</li>
 </ul>
 </div>
 </div>
 
 
-<p>If either F, I, or T apply, then it's appropriate for the action bar. Otherwise, it belongs in the
-action overflow.</p>
+<p>F, I, 혹은 T를 갖춘 액션들이 액션 바에 잘 어울릴 것입니다. 그 외의 액션들은 액션 오버플로우에 소속됩니다.</p>
 
 
 <p>
 
-Pre-defined glyphs should be used for certain common actions such as "refresh" and "share." The
-download link below provides a package with icons that are scaled for various screen densities and
-are suitable for use with the Holo Light and Holo Dark themes. The package also includes unstyled
-icons that you can modify to match your theme, in addition to Adobe&#174; Illustrator&#174; source
-files for further customization.
+"새로 고침"이나 "공유"와 같은 특정 공통 액션들은 미리 정의된 모양을 사용할 수 있습니다.
+아래 다운로드 링크는 다양한 화면 밀도를 위해 조정된 크기 및 Holo Light와 Holo Dark 테마에서 사용가능한 아이콘 패키지를 제공합니다.
+이 패키지는 또한 차후에 아이콘을 당신의 테마에 어울리게 수정할 수 있도록 Adobe&#174; Illustrator&#174; 소스 파일을 비롯한
+스타일링되지 않은 아이콘도 제공합니다.
 
 </p>
 
 <p>
 
-<a href="https://dl-ssl.google.com/android/design/Android_Design_Icons_20120229.zip">Download the Action Bar Icon Pack</a>
+<a href="https://dl-ssl.google.com/android/design/Android_Design_Icons_20120229.zip">액션 바 아이콘 팩 다운로드</a>
 
 </p>
 
@@ -312,76 +301,71 @@ files for further customization.
 <div class="layout-content-row">
   <div class="layout-content-col span-6">
 
-<h4>Action overflow</h4>
-<p>The action overflow in the action bar provides access to your app's less frequently used actions.
-The overflow icon only appears on phones that have no menu hardware keys. Phones with menu keys
-display the action overflow when the user presses the key.</p>
+<h4>액션 오버플로우</h4>
+<p>액션 바의 액션 오버플로우는 애플리케이션에서 덜 사용되는 액션에 접근할 수 있도록 해줍니다.
+폰에서 오버플로우 아이콘은 메뉴 하드웨어 키가 없는 경우에만 나타납니다.
+메뉴 키를 갖춘 폰은 유저가 메뉴 키를 누를 경우에 액션 오버플로우를 표시합니다.</p>
 
   </div>
   <div class="layout-content-col span-7">
 
     <img src="../media/action_bar_pattern_overflow.png"><div class="figure-caption">
-      Action overflow is pinned to the right side.
+      우측에 고정된 액션 오버 플로우.
     </div>
 
   </div>
 </div>
 
 
-<p>How many actions will fit in the main action bar? Action bar capacity is controlled by the following
-rules:</p>
+<p>얼마나 많은 액션이 메인 액션 바에 들어갈 수 있을까요? 액션 바 용량은 다음 규칙에 의해 제어됩니다:</p>
 
 <ul>
-<li>Action buttons in the main action bar may not occupy more than 50% of the bar's width. Action
-  buttons on bottom action bars can use the entire width.</li>
-<li>The screen width in density-independent pixels
-  (<acronym title="Density-independent pixels. One dp is one pixel on a 160 dpi screen.">dp</acronym>)
-  determine the number of items that will fit in the main action bar:<ul>
-<li>smaller than 360 dp = 2 icons</li>
-<li>360-499 dp = 3 icons</li>
-<li>500-599 dp = 4 icons</li>
-<li>600 dp and larger = 5 icons</li>
+<li>메인 액션 바의 액션 버튼은 액션 바 너비의 50% 이상을 점유하지 않습니다.
+하단 액션 바의 액션 버튼은 전체 너비를 사용할 수 있습니다.</li>
+<li>밀도 독립 픽셀(<acronym title="Density-independent pixels. 1dp는 160dpi 화면에서 1픽셀.">dp</acronym>)로
+계산된 화면 너비가 메인 액션 바에 표시될 항목 수를 결정합니다:<ul>
+<li>360 dp 이하 = 2 아이콘</li>
+<li>360-499 dp = 3 아이콘</li>
+<li>500-599 dp = 4 아이콘</li>
+<li>600 dp 이상 = 5 아이콘</li>
 </ul>
 </li>
 </ul>
 <img src="../media/action_bar_pattern_table.png">
 <div class="figure-caption">
-  In the above table "o" denotes an action bar item and "=" an overflow icon.
+  위의 표에서 "o"는 액션 바 아이템을, "="는 오버플로우 아이콘을 가리킵니다.
 </div>
 
 
-<h4>Sharing data</h4>
+<h4>데이터 공유하기</h4>
 
-<p>Whenever your app permits sharing of data, such as images or movie clips, use a <em>share action
-provider</em> in your action bar. The share action provider is designed to speed up sharing by
-displaying the most recently used sharing service next to a spinner button that contains other
-sharing options.</p>
+<p>애플리케이션이 이미지나 무비 클립 등을 공유하는 것을 허용한다면 액션 바에 <em>공유 액션 프로바이더(share action
+provider)</em>를 사용하세요. 이 공유 액션 프로바이더는 다른 공유 옵션을 제공하는 스피너 버튼 옆에
+최근에 사용한 공유 서비스를 표시해 공유 속도를 높일 수 있도록 디자인되었습니다.</p>
 
 
 <img src="../media/action_bar_pattern_share_pack.png">
 <div class="figure-caption">
-  The Gallery app's share action provider with extended spinner for additional sharing options.
+  추가 공유 옵션을 표시하는 확장 스피너가 제공되는 갤러리 앱의 공유 액션 프로바이더.
 </div>
 
 
-<h2 id="checklist">Action Bar Checklist</h2>
+<h2 id="checklist">액션 바 체크리스트</h2>
 
 
-<p>When planning your split action bars, ask yourself questions like these:</p>
+<p>분할 액션 바를 준비중이라면, 다음 자문을 해보시기 바랍니다:</p>
 
-<h4>How important is view navigation to the task?</h4>
+<h4>작업에 있어 뷰 탐색은 얼마나 중요한가요?</h4>
 
-<p>If view navigation is very important to your app, use tabs (for fastest view-switching) or spinners.</p>
+<p>만약 뷰 탐색이 애플리케이션에서 매우 중요하다면, (가장 빠른 뷰 전환을 위해) 탭이나 스피너를 사용하세요.</p>
 
-<h4>Which of the app's actions need to be consistently available directly from the action bar, and which can be moved to the action overflow?</h4>
+<h4>액션 바에서 바로 사용할 수 있어야 하는 액션은 무엇이고, 어떤 액션이 액션 오버플로우 속에 배치되어도 괜찮을까요?</h4>
 
-<p>Use the <acronym title="Frequent, Important or Typical">FIT</acronym> scheme to decide if actions
-are displayed at the top-level or can be moved to the action overflow. If the number of top-level
-actions exceeds the capacity of the main action bar, display them separately in a bottom action bar.</p>
+<p>액션이 최상위 레벨로 표시되어야 할지 아니면 액션 오버플로우 속으로 배치되어도 좋을지 갸늠하기 위해 <acronym title="Frequent, Important or Typical">FIT</acronym> 규칙을 사용하세요. 만약 최상위 레벨 액션이 메인 액션 바의 용량을 초과한다면,
+하단 액션 바에 나누어 표시해주세요.</p>
 
-<h4>What else is important enough to warrant continuous display?</h4>
+<h4>어떤 다른 중요한 것들이 계속 표시되어야 할까요?</h4>
 
-<p>Sometimes it is important to display contextual information for your app that's always visible.
-Examples are the number of unread messages in a messaging inbox view or the Now Playing information
-in a music player. Carefully plan which important information you would like to display and
-structure your action bars accordingly.</p>
+<p>때때로 애플리케이션에서 문맥 정보가 계속 표시되는 것이 중요할 수도 있습니다.
+이를테면 받은 메시지 함에서 읽지 않은 메시지 수라든가 음악 플레이어에서 현재 재생중인 곡에 대한 표시 등이 있습니다.
+잘 계획해서 어떤 중요한 정보를 표시할 것인지를 정하고 그에 맞춰 액션 바를 조직하세요.</p>
