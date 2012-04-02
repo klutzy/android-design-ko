@@ -1,40 +1,28 @@
----
+각 패널각 패널---
 layout: default
-title: Multi-pane Layouts
+title: 다중 창 레이아웃
 ---
-<p>When writing an app for Android, keep in mind that Android devices come in many different screen
-sizes and types. Make sure that your app consistently provides a balanced and aesthetically pleasing
-layout by adjusting its content to varying screen sizes and orientations.</p>
+<p>안드로이드 애플리케이션을 작성할 때, 각 단말기들이 다양한 화면 크기와 유형을 갖는 것을 염두해야 합니다. 즉, 화면 크기와 방향에 따라 컨텐츠의 크기를 조정하여 안정적이며 심미적으로 뛰어난 모습을 보여주야 합니다.</p>
 
-<p><em>Panels</em> are a great way for your app to achieve this. They allow you to combine multiple views into
-one compound view when a lot of horizontal screen real estate is available and by splitting them up
-when less space is available.</p>
+<p><em>패널(Panels)</em> 을 사용하면 위의 요구사항을 잘 만족시킬 수 있습니다. 패널은 화면의 가로 공간이 충분할 경우 다수의 뷰를 하나의 통합된 뷰로 표시하고, 그렇지 않은 경우 뷰들을 분리하여 표시할 수 있도록 합니다. </p>
 
-<h2 id="combining-views">Combining Multiple Views Into One</h2>
+<h2 id="combining-views">다수의 뷰를 하나로 통합하기</h2>
 
 
-<p>On smaller devices your content is typically divided into a master grid or list view and a detail
-view. Touching an item in the master view opens a different screen showing that item's detail
-information.</p>
+<p>작은 화면을 가진 단말기에서는 일반적으로 주요한 정보만 보여주는  그리드뷰/리스트뷰와 상세 정보를 표시하는 뷰로 각각 컨텐츠를 나누어 표시했습니다.  주요 정보를 보여주는 뷰에서 항목을 선택하면 다른 화면이 표시되면서 그 항목의 상세 정보가 표시됩니다. </p>
 
 
 <img src="../media/multipane_views.png">
-<p>Because tablets have more screen real estate than phones, you can use panels to combine the related
-list and detail views into a single compound view. This uses the additional space more efficiently
-and makes navigating the app easier. </p>
+<p>태블릿 단말기는 일반 휴대폰에 비해 화면이 크기 때문에, 패널을 사용하여 서로 연관된 리스트뷰와 상세정보 표시 뷰를 하나의 뷰로 통합할 수 있습니다. 이를 통해 공간을 더욱 효율적으로 사용할 수 있고, 애플리케이션을 더 쉽게 탐색할 수 있습니다. </p>
 
 
 <img src="../media/multipane_view_tablet.png">
-<p>In general, use the pane on the right to present more information about the item you selected in the
-left pane. Make sure to keep the item in the left pane selected in order to establish the
-relationship between the panels.</p>
+<p>일반적으로, 좌측 패널에서 선택한 항목에 대한 자세한 정보를 우측 패널에 표시합니다. 각 구역간의 관계를 보여주기 위해 왼쪽 패널에서 선택한 항목은 선택된 상태를 유지하도록 해야 합니다. </p>
 
-<h2 id="orientation">Compound Views and Orientation Changes</h2>
+<h2 id="orientation">통합 뷰와 화면 방향 변화</h2>
 
 
-<p>Screens should have the same functionality regardless of orientation. If you use a compound view in
-one orientation, don't split it up when the user rotates the screen. There are several techniques
-you can use to adjust the layout after orientation change while keeping functional parity intact.</p>
+<p>화면은 화면 방향과는 관계없이 동일 기능을 수행해야 합니다. 특정 화면 방향에서 통합 뷰를 사용했다면, 사용자가 화면 방향을 전환했을 때도 통합 뷰에 포함된 뷰들이 분리되어 표시되지 않도록 해야 합니다. 다음은 화면 방향이 바뀐 후에도 기능은 동일하게 유지하면서 레이아웃을 조정하는 몇가지 방법을 보여줍니다. </p>
 
 
 <div class="layout-content-row">
@@ -44,8 +32,8 @@ you can use to adjust the layout after orientation change while keeping function
 </div>
   <div class="layout-content-col span-5">
 
-<h4>Stretch/compress</h4>
-<p>Adjust the column width of your left pane to achieve a balanced layout in both orientations.</p>
+<h4>늘이기/줄이기</h4>
+<p>왼쪽 패널의 너비를 조절하여 모든 화면 방향에서 각 패널이 적정 비율을 유지하도록 합니다.</p>
 
   </div>
 </div>
@@ -58,8 +46,8 @@ you can use to adjust the layout after orientation change while keeping function
 </div>
   <div class="layout-content-col span-5">
 
-<h4>Stack</h4>
-<p>Rearrange the panels on your screen to match the orientation.</p>
+<h4>쌓아 올리기</h4>
+<p>각 화면 방향에 맞춰 패널들의 위치를 재조정합니다.</p>
 
   </div>
 </div>
@@ -72,10 +60,8 @@ you can use to adjust the layout after orientation change while keeping function
 </div>
   <div class="layout-content-col span-5">
 
-<h4>Expand/collapse</h4>
-<p>When the device rotates, collapse the left pane view to only show the most important information.
-Provide an <em>expand</em> control that allows the user to bring the left pane content back to its original
-width and vice versa.</p>
+<h4>접기/펼치기</h4>
+<p>단말기가 회전할 때 왼쪽 패널을 접어 최소한의 정보만을 표시하도록 합니다. <em>펼치기(Expand)</em> 컨트롤을 제공하여 사용자가 왼쪽 패널을 접었다 폈다 할 수 있도록 해야 합니다.</p>
 
   </div>
 </div>
@@ -88,31 +74,27 @@ width and vice versa.</p>
 </div>
   <div class="layout-content-col span-5">
 
-<h4>Show/hide</h4>
-<p>After rotating the device, show the right pane in fullscreen view. Use the Up icon in the action bar
-to show the left panel and allow navigation to a different email. Hide the left panel by touching
-the content in the detail panel.</p>
+<h4>보이기/숨기기</h4>
+<p>단말기를 회전한 후 오늘쪽 패널을 화면에 꽉 차게 표시합니다. 액션바의 '이전 단계로' 버튼을 사용하여 왼쪽 패널을 표시하도록 하여 다른 이메일을 선택할 수 있도록 합니다. 상세정보가 표시되는 패널 내의 컨텐츠를 터치한 경우 왼쪽 패널을 숨깁니다.</p>
 
   </div>
 </div>
 
 
-<h2 id="checklist">Checklist</h2>
+<h2 id="checklist">체크리스트</h2>
 
 
 <ul>
 <li>
-<p>Plan in advance on how your app scales to different screen sizes and screen orientations.</p>
+<p>다양한 화면 크기와 방향에 따라 애플리케이션을 어떻게 표시할 지 미리 준비하세요.</p>
 </li>
 <li>
-<p>Identify the most appropriate method for the panels in your compound views to reorganize
-  themselves when screen orientation changes.</p>
+<p>화면 방향이 바뀌었을 때, 통합 뷰 안의 패널들을 재배치하는 방법 중 가장 적절한 것을 확인하세요.</p>
 </li>
 <li>
-<p>Look for opportunities to consolidate your views into multi-panel compound views.</p>
+<p>복잡한 뷰를 여러 패널로 구성된 통합 뷰로 바꿀 수 있는지 알아보세요.</p>
 </li>
 <li>
-<p>Make sure that your screens provide functional parity after the screen orientation
-  changes.</p>
+<p>화면 방향이 바뀐 후에도 화면에서 동일한 기능을 제공할 수 있도록 하세요.</p>
 </li>
 </ul>
