@@ -1,10 +1,9 @@
 ---
 layout: default
-title: Selection
+title: 셀렉션
 ---
-<p>Android 3.0 introduced the <em>long press</em> gesture&#8212;that is, a touch that's held in the same
-position for a moment&#8212;as the global gesture to select data. This affects the way you should
-handle multi-select and contextual actions in your apps.</p>
+<p>안드로이드 3.0에서 <em>길게누르기</em>(같은 위치를 잠시 누르는 터치) 제스쳐는 데이터를 선택하는 일반적인 제스쳐로 소개되었습니다. 
+이것은 여러분 앱의 다중 선택과 컨텍스트 액션 처리 방식에 영향을 주었습니다.</p>
 
 
 <div class="vspace size-1">&#160;</div>
@@ -13,28 +12,24 @@ handle multi-select and contextual actions in your apps.</p>
 <div class="layout-content-row">
   <div class="layout-content-col span-6">
 
-<h4>What has changed?</h4>
-<p>In previous versions of Android, the long press gesture was universally used to display contextual
-actions for a given data item in a contextual menu.</p>
-<p>This pattern changed with Android 3.0. The long press gesture is now used to select data, combining
-contextual actions and selection management functions for selected data into a new element called
-the contextual action bar (CAB).</p>
+<h4>무엇이 바뀌었는가?</h4>
+<p>이전버전의 안드로이드에서, 길게누르기 제스쳐는 컨텍스트 메뉴에 선택된 아이템의 컨섹트스 액션을 표시하기위해 널리 사용되었습니다.</p>
+<p>이 패턴은 안드로이드 3.0에서 바뀌었습니다. 길게누르기 제스쳐는 이제 컨텍스트 액션 바(CAB)로 불리우는 새로운 요소에 들어있는 데이터 선택, 컨텍스트 액션, 선택 관리 기능을 위해 쓰여집니다. </p>
 
   </div>
   <div class="layout-content-col span-7">
 
     <img src="../media/selection_context_menu.png"><div class="figure-caption">
-      Traditional use of the long press gesture to show contextual menus.
+      컨텍스트 메뉴를 보여주기위한 길게누르기 제스쳐의 전통적인 사용.
     </div>
 
   </div>
 </div>
 
 
-<h4>Using the contextual action bar (CAB)</h4>
+<h4>컨텍스트 액션 바 (CAB)의 사용</h4>
 
-<p>The selection CAB is a temporary action bar that overlays your app's current action bar while data
-is selected. It appears after the user long presses on a selectable data item.</p>
+<p>셀렉션 CAB는 데이터가 선택되어있는 동안 여러분의 현재 액션바 위에 오버레이되는 임시 액션바 입니다. CAB는 사용자가 선택 가능한 데이터를 길게누르기 한 다음에 표시됩니다.</p>
 
 
 <img src="../media/selection_cab_big.png">
@@ -44,13 +39,11 @@ is selected. It appears after the user long presses on a selectable data item.</
 <div class="layout-content-row">
   <div class="layout-content-col span-6">
 
-<p>From here the user can:</p>
+<p>여기서 사용자가 할 수 있는 것:</p>
 <ul>
-<li>Select additional data items by touching them.</li>
-<li>Trigger an action from the CAB that applies to all highlighted data items. The CAB then
-  automatically dismisses itself.</li>
-<li>Dismiss the CAB via the navigation bar's Back button or the CAB's checkmark button. This removes
-  the CAB along with all selection highlights.</li>
+<li>아이템을 터치해서 추가적으로 아이템을 선택하세요.</li>
+<li>하이라이트된 모든 데이터 아이템들에게 CAB에 있는 액션을 수행하세요. 이후 CAB는 자동적으로 사라집니다.</li>
+<li>Back 버튼 또는 CAB의 체크마크 버튼으로 CAB를 사라지게 하세요. 선택되었던 모든 하이라이트들도 CAB와 함께 사라집니다.</li>
 </ul>
 </div>
   <div class="layout-content-col span-7">
@@ -63,7 +56,7 @@ is selected. It appears after the user long presses on a selectable data item.</
 <div class="layout-content-row">
   <div class="layout-content-col span-6">
 
-<h4>Selecting CAB actions</h4>
+<h4>CAB 액션들의 선택</h4>
 <p>You can decide which actions and elements appear in the CAB. Use the guidelines in the <a href="actionbar.html">Action Bar
 pattern</a> to decide which items to surface at the top level and which to move to the
 action overflow.</p>
