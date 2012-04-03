@@ -11,6 +11,8 @@
 
 현재 작업물은 [Fork](https://github.com/klutzy/android-design-ko/fork_select)를 눌러 각자의 리포지토리에서 작업해주세요. 작업 후에는 자신의 리포지토리에 먼저 커밋을 해주세요. 그 후 리포지토리 상단의 `Pull Request` 버튼을 눌러주세요. 빠른 시간 내에 작업물을 전달하여 프로젝트에 기여할 수 있습니다.
 
+임시로 번역어는 [여기](https://github.com/klutzy/android-design-ko/issues/67)에서 논의하고 있습니다.
+
 이런 도구의 도움을 받습니다.
 ----------------------
 안드로이드 디자인 사이트 번역을 위해 GIT과 [Jekyll](http://jekyllbootstrap.com/)의 도움을 받고 있습니다.
