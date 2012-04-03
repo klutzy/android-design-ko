@@ -1,25 +1,24 @@
 ---
 layout: default
-title: Grid Lists
+title: 그리드 목록
 ---
 <img src="../media/gridview_overview.png">
-<p>Grid lists are an alternative to standard list views. They are best suited for showing data sets
-that represent themselves through images. In contrast to simple lists, grid lists may scroll either
-vertically or horizontally.</p>
+<p>그리드 목록은 표준 목록 뷰 대신 사용할 수 있습니다. 이미지와 함께 데이터 모음을 보여주기 위한 가장 적당한
+수단입니다. 단순한 목록과는 달리 그리그 목록은 수직, 수평 방향으로 스크롤 할 수 있습니다.</p>
 
 
 
 
-<h2 id="generic_grid">Generic Grids</h2>
+<h2 id="generic_grid">일반적인 그리드</h2>
 
 
 
-<p>The items in a grid list are arranged in two dimensions, one of which is fixed when scrolling
-content. The scrolling direction dictates the ordering of the items within the grid list. Since the
-scrolling direction is not deterministic, make it easy for the user to determine the orientation by
-cutting off grid items to communicate where the overflow is located.</p>
+<p>그리드 목록에 있는 항목들은 2차원으로 정렬되어 있으며 내용을 스크롤 할 때 고정되어 있는 것들 중 하나입니다. 
+스크롤 방향은 그리드 목록의 항목 순서에 영향을 줍니다. 스크롤 방향이 일정하지 않으면, 스크롤 할 방향 다음의 
+내용이 위치한 곳을 확인하기 위해 그리드 항목을 잘라내어 사용자가 스크롤 방향을 쉽게 결정할 수 있도록 합니다.
+</p>
 
-<p>Avoid creating grid lists that scroll in two dimensions.</p>
+<p>두 방향으로 스크롤하는 그리드 목록을 만드는 것을 피하세요.</p>
 
 
 
@@ -30,11 +29,10 @@ cutting off grid items to communicate where the overflow is located.</p>
 </div>
   <div class="layout-content-col span-6">
 
-<h4>Vertical scrolling</h4>
-<p>Vertically scrolling grid list items are sorted in traditional western reading direction:
-left-to-right and top-down. When displaying the list, cut off the items in the bottom row to
-communicate that the user can scroll the list down to show additional items. Be sure to retain this
-scheme when the user rotates the screen.</p>
+<h4>수직 스크롤</h4>
+<p>수직 스크롤 그리드 목록의 항목은 왼쪽에서 오른쪽으로, 위에서 아래로 방향인 전통적인 서유럽의 읽기 방향으로
+정렬합니다. 목록을 표시할 때, 사용자가 추가 항목을 보기 위해 목록을 아래로 스크롤 할 수 있게 확인할 하단 줄의
+항목을 잘라버립니다. 사용자가 화면을 회전했을 때, 이 형태를 유지하는지 확인해보세요.</p>
 
   </div>
 </div>
@@ -47,25 +45,21 @@ scheme when the user rotates the screen.</p>
 </div>
   <div class="layout-content-col span-6">
 
-<h4>Horizontal scrolling</h4>
-<p>Horizontally scrolling lists fix the vertical axis of the item grid. Compared to vertically
-scrolling lists, the sorting changes slightly to a top-down and left-to-right arrangement. Employ
-the same technique of cutting off the items in the rightmost column to indicate the scrolling
-direction.</p>
-<p>Don't use scrolling tabs as a means to switch views in conjunction with horizontally scrolling grid
-lists, because the horizontal gesture for view and content navigation will conflict. If you show
-scrolling tabs for view navigation together with a grid list, use vertical grid scrolling for list
-navigation.</p>
+<h4>수평 스크롤</h4>
+<p>수평 스크롤 목록은 항목 그리드의 수직 방향을 고정합니다. 수직 스크롤 목록에 비하자면, 정렬 방향은 위에서 아래로,
+왼쪽에서 오른쪽으로 바뀝니다. 스크롤 방향을 나타내는 가장 오른쪽 편에 있는 항목들을 잘라내는 동일한 기술을 사용합니다.</p>
+<p>뷰와 내용의 탐색을 위한 수평 방향의 제스처가 충돌할 수 있으니 스크롤 탭을 수평 스크롤 그리드 목록이 들어간 뷰를 전환하는데
+사용하지 마세요. 그리드 목록에 대한 뷰 탐색에 대해 스크롤 탭을 표시하려면, 목록 탐색을 위해 수직 그리드 스크롤을 사용하세요.</p>
 
   </div>
 </div>
 
 
 
-<h2 id="with-labels">Grid List with Labels</h2>
+<h2 id="with-labels">레이블이 있는 그리드 목록</h2>
 
 
-<p>Use labels to display additional contextual information for your grid list items.</p>
+<p>그리드 목록 항목에 대해 추가적인 문맥 정보를 표시하려면 레이블을 사용합니다.</p>
 
 
 
@@ -76,9 +70,9 @@ navigation.</p>
 </div>
   <div class="layout-content-col span-6">
 
-<h4>Style</h4>
-<p>Use semi-transparent panels on top of the grid list items to display your labels. This allows you to
-control the contrast and ensures legibility of the labels while letting the content "shine through".</p>
+<h4>스타일</h4>
+<p>여러분의 레이블을 표시하려면 그리드 목록 항목의 상단에 반투명 패널을 사용합니다. 대비를 조절할 수 있게 해주며 
+ 내용을 "빛나게" 하는 동안 레이블의 가독성을 보장합니다.</p>
 
   </div>
 </div>

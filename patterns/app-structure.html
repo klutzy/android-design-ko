@@ -46,33 +46,35 @@ title: 애플리케이션 구조
 </div>
 
 
-<h2 id="top-level">Top Level</h2>
+<h2 id="top-level">최상위 수준</h2>
 
 
-<p>The layout of your start screen requires special attention. This is the first screen people see
-after launching your app, so it should be an equally rewarding experience for new and frequent
-visitors alike.</p>
+<p>시작 화면의 레이아웃은 특별한 관심이 필요합니다. 시작 화면은 앱이
+수행된 후 사용자가 보는 첫 화면입니다. 그렇기 때문에 시작 화면은
+새로운 사용자와 기존 이용자 모두에게 좋은 사용자 경험을 주어야 합니다.</p>
 
-<p>Ask yourself: "What are my typical users most likely going to want to do in my app?", and structure
-your start screen experience accordingly.</p>
+<p>자신에게 물어보세요: "보통 유저는 내 앱에서 뭘 하길 원할까요?"
+그리고 거기에 맞추어 첫 화면의 사용자 경험을 구성하세요.</p>
 
 
 <div class="layout-content-row">
   <div class="layout-content-col span-5">
 
-<h4>Put content forward</h4>
-<p>Many apps focus on the content display. Avoid navigation-only screens and instead let people get to
-the meat of your app right away by making content the centerpiece of your start screen. Choose
-layouts that are visually engaging and appropriate for the data type and screen size.</p>
+<h4>컨텐츠를 전면에</h4>
+<p>많은 앱들이 컨텐츠 표시에 집중합니다. 탐색만 하는 화면을 만들지
+    말고 시작 화면 중앙에 컨텐츠를 두어 사용자가 앱의 알맹이를 바로
+    가져가게 하세요. 데이터 타입과 화면 크기에 적합하고
+    시각적으로 두각시킬 수 있는 레이아웃을 선택하세요.</p>
 
   </div>
   <div class="layout-content-col span-8">
 
     <img src="../media/app_structure_market.png"><div class="figure-caption">
-      The Google Play app's start screen primarily allows navigation into the stores for Apps, Music, Books,
-      Movies and Games. It is also enriched with tailored recommendations and promotions that
-      surface content of interest to the user. Search is readily available from the action bar.
-    </div>
+      Play 스토어 앱의 시작 화면은 먼저 앱, 음악, 책, 영화, 게임
+      상점을 탐색할 수 있게 합니다. 사용자에게 흥미로운 컨텐츠가
+      나열된 잘 정리된 추천과 홍보물이 가득합니다. 검색은 액션 바를
+      통해 보기좋게 쓸 수 있습니다.
+   </div>
 
   </div>
 </div>
@@ -81,27 +83,28 @@ layouts that are visually engaging and appropriate for the data type and screen 
 <div class="layout-content-row">
   <div class="layout-content-col span-5">
 
-<h4>Set up action bars for navigation and actions</h4>
-<p>All screens in your app should display action bars to provide consistent navigation and surface
-important actions.</p>
-<p>At the top level, special considerations apply to the action bar:</p>
+<h4>탐색과 액션을 위한 액션 바 설정/h4>
+<p>앱의 모든 화면은 일관된 탐색과 중요한 액션의 표시를 위해 액션 바를
+    표시해야 합니다.</p>
+<p>최상위 수준에서 엑션바를 적용하는데 특별히 고려해야할 점이 있습니다:</p>
 <ul>
-<li>Use the action bar to display your app's icon or title.</li>
-<li>If your top level consists of multiple views, or if switching between data from different user
-  accounts is a significant use case, make sure that it's easy for the user to navigate between them
-  by adding view controls to your action bar.</li>
-<li>If your app allows people to create content, consider making the content accessible right from the
-  top level.</li>
-<li>If your content is searchable, include the Search action in the action bar so people can cut
-  through the navigation hierarchy.</li>
+<li>액션 바에 앱의 아이콘이나 제목을 사용합니다.</li>
+<li>만약 최상위 수준에서 여러 뷰를 포함하거나 다른 사용자 계정의
+데이터 사이로 이동한다면, 뷰 사이의 이동이 사용자에게 명확하게
+보이도록 액션 바에 뷰 컨트롤을 붙이세요.</li>
+<li>앱에서 사용자가 컨텐츠를 만들어 낸다면 최상위 수준에서 컨텐츠를
+바로 접근할 수 있게 하세요.</li>
+<li>만약 컨텐츠가 검색가능하다면 액션 바에 검색 액션을 추가하여
+사용자가 탐색 계층 사이로 갈 수 있게 하세요.</li>
 </ul>
 </div>
   <div class="layout-content-col span-8">
 
     <img src="../media/app_structure_gmail.png"><div class="figure-caption">
-      Email is about productivity, so an efficient, easy-to-skim list with higher data density works
-      well. Navigation supports switching between accounts and recent labels. Icons for creating a
-      new message or searching are prominent in the split action bar at the bottom.
+      이메일은 생산성과 관련됩니다. 그래서 효율적인, 데이터가 잘
+      밀집되어 동작하는 리스트 씁니다. 탐색은 계정과 최근 레이블
+      사이를 이동하게 합니다. 편지쓰기와 검색 아이콘은 하단의 분할
+      액션 바에 잘 보입니다.
     </div>
 
   </div>
