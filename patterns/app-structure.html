@@ -114,41 +114,44 @@ title: 애플리케이션 구조
 <div class="layout-content-row">
   <div class="layout-content-col span-5">
 
-<h4>Create an identity for your app</h4>
-<p>Creating an identity for your app goes beyond the action bar. Your app communicates its identity
-through its data, the way that data is arranged, and how people interact with it. Especially for
-media-rich applications, try to create unique layouts that showcase your data and go beyond the
-monotony of simple list views.</p>
+<h4>앱의 정체성 만들기</h4>
+<p>액션 바를 넘어 앱의 정체성을 만듭시다. 당신 앱의 정체성은 데이터와
+    데이터가 구성되는 방법, 사용자와 상호작용하는 방식에 따라
+    결정됩니다. 특히, 미디어 위주의 애플리케이션에서는 단순한 리스트 
+    뷰의 단조로움을 넘어서 데이터를 뽐내는 독특한 레이아웃을 시도해
+    보세요.</p>
 
   </div>
   <div class="layout-content-col span-8">
 
-    <img src="../media/app_structure_music_lndscp.png"><div class="figure-caption">
-      The 3D carousel celebrates cover art and establishes a unique identity for the Music app.
-      Defaulting to the Recent view keeps the focus on music the user has been listening to lately.
-    </div>
+    <img src="../media/app_structure_music_lndscp.png"><div
+    class="figure-caption">
+      3D 회전목마(carousel) 커버 아트를 기리고 뮤직 앱을 독창적으로
+    만들었습니다. 최근 뷰는 기본적으로 사용자가 마지막에 들었던 음악을
+    맞춰줍니다.
+   </div>
 
   </div>
 </div>
 
 
-<h2 id="categories">Categories</h2>
+<h2 id="categories">카테고리</h2>
 
 
-<p>Generally, the purpose of a deep, data-driven app is to navigate through organizational categories
-to the detail level, where data can be viewed and managed. Minimize perceived navigation effort by
-keeping your apps shallow.</p>
+<p>깊이 있는 데이터 위주의 앱은 보통 조직화된 카테고리를 통해 데이터를
+보이고 다루는 구체 뷰를 탐색합니다. 카테고리는 앱을 피상적으로
+유지하여 탐색 단계를 인지하는 노력을 최소화 시킵니다.</p>
 
-<p>Even though the number of vertical navigation steps from the top level down to the detail views is
-typically dictated by the structure of your app's content, there are several ways you can cut down
-on the perception of onerous navigation.</p>
+<p>치솽위 수준에서 구체 뷰까지의 수직 탐색 단계는 보통 앱의 컨텐츠
+구조에 의해 영향을 받지만 탐색을 인지하는 걸 부담스럽게 하는 부분들을
+제거할 방법은 여럿 있습니다.</p>
 
-<h4>Use tabs to combine category selection and data display</h4>
+<h4>선택과 데이터 표현을 통합하기 위해 탭을 사용하세요.</h4>
 
-<p>This can be successful if the categories are familiar or the number of categories is small. It has
-the advantage that a level of hierarchy is removed and data remains at the center of the user's
-attention. Navigating laterally between data-rich categories is more akin to a casual browsing
-experience than to an explicit navigation step.</p>
+<p>카테고리들이 유사하고 한정적이다면 탭의 사용은 성공적일
+겁니다. 계층의 수준을 제거하고 데이터에 사용자가 집중하게 하는 것은
+이점이 있습니다. 데이터가 많은 카테고리들을 좌우로 이동하며 탐색하는
+것은 명시적인 탐색 단계 보다 일반적인 브라우즈 경험과 흡사합니다.</p>
 
 
 <div class="vspace size-1">&#160;</div>
@@ -157,54 +160,59 @@ experience than to an explicit navigation step.</p>
 <div class="layout-content-row">
   <div class="layout-content-col span-8">
 
-<p>If the categories are familiar, predictable, or closely related, use scrolling tabs (where not all
-items are in view simultaneously). Keep the number of scrolling tabs at a manageable level to
-minimize navigational effort. Rule of thumb: no more than 5&#8211;7 tabs.</p>
+<p>만약 카테고리가 유사하고, 예측가능하고, 꽤 밀접하다면, 스크롤
+    탭(Scrolling tabs)를 사용하세요. 탭의 일부 항목만 목록에
+    표시됩니다. 관리가능한 수준에서 스크롤 탭의 수를 유지하는 
+    것은 탐색이 덜 힘들게 합니다. 중요한 규칙이 잇습니다: 5&#8211;7 탭
+    이상은 안됩니다.</p>
 
-    <img src="../media/app_structure_scrolltabs.png"><div class="figure-caption">
-      Google Play uses tabs to simultaneously show category choice and content. To navigate between
-      categories, users can swipe left/right on the content.
-    </div>
+    <img src="../media/app_structure_scrolltabs.png"><div
+    class="figure-caption">
+      Google Play는 탭을 사용하여 카테고리 선택과 컨텐츠를 동시에
+    보여줍니다. 카테고리 사이의 탐색을 위해 사용자는 컨텐츠를 왼쪽이나
+    오른쪽으로 스와이프할 수 있습니다.
+   </div>
 
   </div>
   <div class="layout-content-col span-5">
 
-<p>If the categories in the tabs are not closely related, favor fixed tabs, so that all categories are
-in view at the same time.</p>
+<p>탭 내의 카테고리가 밀접하지 않다면 고정 탭을 선호합니다. 모든
+    카테고리가 탭의 항목으로 보입니다.</p>
 
-    <img src="../media/app_structure_fixedtabs.png"><div class="figure-caption">
-      YouTube uses fixed tabs to switch between different, relatively unrelated functional areas.
-    </div>
+    <img src="../media/app_structure_fixedtabs.png"><div
+    class="figure-caption">
+      YouTube는 생대적으로 기능 부분의 연관없는 다른 뷰로 이동하기 위해 고정 탭을 사용합니다.
+   </div>
 
 
   </div>
 </div>
 
 
-<h4>Allow cutting through hierarchies</h4>
+<h4>계층을 가로 지르기</h4>
 
-<p>Take advantage of shortcuts that allow people to reach their goals quicker. To allow top-level
-invocation of actions for a data item from within list or grid views, display prominent actions
-directly on list view items using drop-downs or split list items. This lets people invoke actions on
-data without having to navigate all the way down the hierarchy.</p>
+<p>목표에 빨리 도달하기 위해 지름길을 허용하는 것은 이점이
+있습니다. 리스트나 그리드 뷰의 데이터 항목에서 액션을 바로 수행하기
+위해 드롭다운이나 분할된 리스트 아이템으로 보여줍니다. 이 방법은 계층
+아래로 탐색할 필요없이 데이터에서 액션을 수행할 수 있게 합니다.</p>
 
 
 <img src="../media/app_structure_shortcut_on_item.png">
 <div class="figure-caption">
-  Music allows the user to act upon a data item (song) from within the category view (album),
-  thereby removing the need to navigate all the way down to the song's detail view.
+  Music은 사용자가 카테고리 뷰 (앨범)에서 데이터 항목 (노래)로 직접
+  접근할 수 있기 때문에, 노래 구체 뷰를 탐색할 필요가 없다.
 </div>
 
 
-<h4>Acting upon multiple data items</h4>
+<h4>여러 데이터 항목에 대해 행동하기</h4>
 
-<p>Even though category views mostly serve to guide people to content detail, keep in mind that there
-are often good reasons to act on collections of data as well.</p>
+<p>카테고리 뷰가 대부분 사람들을 구체적인 컨텐츠로 안내하지만, 가끔
+데이터 모음으로서 행동하는 것도 이점이 있다는 것을 명심하자.</p>
 
-<p>For example, if you allow people to delete an item in a detail view, you should also allow them to
-delete multiple items in the category view. Analyze which detail view actions are applicable to
-collections of items. Then use multi-select to allow application of those actions to multiple items
-in a category view.</p>
+<p>예를 들어, 구체 뷰에서 항목을 삭제하는 것을 허용하면 카테고리
+뷰에서 여러 아이템을 삭제하는 것도 허용해야 한다. 개별 뷰의 행동이
+항목의 모음에서 어떻게 응용될 수 있을지 분석하라. 카테고리 뷰에서 다중
+항목에 대한 행동을 할 수 있게 다중 선택을 사용하라.</p>
 
 <h2 id="details">Details</h2>
 
