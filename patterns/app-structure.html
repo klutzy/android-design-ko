@@ -19,7 +19,7 @@ title: 애플리케이션 구조
 
 <p>일반적인 안드로이드 앱은 최상위 수준의 뷰와 구체/편집 뷰로
 구성됩니다. 탐색 계층(navigation hierachy)이 깊고 복잡해지면 카테고리
-뷰가 최상위 수준과 구체 뷰들을 연결합니다.</p>
+뷰가 최상위 수준과 세부 뷰들을 연결합니다.</p>
 
 
 <div class="layout-content-row">
@@ -39,14 +39,14 @@ title: 애플리케이션 구조
 <p>카테고리 뷰는 당신의 데이터로 더 깊이 내려가게 합니다.</p>
 <div class="vspace size-11">&#160;</div>
 
-<h4>구체/편집 뷰</h4>
-<p>구체/편집 뷰는 데이터를 소모하거나 만드는 곳입니다.</p>
+<h4>세부/편집 뷰</h4>
+<p>세부/편집 뷰는 데이터를 소모하거나 만드는 곳입니다.</p>
 
   </div>
 </div>
 
 
-<h2 id="top-level">최상위 수준</h2>
+<h2 id="top-level">최상위 수준 뷰</h2>
 
 
 <p>시작 화면의 레이아웃은 특별한 관심이 필요합니다. 시작 화면은 앱이
@@ -135,14 +135,14 @@ title: 애플리케이션 구조
 </div>
 
 
-<h2 id="categories">카테고리</h2>
+<h2 id="categories">카테고리 뷰</h2>
 
 
 <p>깊이 있는 데이터 위주의 앱은 보통 조직화된 카테고리를 통해 데이터를
-보이고 다루는 구체 뷰를 탐색합니다. 카테고리는 앱을 피상적으로
+보이고 다루는 상세 뷰를 탐색합니다. 카테고리는 앱을 피상적으로
 유지하여 탐색 단계를 인지하는 노력을 최소화 시킵니다.</p>
 
-<p>치솽위 수준에서 구체 뷰까지의 수직 탐색 단계는 보통 앱의 컨텐츠
+<p>치솽위 수준에서 상세 뷰까지의 수직 탐색 단계는 보통 앱의 컨텐츠
 구조에 의해 영향을 받지만 탐색을 인지하는 걸 부담스럽게 하는 부분들을
 제거할 방법은 여럿 있습니다.</p>
 
@@ -200,24 +200,24 @@ title: 애플리케이션 구조
 <img src="../media/app_structure_shortcut_on_item.png">
 <div class="figure-caption">
   Music은 사용자가 카테고리 뷰 (앨범)에서 데이터 항목 (노래)로 직접
-  접근할 수 있기 때문에, 노래 구체 뷰를 탐색할 필요가 없습니다.
+  접근할 수 있기 때문에, 노래 상세 뷰를 탐색할 필요가 없습니다.
 </div>
 
 
 <h4>여러 데이터 항목에 대해 행동하기</h4>
 
-<p>카테고리 뷰가 대부분 사람들을 구체적인 컨텐츠로 안내하지만, 가끔
+<p>카테고리 뷰가 대부분 사람들을 상세적인 컨텐츠로 안내하지만, 가끔
 데이터 모음으로서 행동하는 것도 이점이 있다는 것을 명심하십시요.</p>
 
-<p>예를 들어, 구체 뷰에서 항목을 삭제하는 것을 허용하면 카테고리
+<p>예를 들어, 상세 뷰에서 항목을 삭제하는 것을 허용하면 카테고리
 뷰에서 여러 아이템을 삭제하는 것도 허용해야 합니다. 개별 뷰의 행동이
 항목의 모음에서 어떻게 응용될 수 있을지 분석하세요. 카테고리 뷰에서 다중
 항목에 대한 행동을 할 수 있게 다중 선택을 사용합시다.</p>
 
-<h2 id="details">구체</h2>
+<h2 id="details">상세 뷰</h2>
 
 
-<p>구체 뷰는 사용자의 데이터를 보고 행동하게 합니다. 구체 뷰의
+<p>상세 뷰는 사용자의 데이터를 보고 행동하게 합니다. 상세 뷰의
 레이아웃은 표현될 데이터에 달려있으며 앱에 따라 다양합니다.</p>
 
 
@@ -225,7 +225,7 @@ title: 애플리케이션 구조
   <div class="layout-content-col span-4">
 
 <h4>레이아웃</h4>
-<p>구체 뷰에서 동작시키고 조작할 엑티비티와 이용할 레이아웃에 따라
+<p>상세 뷰에서 동작시키고 조작할 엑티비티와 이용할 레이아웃에 따라
     엑티비티들을 고려하세요. 전체 화면으로 정신 사납지 않으면서
     실감나게 하려면면 소등된 것 (기타 UI가 최소화 된 버전) 을 만들어야
     합니다.</p>
@@ -235,58 +235,56 @@ title: 애플리케이션 구조
   <div class="layout-content-col span-9">
 
     <img src="../media/app_structure_book_detail_page_flip.png"><div class="figure-caption">
-      Google Books' detail view is all about replicating the experience of reading an actual book.
-      The page-flip animation reinforces that notion. To create an immersive experience the app
-      enters lights-out mode, which hides all system UI affordances.
+      Google Book의 상세 뷰는 실제 책의 독서 방식을 모사하였습니다. 
+      페이지 넘기는 에니메이션이 그 개념을 확실히 하죠. 
+      실감나는 사용자 경험을 만들기 위해 앱은 시스템의 UI 어포던스를 모두 제거하는 소등을 했습니다.
     </div>
 
     <div class="figure-caption">
-      The purpose of the People app's detail view is to surface communication options. The list view
-      allows for efficient scanning and quick access of phone numbers, email addresses and other
-      information items. Split items are used to combine calling and messaging into one compact line
-      item.
+      피플 앱의 상세 뷰의 목적은 커뮤니케이션 옵션을 보여주는 것입니다. 
+      리스트 뷰는 효과적으로 훑어보고 휴대전화 번호, 이메일 주소, 다른 항목등을 쉽게 접근하게 합니다.
+      항목 하나가 전화 걸기와 문자 보내기 등으로 나뉘어진 항목으로 사용되기도 합니다.
     </div>
   </div>
 </div>
 
 
-<h4>Make navigation between detail views efficient</h4>
+<h4>상세 뷰들을 효과적으로 탐색하기</h4>
 
-<p>If your users are likely to want to look at multiple items in sequence, allow them to navigate
-between items from within the detail view. Use swipe views or other techniques, such as filmstrips,
-to achieve this.</p>
+<p>사용자가 순차적으로 여러 아이템을 보길 원할 것 같으면 사용자에게 상세 뷰 들을 탐색할 수 있게 하세요.
+그렇게 하기 위해 뷰 스와이프나, 다른 방법(필름 스트립) 등을 도입하세요.</p>
 
 
 <img src="../media/app_structure_gmail_swipe.png">
 <div class="figure-caption">
-  Gmail using swipe views to navigate from detail view to detail view.
+  Gmail은 상세 뷰에서 다른 상세 뷰로 탐색하기 위해 뷰 스와이프를 사용합니다.
 </div>
 
 
 <img src="../media/app_structure_gallery_filmstrip.png">
 <div class="figure-caption">
-  In addition to supporting swipe gestures to move left or right through images, Gallery provides a
-  filmstrip control that lets people quickly jump to specific images.
+  갤러리는 이미지 들을 왼쪽이나 오른쪽으로 이동하는 스와이프 제스쳐를 제공하는 것 이외에 필름 스트립 컨트롤을 제공합니다.
+  필름 스트립 컨트롤에서는 특정 이미지로 바로 이동할 수 있습니다.
 </div>
 
 
-<h2 id="checklist">Checklist</h2>
+<h2 id="checklist">체크리스트</h2>
 
 
 <ul>
 <li>
-<p>Find ways to display useful content on your start screen.</p>
+<p>화면에 유용한 컨텐츠를 표현할 방법을 찾으세요.</p>
 </li>
 <li>
-<p>Use action bars to provide consistent navigation.</p>
+<p>일관된 탐색을 위해 액션 바를 사용하세요.</p>
 </li>
 <li>
-<p>Keep your hierarchies shallow by using horizontal navigation and shortcuts.</p>
+<p>수평적인 탐색과 숏컷을 사용하여 계층을 얕게 유지하세요.</p>
 </li>
 <li>
-<p>Use multi-select to allow the user to act on collections of data.</p>
+<p>데이터의 묶음에 사용자가 명령할 수 있게 다중 선택을 지원하세요.</p>
 </li>
 <li>
-<p>Allow for quick navigation between detail items with swipe views.</p>
+<p>여러 상세 아이템 사이를 빨리 탐색하기 위해 스와이프 뷰 등을 사용하세요.</p>
 </li>
 </ul>
