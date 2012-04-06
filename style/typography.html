@@ -9,11 +9,10 @@ title: 글꼴
 </div>
   <div class="layout-content-col span-5">
 
-<p>안드로이드 디자인 언어는 스케일, 여백, 리듬, 기준선 격자와 같은 전통적인 글꼴 도구에 의존하고 있습니다.
-이러한 글꼴 도구는 사용자가 빠르게 화면 상의 정보를 이해할 수 있도록 돕는데 매우 중요합니다.
-이와 같은 글꼴을 지원하기 위해 아이스크림 샌드위치는
-UI 요구사항과 고해상도 화면을 위해 특별히 고안된 로보토(Roboto)라 이름한 새로운 글꼴을 소개했습니다.
-현재 TextView 프레임워크는 일반, 볼드, 이탤릭, 그리고 볼드 이탤릭을 기본으로 지원합니다.</p>
+<p>안드로이드 디자인 언어는 크기, 여백, 리듬, 기준선 격자와 같은 전통적인 타이포그래피 요소에 의존하고 있습니다.
+이 요소를 효율적으로 활용하는 것은 사용자가 빠르게 화면의 정보를 이해하는데 필수적입니다.
+이런 타이포그래피 활용을 위해 아이스크림 샌드위치에서는 로보토(Roboto)라는 이름의 새 글꼴을 소개합니다. 이 글꼴은 UI 요구사항과 고해상도 화면을 위해 특별히 고안되었습니다.
+현재 TextView 프레임워크는 일반, 볼드, 이탤릭, 볼드 이탤릭을 기본으로 지원합니다.</p>
 
     <img src="../media/typography_alphas.png"><p><a href="https://dl-ssl.google.com/android/design/Roboto_Hinted_20111129.zip">로보토 다운로드</a></p>
 <p><a href="https://dl-ssl.google.com/android/design/Roboto_Specimen_Book_20111129.pdf">견본 문서</a></p>
@@ -27,22 +26,22 @@ UI 요구사항과 고해상도 화면을 위해 특별히 고안된 로보토(R
   <div class="layout-content-col span-6">
 
 <h4>기본 타입 색상</h4>
-<p>안드로이드 UI는 다음과 같은 기본 컬러 스타일을 사용합니다: <code>textColorPrimary</code>와
-<code>textColorSecondary</code>. light 테마에서는 <code>textColorPrimaryInverse</code>와
-<code>textColorSecondaryInverse</code>를 사용하세요. 이 프레임워크 텍스트 컬러 스타일은
-UI 요소 안에서 사용될 경우 터치 피드백 상태 또한 지원합니다.</p>
+<p>안드로이드 UI는 <code>textColorPrimary</code>와
+<code>textColorSecondary</code>를 기본 색 스타일로 사용합니다. 라이트 테마는 <code>textColorPrimaryInverse</code>와
+<code>textColorSecondaryInverse</code>를 사용하세요. 이 프레임워크 텍스트 색 스타일은
+UI 요소 안에서 사용하면 터치 피드백 상태에 따른 변수도 지원합니다.</p>
 
     <img src="../media/typography_defaults.png">
 </div>
   <div class="layout-content-col span-6">
 
 <h4>글꼴 크기</h4>
-<p>정상적인 레이아웃에서 글자 크기를 대비시키는 것은 레이아웃 정돈에 어느 정도 도움이 될 수는 있습니다.
-그래도 같은 UI 내에 너무 다양한 글자 크기를 사용하는 것은 지저분하게 느껴질 수 있습니다.
-따라서 안드로이드 프레임워크는 다음과 같은 제한된 수의 글꼴 크기 세트를 사용하고 있습니다:</p>
+<p>글자 크기 대비는 정돈되고 보기 쉬운 레이아웃 만들기에 상당히 도움이 됩니다.
+반면 같은 UI에 너무 다양한 글자 크기를 사용하면 지저분해집니다.
+안드로이드 프레임워크는 다음과 같이 글꼴 크기를 제한하여 사용하고 있습니다:</p>
 
 <img src="../media/typography_sizes.png"><p>사용자는 설정 앱에서 시스템 전역에 적용하는 글꼴 확대 수준을 선택할 수 있습니다.
-글꼴이 이러한 접근성 기능을 지원하려면, 가능한 부분은 모두 스케일 독립
+글꼴이 이러한 접근성 기능을 지원하려면 가능한 부분은 모두 스케일 독립
     픽셀(<acronym title="Scale-independent pixels(스케일 독립 픽셀). 사용자가 전역 텍스트 크기를 100%로 설정했을 경우 1sp는 160dp에서 1픽셀.">sp</acronym>) 타입으로 지정해야 합니다.
 확대 가능한 타입으로 지정된 레이아웃은 이러한 설정에 대한 테스트가 필요합니다.</p>
 
