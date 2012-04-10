@@ -131,110 +131,97 @@ Google Play에서 같은 개발자의 다른 앱들을 열람하는 경우, 혹�
 해당 경로로 진입한 후에 이전 키를 누르면 먼저 받은 편지함으로 돌아가고, 그 후에 계속해서 홈으로 돌아갑니다.</p>
 -->
 
-<h2 id="into-your-app">Navigation into Your App via Home Screen Widgets and Notifications</h2>
+<h2 id="into-your-app">홈 화면 위젯과 알림에서 앱으로 들어오는 탐색</h2>
 
-<p>You can use Home screen widgets or notifications to help your users navigate directly to screens
-deep within your app's hierarchy. For example, Gmail's Inbox widget and new message notification can
-both bypass the Inbox screen, taking the user directly to a conversation view.</p>
+<p>사용자가 홈 화면 위젯이나 알림으로 앱 계층 깊숙히 곧바로 탐색할 수 있도록 할 수 있습니다.
+예를 들어 Gmail의 받은 편지함 위젯과 새 메일 알림 모두 받은 편지함 화면을 건너 뛰고
+곧바로 대화 뷰로 진입합니다.</p>
 
-<p>For both of these cases, handle the Up button as follows:</p>
+<p>이러한 경우에는 상위 버튼을 다음과 같이 처리하세요:</p>
 
 <ul>
-<li><em>If the destination screen is typically reached from one particular screen within your
-app</em>, Up should navigate to that screen.</li>
-<li><em>Otherwise</em>, Up should navigate to the topmost ("Home") screen of your app.</li>
+<li><em>대상 화면이 일반적으로 특정한 한 화면에서 불리는 경우라면</em>, 상위 버튼을 누르면 그 화면으로 이동해야 합니다.</li>
+<li><em>그 외의 경우에는</em>, 상위 버튼을 누르면 앱의 최상위("홈") 화면으로 이동해야 합니다.</li>
 </ul>
 
-<p>In the case of the Back button, you should make navigation more predictable by inserting into the
-task's back stack the complete upward navigation path to the app's topmost screen. This allows users
-who've forgotten how they entered your app to navigate to the app's topmost screen before
-exiting.</p>
-
-<p>As an example, Gmail's Home screen widget has a button for diving directly to its compose
-screen. Up or Back from the compose screen would take the user to the Inbox, and from there the
-Back button continues to Home.</p>
+<p>이전 버튼을 누르는 경우에는, 작업 백스택(back stack)에 앱의 최상위 화면까지 상위로 이동해 갈 수 있게끔
+충분히 예측할 수 있는 이동 경로를 삽입해야 합니다.
+이러한 처리는 어떻게 앱에 진입했는지 잊어버린 사용자가 앱을 빠져나가기 전에
+앱 최상위 화면을 열람할 수 있게 할 것입니다.</p>
 
 <img src="../media/navigation_from_outside_back.png">
 
 <img src="../media/navigation_from_outside_back.png">
 
-<h4>Indirect notifications</h4>
+<h4>간접 알림(Indirect Notifications)</h4>
 
-<p>When your app needs to present information about multiple events simultaneously, it can use a
-single notification that directs the user to an interstitial screen. This screen summarizes these
-events, and provides paths for the user to dive deeply into the app. Notifications of this style are
-called <em>indirect notifications</em>.</p>
+<p>다양한 이벤트 정보를 동시에 표시할 필요가 있다면 삽입 화면(interstitial screen)으로 이동하는
+한가지 알림만 표시할 수 있습니다. 이 화면에서는 이러한 이벤트들을 요약하고, 앱 깊숙히 이동할 수 있도록
+경료를 제공합니다. 이러한 스타일의 알림은 <em>간접 알림</em>이라고 부릅니다.</p>
 
-<p>Unlike standard (direct) notifications, pressing Back from an indirect notification's
-interstitial screen returns the user to the point the notification was triggered from&mdash;no
-additional screens are inserted into the back stack. Once the user proceeds into the app from its
-interstitial screen, Up and Back behave as for standard notifications, as described above:
-navigating within the app rather than returning to the interstitial.</p>
+<p>표준(직접) 알림과 달리 간접 알림의 삽입 화면에서 이전 버튼을 누르면&mdash;백 스택에 다른 화면이
+추가되지 않고 알림이 호출되었던 이전 화면으로&mdash;돌아갑니다.
+일단 삽입 화면에서 사용자가 앱 속으로 진입하면, 상위 및 이전 버튼은 위에 설명한 표준 알림과 같은
+방식으로, 즉 삽입 화면으로 돌아가지 않고 앱 내를 탐색합니다.</p>
 
-<p>For example, suppose a user in Gmail receives an indirect notification from Calendar. Touching
-this notification opens the interstitial screen, which displays reminders for several different
-events. Touching Back from the interstitial returns the user to Gmail. Touching on a particular
-event takes the user away from the interstitial and into the full Calendar app to display details of
-the event. From the event details, Up and Back navigate to the top-level view of Calendar.</p>
+<p>예를 들어 Gmail을 사용 중일 때 캘린더의 간접 알림을 받았다고 가정해보겠습니다.
+이 알림을 터치하면 여러 다른 종류의 이벤트 알림이 담긴 삽입 화면이 열립니다.
+삽입 화면에서 이전 버튼을 누르면 Gmail로 돌아갑니다. 특정 이벤트를 누르면 삽입 화면에서
+벗어나 본격적으로 캘린더 앱으로 들어가 상세 이벤트 정보를 볼 수 있게 됩니다.
+상세 이벤트 내역에서 상위 및 이전 버튼을 누르면 캘린더의 최상위 레벨로 이동하게 됩니다.</p>
 
 <img src="../media/navigation_indirect_notification.png">
 
-<h4>Pop-up notifications</h4>
+<h4>팝업 알림</h4>
 
-<p><em>Pop-up notifications</em> bypass the notification drawer, instead appearing directly in
-front of the user. They are rarely used, and <strong>should be reserved for occasions where a timely
-response is required and the interruption of the user's context is necessary</strong>. For example,
-Talk uses this style to alert the user of an invitation from a friend to join a video chat, as this
-invitation will automatically expire after a few seconds.</p>
+<p><em>팝업 알림</em>은 알림 서랍에 들어가지 않고 곧바로 사용자 앞에 나타납니다.
+<strong>적시에 응답하는 것이 꼭 필요한 경우 및 사용자를 방해하는 것이 불가피할 때</strong> 등에
+드물게 사용합니다. 예를 들어, 토크는 영상채팅 초대를 받았을 때 통보하기 위해 이 스타일을 사용하며
+몇 초 후에 이 초대를 자동으로 파기합니다.</p>
 
-<p>In terms of navigation behavior, pop-up notifications closely follow the behavior of an indirect
-notification's interstitial screen. Back dismisses the pop-up notification. If the user navigates
-from the pop-up into the notifying app, Up and Back follow the rules for standard notifications,
-navigating within the app.</p>
+<p>탐색 방식 면에서 팝업 알림은 간접 알림의 삽입 화면에서 사용하는 방식과 상당히 비슷합니다.
+이전 버튼은 팝업 알림을 없앱니다. 팝업에서 알림 앱 속으로 탐색하게 되면, 
+상위 및 이전 버튼은 앱 내를 탐색하는 표준 알림과 같은 방식으로 동작합니다.</p>
 
 <img src="../media/navigation_popup_notification.png">
 
-<h2 id="between-apps">Navigation Between Apps</h2>
+<h2 id="between-apps">앱에서 앱으로 이어지는 탐색</h2>
 
-<p>One of the fundamental strengths of the Android system is the ability for apps to activate each
-other, giving the user the ability to navigate directly from one app into another. For example, an
-app that needs to capture a photo can activate the Camera app, which will return the photo
-to the referring app. This is a tremendous benefit to both the developer, who can easily leverage
-code from other apps, and the user, who enjoys a consistent experience for commonly performed
-actions.</p>
+<p>안드로이드 시스템의 핵심적인 강점 중 하나는 앱이 다른 앱을 실행해, 사용자가 하나의 앱에서 다른 앱
+깊숙히 탐색할 수 있게 하는 기능입니다.
+예를 들어 사진을 찍어야 하는 앱이 카메라 앱을 실행하면 카메라 앱은 자신을 호출했던 앱으로 사진을
+되돌려줍니다. 다른 앱의 기능을 쉽게 끌어오고, 자주 사용하는 동작을 일관된 경험으로 사용할 수 있기 때문에 
+이 기능은 개발자와 사용자 양방에 크나큰 이득을 줍니다.</p>
 
-<p>To understand app-to-app navigation, it's important to understand the Android framework behavior
-discussed below.</p>
+<p>앱에서 앱으로 이어지는 탐색을 이해하기 위해, 먼저 아래 이어지는 안드로이드 프레임워크 특성에 대해
+이해하는 것이 중요합니다.</p>
 
-<h4>Activities, tasks, and intents</h4>
+<h4>액티비티, 태스크, 인텐트</h4>
 
-<p>In Android, an <strong>activity</strong> is an application component that defines a screen of
-information and all of the associated actions the user can perform. Your app is a collection of
-activities, consisting of both the activities you create and those you re-use from other apps.</p>
+<p>안드로이드에서, <strong>액티비티(activity)</strong>는 정보 화면을 정의하는 애플리케이션 구성 요소 및
+사용자가 수행할 수 있는 모든 연관된 동작을 의미합니다.
+앱은 여러분이 만든 액티비티 및 다른 앱에서 재사용될 액티비티를 비롯한 액티비티의 모음이라고 할 수 있습니다.</p>
 
-<p>A <strong>task</strong> is the sequence of activities a user follows to accomplish a goal. A
-single task can make use of activities from just one app, or may draw on activities from a number
-of different apps.</p>
+<p><strong>태스크(task)</strong>는 사용자가 목적을 달성하기 위해 거치는 일련의 액티비티입니다.
+하나의 태스크는 오직 한 앱의 액티비티만 활용할 수도 있지만,
+수 많은 다른 앱의 액티비티에서 결과를 받아올 수도 있습니다.</p>
 
-<p>An <strong>intent</strong> is a mechanism for one app to signal it would like another
-app's assistance in performing an action. An app's activities can indicate which intents
-they can respond to. For common intents such as "Share", the user may have many apps installed
-that can fulfill that request.</p>
+<p><strong>인텐트(intent)</strong>는 한 앱에서 특정 액션을 수행할 때 다른 앱에게 도움을 받고 싶다는
+신호를 날리는 메커니즘입니다. 앱 액티비티는 어떤 인텐트에 응답할 수 있는지 인지할 수 있습니다.
+"공유"와 같은 일반적인 인텐트를 사용하기 위해 사용자는 필요에 따라 다양한 앱을 설치해두었을 것입니다.</p>
 
-<h4>Example: navigating between apps to support sharing</h4>
+<h4>예제: 공유 기능 사용시의 앱 간 탐색</h4>
 
-<p>To understand how activities, tasks, and intents work together, consider how one app allows users
-to share content by using another app. For example, launching the Play Store app from Home begins
-new Task A (see figure below). After navigating through the Play Store and touching a promoted book
-to see its details, the user remains in the same task, extending it by adding activities. Triggering
-the Share action prompts the user with a dialog listing each of the activities (from different apps)
-which have registered to handle the Share intent.</p>
+<p>액티비티, 태스크, 인텐트가 어떻게 동작하는지 이해하기 위해, 한 앱이 다른 앱을 사용해
+어떻게 컨텐츠를 공유하는지 생각해보겠습니다. 예를 들어, 홈에서 Play 스토어 앱을 실행하면 태스크 A가
+시작됩니다(아래 도표를 보세요). Play 스토어로 탐색한 후, 상세 정보를 보기 위해 홍보중인 책을 터치했을 때,
+사용자는 같은 태스크에 남아 있지만 액티비티를 추가해 태스크를 확장한 것입니다.
+공유 액션을 선택하면 공유 인텐트를 처리하게 등록되어 있는 (다양한 앱의)
+액티비티 목록이 담긴 대화 상자가 나타납니다.</p>
 
 <img src="../media/navigation_between_apps_inward.png">
 
-<p>When the user elects to share via Gmail, Gmail's compose activity is added as a continuation of
-Task A&mdash;no new task is created. If Gmail had its own task running in the background, it would
-be unaffected.</p>
+<p>사용자가 Gmail로 공유하겠다고 결정하면 Gmail의 메일 쓰기 액티비티가 태스크 A에 이어져&mdash;새 태스크가 생성되지 않고&mdash;추가됩니다. 이 태스크는 백그라운드에 Gmail 자신의 태스크가 동작하고 있었어도 영향을 받지 않습니다.</p>
 
 <p>From the compose activity, sending the message or touching the Back button returns the user to
 the book details activity. Subsequent touches of Back continue to navigate back through the Play
