@@ -1,48 +1,46 @@
 ---
 layout: default
-title: Settings
+title: 설정
 ---
-<p>Settings is a place in your app where users indicate their preferences for how your app should
-behave. This benefits users because:</p>
+<p>설정(Settings)은 앱 동작 방식을 사용자 취향에 따라 설정하는 곳입니다. 설정이 사용자에게 유용한 이유는:</p>
 
 <ul>
-<li>You don't need to interrupt them with the same questions over and over when certain situations
-arise. The settings predetermine what will always happen in those situations (see design
-principle: <a href="../get-started/principles.html#decide-for-me">Decide for me but
-let me have the final say</a>).</li>
-<li>You help them feel at home and in control (see design principle:
-<a href="../get-started/principles.html#make-it-mine">Let me make it mine</a>).</li>
+<li>특정 상황이 발생했을 때 같은 질문을 매번 반복할 필요가 없습니다.
+설정은 해당 상황에서 무슨 일이 일어날지 미리 결정합니다. 
+(디자인 원칙: <a href="../get-started/principles.html#decide-for-me">대신 판단하고
+마지막에만 물어보세요</a> 참조)</li>
+<li>설정 기능은 편안함과 함께 통제권을 줍니다. (디자인 원칙:
+<a href="../get-started/principles.html#make-it-mine">내 것으로 만들 수 있도록 해주세요</a> 참조)</li>
 </ul>
 
-<h2 id="flow-structure">Flow and Structure</h2>
+<h2 id="flow-structure">흐름 및 구조</h2>
 
-<h4 id="settings-access">Provide access to Settings in the action overflow</h4>
+<h4 id="settings-access">액션 오버플로우로 설정에 접근할 수 있게 하세요</h4>
 
-<p>Settings is given low prominence in the UI because it's not frequently needed. Even if there's
-room in the <a href="../patterns/actionbar.html">action bar</a>, never make Settings
-an action button. Always keep it in the action overflow and label it "Settings". Place it below
-all other items except "Help".</p>
+<p>설정은 자주 필요하지 않기 때문에 UI에서 중요성이 낮습니다.
+<a href="../patterns/actionbar.html">액션 바</a>에 공간이 남더라도 절대 설정을 액션 버튼으로
+만들지 마세요. 언제나 액션 오버플로우 안에 "설정(영문 앱인 경우, Settings)"이란 이름으로 배치하세요.
+"도움말(영문 앱인 경우, Help)"을 제외한 모든 항목 최하단에 배치하세요.</p>
 
 <img src="../media/settings_overflow.png">
 
 <div class="vspace size-2">&nbsp;</div>
 
-<h4 id="what-to-make-a-setting">Avoid the temptation to make everything a setting</h4>
+<h4 id="what-to-make-a-setting">모든 걸 설정으로 만들겠다는 유혹을 피하세요</h4>
 
-<p>Because Settings is a few navigational steps away, no matter how many items you have, they'll
-never clutter up the core part of your UI. This may seem like good news, but it also poses a
-challenge.</p>
+<p>설정은 어느 정도 탐색 단계를 거쳐 들어가야하기 때문에 얼마나 많은 항목이 있든지 간에
+UI의 주요 부분을 전혀 어수선하게 하지 않을 것입니다. 이것은 좋은 이야기처럼 보이지만
+도전을 제기하는 부분이기도 합니다.</p>
 
-<p>Settings can be a tempting place to keep a lot of stuff&mdash;like a hall closet where things
-get stashed when you tidy up before company comes over. It's not a place where you spend lots of
-time, so it's easy to rationalize and ignore its cluttered condition. But when users visit
-Settings&mdash;however infrequently&mdash;they'll have the same expectations for the experience as
-they do everywhere else in your app. More settings means more choices to make, and too many are
-overwhelming.</p>
+<p>설정은&mdash;마치 손님이 오기 전에 깨끗이 보이려고 임시로 물건들을 박아두는 복도 
+벽장처럼&mdash;많은 것들을 넣어 둘 구미가 당기는 공간입니다.
+많은 시간을 쏟을 공간도 아니기 때문에 어수선한 상태를 합리화하고 무시하기 쉽상입니다.
+하지만 사용자가 설정에 들어왔을 때&mdash;아무리 자주 안 들어오더라도&mdash;그들은 
+앱 내의 다른 곳과 같은 경험을 할 거라는 기대를 할 것입니다. 더 많은 설정은 만드는 것은 더 많은
+선택 사항을 의미하며 너무 많은 선택 사항은 감당하기 힘듭니다.</p>
 
-<p>So don't punt on the difficult product decisions and debates that can bring on the urge to
-"just make it a setting". For each control you're considering adding to Settings, make sure it
-meets the bar:</p>
+<p>그러므로 어렵다고 "그냥 설정으로 빼자"고 결론 내고서 결과물에 대한 판단과 논의를 그냥 지나치지 마세요.
+설정에 추가할 것을 고려 중인 항목이 있다면 다음 조건을 충족하는지 확인하세요:</p>
 
 <img src="../media/settings_flowchart.png">
 
@@ -51,26 +49,25 @@ meets the bar:</p>
 <div class="layout-content-row">
   <div class="layout-content-col span-5 with-callouts">
 
-<h4 id="group-settings">If you still have lots of settings, group related settings together</h4>
+<h4 id="group-settings">여전히 설정이 많다면 관련된 설정끼리 그룹으로 묶으세요</h4>
 
-<p>The number of items an average human can hold in short-term memory is 7&plusmn;2. If you
-present a list of 10 or more settings (even after applying the criteria above), users will have
-more difficulty scanning, comprehending, and processing them.</p>
+<p>사람이 단기 기억으로 기억할 수 있는 항목 갯수는 7&plusmn;2개라고 합니다.
+(상단 기준을 적용한 후에도) 설정에 10개 이상의 리스트를 표시하고 있다면
+사용자는 해당 항목을 찾고 이해하고 처리하기가 더 힘들 것입니다.</p>
 
-<p>You can remedy this by dividing some or all of the settings into groups, effectively turning
-one long list into multiple shorter lists. A group of related settings can be presented in one of
-two ways:</p>
+<p>이 문제는 설정의 일부 혹은 전체를 그룹으로 나누어서 하나의 긴 리스트를 복수의
+짧은 리스트로 효과적으로 바꿈으로 해결할 수 있습니다.
+관련 설정 그룹을 둘 중 한 가지 방법으로 표시할 수 있습니다:</p>
 
 <ol>
-<li><h4>Under a section divider</h4></li>
-<li><h4>In a separate subscreen</h4></li>
+<li><h4>섹션 분리선 아래 표시</h4></li>
+<li><h4>분리된 부 화면</h4></li>
 </ol>
 
-<p>You can use one or both these grouping techniques to organize your app's settings.</p>
+<p>앱 설정을 조직하기 위해 이러한 그룹화 방법을 하나만 혹은 둘다 적용할 수 있습니다.</p>
 
-<p>For example, in the main screen of the Android Settings app, each item in the list navigates
-to a subscreen of related settings. In addition, the items themselves are grouped under section
-dividers.</p>
+<p>예를 들어 안드로이 설정 앱의 주 화면에서는 리스트의 각 항목은
+관련 설정의 부 화면으로 이어집니다. 그에 더해 각 항목은 섹션 분리선 아래 그룹화되어 있습니다.</p>
 
   </div>
   <div class="layout-content-col span-8">
@@ -80,20 +77,20 @@ dividers.</p>
   </div>
 </div>
 
-<p>Grouping settings is not an exact science, but here's some advice for how to approach it, based
-on the total number of settings in your app.</p>
+<p>설정 그룹화는 정밀 과학은 아니지만 앱 전체 설정 갯수에 따라 어떻게 접근하는게 좋을지에 대한
+제안 사항이 있습니다.</p>
 
 <div class="vspace size-1">&nbsp;</div>
 
 <div class="layout-content-row">
   <div class="layout-content-col span-2">
 
-<h4>7 or fewer</h4>
+<h4>7개 이하</h4>
 
   </div>
   <div class="layout-content-col span-11">
 
-<p>Don't group them at all. It won't benefit users and will seem like overkill.</p>
+<p>그룹화 하지 마세요. 그룹화는 이득은 커녕 지나친 느낌이 듭니다.</p>
 
   </div>
 </div>
@@ -101,20 +98,20 @@ on the total number of settings in your app.</p>
 <div class="layout-content-row">
   <div class="layout-content-col span-2">
 
-<h4>8 to 10</h4>
+<h4>8~10개</h4>
 
   </div>
   <div class="layout-content-col span-11">
 
-<p>Try grouping related settings under 1 or 2 section dividers. If you have any "singletons"
-(settings that don't relate to any other settings and can't be grouped under your section
-dividers), treat them as follows:</p>
+<p>한 두개의 섹션 분리선으로 관련 설정을 그룹화해보세요. 
+어떤 "싱글톤"(다른 설정과 관련도 없고 섹션 분리선 아래 그룹화 될 수도 없는 설정)이 있다면
+다음과 같이 다루어주세요:</p>
 
 <ul>
-<li>If they include some of your most important settings, list them at the top without a section
-divider.</li>
-<li>Otherwise, list them at the bottom with a section divider called "OTHER", in order of
-importance.</li>
+<li>중요한 설정이 포함되어 있다면
+섹션 분리선을 넣지 말고 가장 윗쪽에 나열해주세요.</li>
+<li>그렇지 않다면 "기타(OTHER)"로 이름지은 섹션 분리선에 포함시켜 중요도에 따라
+아래에 나열해주세요.</li>
 </ul>
 
   </div>
@@ -123,23 +120,22 @@ importance.</li>
 <div class="layout-content-row">
   <div class="layout-content-col span-2">
 
-<h4>11 to 15</h4>
+<h4>11~15개</h4>
 
   </div>
   <div class="layout-content-col span-11">
 
-<p>Same advice as above, but try 2 to 4 section dividers.</p>
+<p>위와 같지만 2~4개의 섹션 분리자를 사용해주세요.</p>
 
-<p>Also, try the following to reduce the list:</p>
+<p>또한 리스트를 줄이기 위해 다음 사항을 따라주세요:</p>
 
 <ul>
-<li>If 2 or more of the settings are mainly for power users, move them out of your main Settings
-screen and into an "Advanced" subscreen. Place an item in the action overflow called "Advanced" to
-navigate to it.</li>
-<li>Look for "doubles": two settings that relate to one another, but not to any other settings.
-Try to combine them into one setting, using the design patterns described later in this section.
-For example, you might be able to redesign two related checkbox settings into one multiple choice
-setting.</li>
+<li>만약 특정한 2개 혹은 그 이상의 설정이 주로 파워 유저가 사용한다면
+주 설정 화면에서 "고급" 부 화면으로 해당 설정을 이동하세요. 그 항목으로 이동할 수 있도록
+액션 오버플로우에 "고급"이라는 이름의 항목을 배치하세요.</li>
+<li>다른 설정에는 영향을 주지 않지만 서로 영향을 주는 두 설정 항목을 찾아내세요.
+이 섹션 밑에서 설명될 디자인 패턴을 사용해 한 설정 항목으로 항목들을 통합해 보세요.
+예를 들어 두개의 관련된 체크박스 설정을 하나의 다중 선택 항목으로 다시 디자인할 수 있습니다.</li>
 </ul>
 
   </div>
@@ -148,25 +144,25 @@ setting.</li>
 <div class="layout-content-row">
   <div class="layout-content-col span-2">
 
-<h4>16 or more</h4>
+<h4>16개 이상</h4>
 
   </div>
   <div class="layout-content-col span-11">
 
-<p>If you have any instances of 4 or more related settings, group them under a subscreen. Then use
-the advice suggested above for the reduced list size.</p>
+<p>4개 이상의 관련 설정이 있는 경우 부 화면으로 그룹화하세요.
+그 후 리스트 크기를 줄이도록 위에서 제안한 방법을 사용하세요.</p>
 
   </div>
 </div>
 
 
-<h2 id="patterns">Design Patterns</h2>
+<h2 id="patterns">디자인 패턴</h2>
 
 <div class="layout-content-row">
   <div class="layout-content-col span-3">
 
-<h4>Checkbox</h4>
-<p>Use this pattern for a setting that is either selected or not selected.</p>
+<h4>체크박스</h4>
+<p>해당 설정이 선택/비선택이 분명할 때 이 패턴을 사용하세요.</p>
 
   </div>
   <div class="layout-content-col span-10">
@@ -179,9 +175,9 @@ the advice suggested above for the reduced list size.</p>
 <div class="layout-content-row">
   <div class="layout-content-col span-3">
 
-<h4>Multiple choice</h4>
-<p>Use this pattern for a setting that needs to present a discrete set of options, from which the
-user can choose only one.</p>
+<h4>다중 선택</h4>
+<p>선택 사항 종류를 보여주어야 하고 사용자가 그 중 하나만 선택할 수 있는 설정인 경우
+이 패턴을 사용하세요.</p>
 
   </div>
   <div class="layout-content-col span-10">
@@ -194,9 +190,8 @@ user can choose only one.</p>
 <div class="layout-content-row">
   <div class="layout-content-col span-3">
 
-<h4>Slider</h4>
-<p>Use this pattern for a setting where the range of values are not discrete and fall along a
-continuum.</p>
+<h4>슬라이더</h4>
+<p>해당 설정이 일정 범위의 값이며 개별적이지 않고 연결되어 이어질 경우 이 패턴을 사용하세요.</p>
 
   </div>
   <div class="layout-content-col span-10">
@@ -209,8 +204,8 @@ continuum.</p>
 <div class="layout-content-row">
   <div class="layout-content-col span-3">
 
-<h4>Date/time</h4>
-<p>Use this pattern for a setting that needs to collect a date and/or time from the user.</p>
+<h4>날짜/시간</h4>
+<p>해당 설정이 사용자에게 날짜와/혹은 시간을 얻어올 경우 이 패턴을 사용하세요.</p>
 
   </div>
   <div class="layout-content-col span-10">
@@ -223,7 +218,7 @@ continuum.</p>
 <div class="layout-content-row">
   <div class="layout-content-col span-3">
 
-<h4>Subscreen navigation</h4>
+<h4>부 화면 탐색</h4>
 <p>Use this pattern for navigating to a subscreen or sequence of subscreens that guide the user
 through a more complex setup process.</p>
 <ul>
@@ -244,7 +239,7 @@ first step in the sequence.</li>
 <div class="layout-content-row">
   <div class="layout-content-col span-3">
 
-<h4>List subscreen</h4>
+<h4>리스트 부 화면</h4>
 <p>Use this pattern for a setting or category of settings that contains a list of equivalent items.
 </p>
 <p>The label provides the name of the item, and secondary text may be used for status. (In this
@@ -262,7 +257,7 @@ the list appear in the action bar rather than the list itself.</p>
 <div class="layout-content-row">
   <div class="layout-content-col span-3">
 
-<h4>Master on/off switch</h4>
+<h4>마스터 온/오프 스위치</h4>
 <p>Use this pattern for a category of settings that need a mechanism for turning on or off as a
 whole.</p>
 <p>An on/off switch is placed as the first item in the action bar of a subscreen. When the switch
@@ -297,7 +292,7 @@ it's initially set up and more often just want to toggle the switch.</p>
 <div class="layout-content-row">
   <div class="layout-content-col span-3">
 
-<h4>Individual on/off switch</h4>
+<h4>독립적 온/오프 스위치</h4>
 <p>Use this pattern for an individual setting that requires a more elaborate description than can
 be provided in checkbox form.</p>
 <p>The on/off switch only appears in the subscreen so that users aren't able to toggle it without
@@ -317,7 +312,7 @@ does, we made the status more descriptive than just "On".</p>
 <div class="layout-content-row">
   <div class="layout-content-col span-3">
 
-<h4>Dependency</h4>
+<h4>의존성</h4>
 <p>Use this pattern for a setting that changes availability based on the value of another setting.
 </p>
 <p>The disabled setting appears below its dependency, without any indentation. If the setting
@@ -355,7 +350,7 @@ me if it's important</a>?
 </li>
 </ul>
 
-<h2 id="writing">Writing Guidelines</h2>
+<h2 id="writing">작성 가이드라인</h2>
 
 <h4>Label clearly and concisely</h4>
 
@@ -386,29 +381,29 @@ or off, label it "Notifications" instead of "Notify me".</li>
 <a href="../style/metrics-grids.html">LDPI handset</a> in portrait to make sure
 they'll fit everywhere.</p>
 
-<h4>Secondary text below is for status, not description&hellip;</h4>
+<h4>하단 보조 텍스트로 상태를 표시하세요, 설명 말구요&hellip;</h4>
 
-<p>Before Ice Cream Sandwich, we often displayed secondary text below a label to further describe
-it or provide instructions. Starting in Ice Cream Sandwich, we're using secondary text for status.
+<p>아이스크림 샌드위치 이전에 우리는 종종 레이블을 설명하거나 지침을 제공하기 위해 
+레이블 밑 보조 텍스트를 표시했습니다. 아이스크림 샌드위치부터 우리는 상태를 표시하는데 보조 텍스트를 사용합니다.
 </p>
 
 <div class="layout-content-row">
   <div class="layout-content-col span-4">
 
-    <div class="do-dont-label bad emulate-content-left-padding">Before</div>
+    <div class="do-dont-label bad emulate-content-left-padding">개선 전</div>
 
     <table class="ui-table bad emulate-content-left-padding">
     <thead>
       <tr>
         <th class="label">
-        Screen timeout
+        화면 조명시간
         </th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td class="secondary-text">
-        Adjust the delay before the screen automatically turns off
+        화면 자동 꺼짐 시간 간격 조정
         </td>
       </tr>
     </tbody>
@@ -417,20 +412,20 @@ it or provide instructions. Starting in Ice Cream Sandwich, we're using secondar
   </div>
   <div class="layout-content-col span-4">
 
-    <div class="do-dont-label good">After</div>
+    <div class="do-dont-label good">개선 후</div>
 
     <table class="ui-table good">
     <thead>
       <tr>
         <th class="label">
-        Sleep
+        화면 끄기
         </th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td class="secondary-text">
-        After 10 minutes of activity
+        사용 10분 후
         </td>
       </tr>
     </tbody>
@@ -469,7 +464,7 @@ provide a description. Only include one if necessary.</p>
 ("I"). Android speaks to users, not on behalf of them.</li>
 </ul>
 
-<h4>Writing examples</h4>
+<h4>작성 예제</h4>
 
 <p>The following are examples of changes we made to labels and secondary text in the Settings app
 in Ice Cream Sandwich.</p>
@@ -477,13 +472,13 @@ in Ice Cream Sandwich.</p>
 <div class="layout-content-row">
   <div class="layout-content-col span-4">
 
-    <div class="do-dont-label bad emulate-content-left-padding">Before</div>
+    <div class="do-dont-label bad emulate-content-left-padding">개선 전</div>
 
     <table class="ui-table bad emulate-content-left-padding">
     <thead>
       <tr>
         <th class="label">
-        Use tactile feedback
+        촉각 반응 사용
         </th>
       </tr>
     </thead>
@@ -492,13 +487,13 @@ in Ice Cream Sandwich.</p>
   </div>
   <div class="layout-content-col span-4">
 
-    <div class="do-dont-label good">After</div>
+    <div class="do-dont-label good">개선 후</div>
 
     <table class="ui-table good">
     <thead>
       <tr>
         <th class="label">
-        Vibrate on touch
+        터치시 진동
         </th>
       </tr>
     </thead>
@@ -517,20 +512,20 @@ more direct and understandable.</p>
 <div class="layout-content-row">
   <div class="layout-content-col span-4">
 
-    <div class="do-dont-label bad emulate-content-left-padding">Before</div>
+    <div class="do-dont-label bad emulate-content-left-padding">개선 전</div>
 
     <table class="ui-table bad emulate-content-left-padding">
     <thead>
       <tr>
         <th class="label">
-        Screen timeout
+        화면 조명 시간
         </th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td class="secondary-text">
-        Adjust the delay before the screen automatically turns off
+        화면 자동 꺼짐 시간 간격 조정
         </td>
       </tr>
     </tbody>
@@ -539,20 +534,20 @@ more direct and understandable.</p>
   </div>
   <div class="layout-content-col span-4">
 
-    <div class="do-dont-label good">After</div>
+    <div class="do-dont-label good">개선 후</div>
 
     <table class="ui-table good">
     <thead>
       <tr>
         <th class="label">
-        Sleep
+        화면 끄기
         </th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td class="secondary-text">
-        After 10 minutes of activity
+        사용 10분 후
         </td>
       </tr>
     </tbody>
@@ -571,20 +566,20 @@ minutes", because on its own, the meaning could be misinterpreted as "sleep for 
 <div class="layout-content-row">
   <div class="layout-content-col span-4">
 
-    <div class="do-dont-label bad emulate-content-left-padding">Before</div>
+    <div class="do-dont-label bad emulate-content-left-padding">개선 전</div>
 
     <table class="ui-table bad emulate-content-left-padding">
     <thead>
       <tr>
         <th class="label">
-        Change screen lock
+        화면 잠금 설정
         </th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td class="secondary-text">
-        Change or disable pattern, PIN, or password security
+        패턴, PIN, 또는 비밀번호 보안을 변경하거나 사용 중지
         </td>
       </tr>
     </tbody>
@@ -593,20 +588,20 @@ minutes", because on its own, the meaning could be misinterpreted as "sleep for 
   </div>
   <div class="layout-content-col span-4">
 
-    <div class="do-dont-label good">After</div>
+    <div class="do-dont-label good">개선 후</div>
 
     <table class="ui-table good">
     <thead>
       <tr>
         <th class="label">
-        Screen lock
+        화면 잠금
         </th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td class="secondary-text">
-        Pattern
+        패턴
         </td>
       </tr>
     </tbody>
@@ -626,7 +621,7 @@ hasn't set up a screen lock, the secondary text says "None".</p>
 <div class="layout-content-row">
   <div class="layout-content-col span-4">
 
-    <div class="do-dont-label bad emulate-content-left-padding">Before</div>
+    <div class="do-dont-label bad emulate-content-left-padding">개선 전</div>
 
     <table class="ui-table bad emulate-content-left-padding">
     <thead>
@@ -639,7 +634,7 @@ hasn't set up a screen lock, the secondary text says "None".</p>
     <tbody>
       <tr>
         <td class="secondary-text">
-        Use Near Field Communication to read and exchange tags
+        근거리무선통신으로 태그를 읽거나 교환합니다
         </td>
       </tr>
     </tbody>
@@ -648,7 +643,7 @@ hasn't set up a screen lock, the secondary text says "None".</p>
   </div>
   <div class="layout-content-col span-4">
 
-    <div class="do-dont-label good">After</div>
+    <div class="do-dont-label good">개선 후</div>
 
     <table class="ui-table good">
     <thead>
@@ -661,7 +656,7 @@ hasn't set up a screen lock, the secondary text says "None".</p>
     <tbody>
       <tr>
         <td class="secondary-text">
-        Allow data exchange when the phone touches another device
+        전화기가 다른 기기를 터치하면 데이터 교환 허용
         </td>
       </tr>
     </tbody>
@@ -680,7 +675,7 @@ it doesn't mean anything to most users and would have taken up a lot of space.</
   </div>
 </div>
 
-<h2 id="checklist">Checklist</h2>
+<h2 id="checklist">점검 목록</h2>
 <ul>
 <li><p>Make sure each item in Settings meets the criteria for belonging there.</p></li>
 <li><p>If you have more than 7 items, explore ways to group related settings.</p></li>
