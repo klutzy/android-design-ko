@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>
-      안드로이드 디자인{%if page.title%} - {{page.title}}{%endif%}
-    </title>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<title>{%if page.title%}{{page.title}}{%else%}디자인{%endif%} | Android Developers</title>
 
 <!-- BASIC STYLESHEETS -->
 <link rel="stylesheet"
@@ -36,21 +36,153 @@ href="//fonts.googleapis.com/css?family=Roboto:regular,medium,thin,italic,medium
   var SITE_ROOT = toRoot + basePath.substring(1,basePath.indexOf("/",1));
 </script>
 
-  </head>
-  <body itemscope itemtype="http://schema.org/Article">
+</head>
+<body class="gc-documentation
+  design" itemscope itemtype="http://schema.org/Article">
+<a name="top"></a>
 
-    <div id="page-container">
+    <!-- Header -->
+    <div id="header">
+        <div class="wrap" id="header-wrap">
+          <div class="col-3 logo">
+          <a href="//developer.android.com/index.html">
+            <img src="//developer.android.com/assets/images/dac_logo.png" width="123" height="25" alt="Android Developers" />
+          </a>
+          <div class="btn-quicknav" id="btn-quicknav">
+          	<a href="#" class="arrow-inactive">Quicknav</a>
+			<a href="#" class="arrow-active">Quicknav</a>
+          </div>
+          </div>
+            <ul class="nav-x col-9">
+                <li class="design"><a href="{{site.url}}index.html" class="selected" >Design</a></li>
+                <li class="develop"><a href="//developer.android.com/develop/index.html"  >Develop</a></li>
+                <li class="distribute last"><a href="//developer.android.com/distribute/index.html"  >Distribute</a></li>
+            </ul>
+            
+            <!-- New Search -->
+            <div class="menu-container">
+            <div class="moremenu">
+    <div id="more-btn"></div>
+  </div>
+  <div class="morehover" id="moremenu">
+    <div class="top"></div>
+    <div class="mid">
+      <div class="header">Android Sites</div>
+      <ul>
+        <li><a href="http://www.android.com">Android.com</a></li>
+        <li class="active"><a>Android Developers</a></li>
+        <li><a href="http://source.android.com">Android Open Source Project</a></li>
+      </ul>
+      <div class="header">Support</div>
+      <ul>
+        <li><a href="//developer.android.com/support.html">Developer Support</a></li>
+      </ul>
+      <div class="header">Languages</div>
+        <div id="language" class="locales">
+          <select name="language" onChange="changeLangPref(this.value, true)">
+              <option value="en">English</option>
+              <option value="es">Español</option>
+              <option value="ja">日本語</option>
+              <option value="ko">한국어</option>
+              <option value="ru">Русский</option>
+              <option value="zh-CN">中文 (中国)
+      </option>
+          </select>	
+        </div>
+      <script type="text/javascript">
+        <!--  
+        loadLangPref();  
+          //-->
+      </script>
+      <br class="clearfix" />
+    </div>
+    <div class="bottom"></div>
+  </div>
+  <div class="search" id="search-container">
+    <div class="search-inner">
+      <div id="search-btn"></div>
+      <div class="left"></div>
+      <form onsubmit="return submit_search()">
+        <input id="search_autocomplete" type="text" value="" autocomplete="off" name="q"
+onfocus="search_focus_changed(this, true)" onblur="search_focus_changed(this, false)"
+onkeydown="return search_changed(event, true, '/')" onkeyup="return search_changed(event, false,
+'/')" />
+      </form>
+      <div class="right"></div>
+        <a class="close hide">close</a>
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+  </div>
+  <div id="search_filtered_wrapper">
+    <div id="search_filtered_div" class="no-display">
+        <ul id="search_filtered">
+        </ul>
+    </div>
+  </div>
+  
+  </div>
+  <!-- /New Search>
+          
+          
+          <!- - Expanded quicknav -->
+           <div id="quicknav" class="col-9">
+                <ul>
+                    <li class="design">
+                      <ul>
+                        <li><a href="{{site.url}}style/index.html">스타일</a></li>
+                        <li><a href="{{site.url}}patterns/index.html">패턴</a></li>
+                        <li><a href="{{site.url}}building-blocks/index.html">구성 요소</a></li>
+                        <li><a href="{{site.url}}downloads/index.html">다운로드</a></li>
+                      </ul>
+                    </li>
+                    <li class="develop">
+                      <ul>
+                        <li><a href="//developer.android.com/training/index.html">Android Training</a></li>
+                        <li><a href="//developer.android.com/guide/components/index.html">API Guides</a></li>
+                        <li><a href="//developer.android.com/reference/packages.html">Reference</a></li>
+                        <li><a href="//developer.android.com/tools/index.html">Tools</a>
+                          <ul><li><a href="//developer.android.com/sdk/index.html">Get the
+SDK</a></li></ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="distribute last">
+                      <ul>
+                        <li><a href="//developer.android.com/distribute/index.html">Google Play</a></li>
+                        <li><a href="//developer.android.com/distribute/googleplay/publish/index.html">Publishing</a></li>
+                        <li><a href="//developer.android.com/distribute/googleplay/promote/index.html">Promoting</a></li>
+                        <!--<li><a href="/distribute/googleplay/strategies/index.html">Strategies</a></li> -->
+                        <li><a href="//developer.android.com/distribute/open.html">Open
+Distribution</a></li> 
+                      </ul>
+                    </li>
+                </ul>
+          </div>
+          <!-- /Expanded quicknav -->
+        </div>
+    </div>
+    <!-- /Header -->
+    
+    
+  <div id="searchResults" class="wrap" style="display:none;">
+          <h2 id="searchTitle">Results</h2>
+          <div id="leftSearchControl" class="search-control">Loading...</div>
+  </div>
+    
+    
+    
 
-      <div id="page-header" itemscope itemtype="http://schema.org/WPHeader"><a href="{{site.url}}index.html">안드로이드 디자인</a></div>
+  
 
-      <div id="main-row">
+  <div class="wrap clearfix" id="body-content">
+    <div class="col-3" id="side-nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <div id="devdoc-nav" class="scroll-pane">
+<a class="totop" href="#top" data-g-event="left-nav-top">to top</a>
 
-        <div id="nav-container" itemscope itemtype="http://schema.org/SiteNavigationElement">
 
-        
-  <ul id="nav">
+<ul id="nav">
 
-  <!-- TODO hrefs -->
   <li class="nav-section">
     <div class="nav-section-header"><a href="{{site.url}}index.html">시작하기</a></div>
     <ul>
@@ -114,69 +246,111 @@ href="//fonts.googleapis.com/css?family=Roboto:regular,medium,thin,italic,medium
     <div class="nav-section-header empty"><a href="{{site.url}}downloads/index.html">다운로드</a></div>
   </li>
 
-  <li>
-    <div id="back-dac-section"><a href="http://developer.android.com/index.html">Developers</a></div>
-  </li>
-
 </ul>
+       
+
+      </div>
+    </div> <!-- end side-nav -->
+    <script>
+      $(document).ready(function() {
+        scrollIntoView("devdoc-nav");
+        });
+    </script>
 
 
-        </div>
 
-        <div id="content">
+
+<div class="col-13" id="doc-col" >
+
+
+  
+  <div class="layout-content-row content-header just-links">
+    <div class="layout-content-col span-9">
+{%if page.url contains 'index.html' %}
+      &nbsp;
+{%else%}
+      <h1 itemprop="name">{{page.title}}</h1>
+{%endif%}
+      
+    </div>
+    
 {%assign enable_navigation = false %}
+{%assign enable_navigation_bottom = false %}
 {%if page.url contains 'index.html' %}
 {%if page.url contains 'downloads/index.html'%}
 {%assign enable_navigation = true %}
 {%endif%}
 {%else%}
 {%assign enable_navigation = true %}
+{%assign enable_navigation_bottom = true %}
 {%endif%}
 {%if enable_navigation %}
-<div class="layout-content-row content-header ">
-  <div class="layout-content-col span-9">
-    <h2>{{page.title}}</h2>
-    
-  </div>
-  <div class="paging-links layout-content-col span-4" itemscope itemtype="http://schema.org/SiteNavigationElement">
-    <a href="#" class="prev-page-link">이전</a>
-    <a href="#" class="next-page-link">다음</a>
-  </div>
-</div>
+      <div class="paging-links layout-content-col span-4" itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a href="#" class="prev-page-link hide">이전</a>
+        <a href="#" class="next-page-link hide">다음</a>
+      </div>
 {%endif%}
+  </div>
+  
+
+
+  
+  <div id="jd-content">
+
+
+    <div class="jd-descr" itemprop="articleBody">
 {{content}}
-{%if enable_navigation %}
-<div class="layout-content-row content-footer" itemscope itemtype="http://schema.org/SiteNavigationElement">
-  <div class="paging-links layout-content-col span-9">&nbsp;</div>
-  <div class="paging-links layout-content-col span-4">
-    <a href="#" class="prev-page-link">이전</a>
-    <a href="#" class="next-page-link">다음</a>
-  </div>
-</div>
-{%endif%}
-        </div>
-
-      </div>
-
-      <div id="page-footer" itemscope itemtype="http://schema.org/WPFooter">
-
-        <p id="copyright">
-          별도로 언급한 사항을 제외하고, 이 내용은
-          <a href="http://creativecommons.org/licenses/by/2.5/">
-          크리에이티브 커먼즈 저작자표시 2.5</a>라이선스를 따릅니다.<br>
-          자세한 내용과 제약은
-          <a href="http://developer.android.com/license.html">내용에 대한 라이선스</a>를 참고하세요.
-        </p>
-
-        <p>
-          <a href="http://www.android.com/terms.html">사이트 서비스 약관</a> &ndash;
-          <a href="http://www.android.com/privacy.html">개인정보 취급 정책</a> &ndash;
-          <a href="http://www.android.com/branding.html">브랜드 지침</a>
-        </p>
-
-      </div>
     </div>
+      
+      <div class="content-footer layout-content-row" 
+                    itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <div class="layout-content-col col-9" style="padding-top:4px">
+          
+            <div class="g-plusone" data-size="medium"></div>
+          
+        </div>
+        
+        <div class="paging-links layout-content-col col-4">
+          
+            {%if enable_navigation_bottom %}
+            <a href="#" class="prev-page-link hide">이전</a>
+            <a href="#" class="next-page-link hide">다음</a>
+            {%endif%}
+          
+        </div>
+        
+      </div>
+      
+      
+      
 
-  </body>
+  </div> <!-- end jd-content -->
+
+<div id="footer" class="wrap" >
+        
+
+  <div id="copyright">
+별도로 언급한 사항을 제외하고, 이 내용은
+<a href="http://creativecommons.org/licenses/by/2.5/">
+크리에이티브 커먼즈 저작자표시 2.5</a> 라이선스를 따릅니다.
+자세한 내용과 제약은
+<a href="http://developer.android.com/license.html">내용에 대한 라이선스</a>를 참고하세요.
+  </div>
+
+
+  <div id="footerlinks">
+    
+  <p>
+    <a href="//developer.android.com/about/index.html">About Android</a>&nbsp;&nbsp;|&nbsp;
+    <a href="//developer.android.com/legal.html">Legal</a>&nbsp;&nbsp;|&nbsp;
+    <a href="//developer.android.com/support.html">Support</a>
+  </p>
+  </div>
+
+</div> <!-- end footer -->
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+</body>
 </html>
-
