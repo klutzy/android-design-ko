@@ -257,7 +257,7 @@ Distribution</a></li>
 <div class="col-13" id="doc-col" >
 
 {%assign is_index = false %}
-{%if page.url contains 'index.html' %}
+{%if page.url contains 'index.html' and page.url != "/downloads/index.html" %}
 {%assign is_index = true %}
 {%endif%}
 {%assign is_top = false %}
