@@ -262,11 +262,30 @@ Distribution</a></li>
 
 <div class="col-13" id="doc-col" >
 
-
-  
-  <div class="layout-content-row content-header just-links">
-    <div class="layout-content-col span-9">
+{%assign is_index = false %}
 {%if page.url contains 'index.html' %}
+{%assign is_index = true %}
+{%endif%}
+{%assign is_top = false %}
+{%if page.url == '/index.html'%}
+{%assign is_top = true %}
+{%endif%}
+{%assign enable_navigation = false %}
+{%assign enable_navigation_bottom = false %}
+{%if is_index %}
+{%if is_top != true %}
+{%assign enable_navigation = true %}
+{%endif%}
+{%else%}
+{%assign enable_navigation = true %}
+{%assign enable_navigation_bottom = true %}
+{%endif%}
+
+{%if is_top == false %}
+  
+  <div class="layout-content-row content-header {%if is_index%}just-links{%endif%}">
+    <div class="layout-content-col span-9">
+{%if is_index %}
       &nbsp;
 {%else%}
       <h1 itemprop="name">{{page.title}}</h1>
@@ -274,16 +293,6 @@ Distribution</a></li>
       
     </div>
     
-{%assign enable_navigation = false %}
-{%assign enable_navigation_bottom = false %}
-{%if page.url contains 'index.html' %}
-{%if page.url contains 'downloads/index.html'%}
-{%assign enable_navigation = true %}
-{%endif%}
-{%else%}
-{%assign enable_navigation = true %}
-{%assign enable_navigation_bottom = true %}
-{%endif%}
 {%if enable_navigation %}
       <div class="paging-links layout-content-col span-4" itemscope itemtype="http://schema.org/SiteNavigationElement">
         <a href="#" class="prev-page-link hide">이전</a>
@@ -292,7 +301,7 @@ Distribution</a></li>
 {%endif%}
   </div>
   
-
+{%endif%}
 
   
   <div id="jd-content">
