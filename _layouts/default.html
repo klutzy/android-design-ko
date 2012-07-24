@@ -18,6 +18,9 @@ href="//fonts.googleapis.com/css?family=Roboto:regular,medium,thin,italic,medium
 <!-- BASIC JAVASCRIPT -->
 <script src="//developer.android.com/assets/js/global-libraries-combined.js"
         type="text/javascript"></script>
+<script type="text/javascript">
+  var toRoot = "{{site.url}}";
+</script>
 <script src="//developer.android.com/assets/js/docs.js" type="text/javascript"></script>
 
 
@@ -30,11 +33,6 @@ href="//fonts.googleapis.com/css?family=Roboto:regular,medium,thin,italic,medium
 
 
 <script src="//developer.android.com/navtree_data.js" type="text/javascript"></script>
-<script type="text/javascript">
-  setToRoot("/");
-  var basePath = getBaseUri(location.pathname);
-  var SITE_ROOT = toRoot + basePath.substring(1,basePath.indexOf("/",1));
-</script>
 
 </head>
 <body class="gc-documentation
