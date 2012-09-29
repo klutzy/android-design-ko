@@ -24,9 +24,15 @@ title: 대화 상자
 </li>
 <li>
 <h4>액션 버튼</h4>
-<p>액션 버튼(action button)은 일반적으로 취소(Cancel) 및 확인(OK) 버튼으로 구성되며, 확인(OK) 버튼은 준비된 동작을 아마도 진행할 수 있음을 나타냅니다.
-그러나 옵션들이 설명된 내용의 확인이나 취소 대신, 닫기나 대기와 같은 특정 동작으로 이루어진다면 버튼 스스로가 각각 어떤 동작인지 설명할 수 있어야 합니다.
-대체로, 대화 상자의 내용을 부정하는 동작은 항상 왼쪽에 두고 긍정적인 동작들은 항상 오른쪽에 위치시킵니다.</p>
+<p>액션 버튼(action button)은 일반적으로 취소(Cancel) 및 확인(OK) 버튼으로 구성되며, 확인 버튼은 가장 선호하거나 가능성이 높은 행동을 의미합니다.
+하지만 선택지가 확인/취소가 아니라 닫기나 대기 등의 특정 동작들로 이루어지는 경우는 버튼 스스로가 어떤 행동을 할지 표시해야 합니다.
+버튼 순서 기준은 다음과 같습니다.
+</p>
+<ul>
+<li>다이얼로그 행동을 취소하는 버튼은 항상 왼쪽에 옵니다. 이 행동을 선택하면 기존 화면으로 돌아옵니다.</li>
+<li>긍정하는 행동이 오른쪽에 옵니다. 이 행동을 선택하면 다이얼로그가 뜨기 전부터의 원래 사용자 목적을 계속 수행합니다.</li>
+</ul>
+</li>
 </li>
 </ol>
 </div>
@@ -81,6 +87,36 @@ title: 대화 상자
   </div>
 </div>
 
+<p>경고 창을 만들 때, 제목에 원래 행동을 다시 한번 표시하는 방식으로 제목에 의미를 주세요.</p>
+
+
+<div class="layout-content-row">
+  <div class="layout-content-col span-4">
+    <div class="do-dont-label bad">이렇게 하지 마세요</div>
+      <table class="ui-table bad"><thead><tr>
+<th class="label">
+          확실합니까?
+          </th>
+        </tr></thead></table>
+</div>
+  <div class="layout-content-col span-4">
+    <div class="do-dont-label bad">이렇게 하지 마세요</div>
+      <table class="ui-table bad"><thead><tr>
+<th class="label">
+          주의!
+          </th>
+        </tr></thead></table>
+</div>
+  <div class="layout-content-col span-5">
+    <div class="do-dont-label good">이렇게 하세요</div>
+      <table class="ui-table good"><thead><tr>
+<th class="label">
+          Erase USB storage?
+          USB 저장소를 지우시겠습니까?
+          </th>
+        </tr></thead></table>
+</div>
+</div>
 
 
 <h2 id="popups">팝업</h2>
