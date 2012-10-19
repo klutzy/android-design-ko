@@ -84,25 +84,34 @@ title: 위젯
 </div>
 
 
-<h2>Widget limitations</h2>
+<h2>위젯의 제약점</h2>
 
-<p>While widgets could be understood as "mini apps", there are certain limitations that are important to understand before you start to embark on designing your widget:</p>
+<p>위젯을 "미니 앱"으로 생각할 수 있긴 하지만, 위젯에는 명확한 제약점이 존재하며 위젯 디자인 시 이들을 이해하고 있어야 합니다.</p>
 
 
-<h3>Gestures</h3>
+<h3>제스처</h3>
 
-<p>Because widgets live on the home screen, they have to co-exist with the navigation that is established there. This limits the gesture support that is available in a widget compared to a full-screen app. While apps for example may support a view pager that allows the user to navigate between screens laterally, that gesture is already taken on the home screen for the purpose of navigating between home panels.</p>
+<p>
+위젯은 홈 화면 내에 상주하기 때문에, 홈 화면 간 이동 등의 조작과 충돌하지 않아야 합니다.
+이러한 점으로 인해 위젯 제스처는 일반적인 앱에 비해 제한적입니다.
+가령 앱은 뷰 페이저를 통하여 앱 내에서 좌우로 이동할 수 있지만, 이 제스처는 홈 패널 간의 이동에 사용하고 있어서 위젯에서는 사용할 수 없습니다.
+</p>
 
-<p>The only gestures available for widgets are:</p>
+<p>위젯에서 가능한 제스처는 다음과 같습니다.</p>
 
 <ul>
-<li>Touch</li>
-  <li>Vertical swipe</li>
+<li>터치</li>
+  <li>세로로 스와이프</li>
 </ul>
 <img src="../media/widgets_gestures.png">
-<h3>Elements</h3>
+<h3>구성 요소</h3>
 
-<p>Given the above interaction limitations, some of the UI building blocks that rely on restricted gestures are not available for widgets. For a complete list of supported building blocks and more information on layout restrictions, please refer to the "Creating App Widget Layouts" section in the <a href="http://developer.android.com/guide/topics/appwidgets/index.html">App Widgets</a> API Guide.</p>
+<p>
+위의 인터랙션 제약으로 인해, 사용 불가능한 제스처를 이용하는 UI 구성 요소들 역시 사용할 수 없습니다.
+사용 가능한 구성 요소 및 레이아웃 제한에 대해서는
+<a href="http://developer.android.com/guide/topics/appwidgets/index.html">App Widgets</a>API 가이드</p>(영어)의
+"Creating App Widget Layouts" 부분을 참고해주세요.
+</p>
 
 
 <h2>Design guidelines</h2>
