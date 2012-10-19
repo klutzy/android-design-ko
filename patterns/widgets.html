@@ -1,19 +1,30 @@
 ---
 layout: default
-title: Widgets
+title: 위젯
 ---
-<p>Widgets are an essential aspect of home screen customization. You can imagine them as "at-a-glance" views of an app's most important data and functionality that is accessible right from the user's home screen. Users can move widgets across their home screen panels, and, if supported, resize them to tailor the amount of information within a widget to their preference.</p>
+<p>
+위젯(widget)은 홈 화면 구성에 있어 핵심적인 관점을 제공합니다.
+위젯은 홈 화면에서 바로 쓸 수 있도록 앱에서 가장 중요한 자료와 기능을 한 곳에 모아주는 역할로 생각할 수 있습니다.
+사용자는 홈 화면 여기저기 위젯을 이동하여 배치하거나, 위젯이 지원하는 경우 크기를 조절하여 위젯의 정보량을 조절할 수 있습니다.
+</p>
 
 
-<h2>Widget types</h2>
+<h2>위젯 종류</h2>
 
-<p>As you begin planning your widget, think about what kind of widget you're trying to build. Widgets typically fall into one of the following categories:</p>
+<p>
+위젯을 구상하려면, 우선 어떤 종류의 위젯을 만들 것인지 생각해보세요.
+위젯은 일반적으로 아래 목록 중 하나에 속합니다.
+</p>
 
 
-<h3>Information widgets</h3>
+<h3>정보 위젯</h3>
 
 <img style="float:right;" src="../media/widgets_info.png">
-<p>Information widgets typically display a few crucial information elements that are important to a user and track how that information changes over time. Good examples for information widgets are weather widgets, clock widgets or sports score trackers. Touching information widgets typically launches the associated app and opens a detail view of the widget information.</p>
+<p>
+정보 위젯은 사용자에게 중요한 정보를 표시하고 시간에 따른 변화를 추적합니다.
+날씨 정보, 시계, 스포츠 경기 득점표 등이 이에 해당합니다.
+정보 위젯을 터치하면 보통 그에 대응하는 앱이 위젯보다 더 자세하게 정보를 표시해 줍니다.
+</p>
 
 
 <div class="vspace size-2">&#160;</div>
@@ -21,42 +32,55 @@ title: Widgets
 
 <div class="layout-content-row">
   <div class="layout-content-col span-6">
-    <h3>Collection widgets</h3>
-    <p>As the name implies, collection widgets specialize on displaying multitude elements of the same type, such as a collection of pictures from a gallery app, a collection of articles from a news app or a collection of emails/messages from a communication app. Collection widgets typically focus on two use cases: browsing the collection, and opening an element of the collection to its detail view for consumption. Collection widgets can scroll vertically.</p>
+    <h3>모음 위젯</h3>
+    <p>
+    모음 위젯은 이름 그대로 특정한 종류의 여러 자료를 한번에 모아 보여주는 기능을 합니다.
+    가령 갤러리 앱은 그림들을, 뉴스 앱이나 이메일 앱은 글들을 모읍니다.
+    모음 위젯은 일반적으로 자료를 탐색하거나, 그 자료 중 하나를 선택하여 자세히 보는 두 가지 사용법을 가집니다.
+    모음 위젯은 세로 방향으로 스크롤할 수 있습니다.
+    </p>
   </div>
   <div class="layout-content-col span-3">
     <img src="../media/widgets_collection_gmail.png"><div class="figure-caption">
-      ListView widget
+      ListView 위젯
     </div>
   </div>
   <div class="layout-content-col span-4">
     <img src="../media/widgets_collection_bookmarks.png"><div class="figure-caption">
-      GridView widget
+      GridView 위젯
     </div>
   </div>
 </div>
 
 
-<h3>Control widgets</h3>
+<h3>제어 위젯</h3>
 
 <img style="float:right;" src="../media/widgets_control.png">
-<p>The main purpose of a control widget is to display often used functions that the user can trigger right from the home screen without having to open the app first. Think of them as remote controls for an app. A typical example of control widgets are music app widgets that allow the user to play, pause or skip music tracks from outside the actual music app.</p>
+<p>
+제어 위젯의 기본 목적은 자주 사용하는 기능을 보여주어, 앱을 열지 않고 바로 제어할 수 있도록 하는 것입니다.
+앱에 대한 리모컨이라고 생각해주세요.
+가령, 음악 앱 위젯은 음악 앱 밖에서도 음악을 재생하고 멈추거나 다음 곡으로 넘어가는 기능을 가집니다.
+</p>
 
-<p>Interacting with control widgets may or may not progress to an associated detail view depending on if the control widget's function generated a data set, such as in the case of a search widget.</p>
+<p>
+제어 위젯과의 상호작용에서, 위젯 기능이 어떤 자료를 제공한다면 연관 뷰로 진행할 수도 있습니다.
+검색 위젯의 경우가 대표적인 예입니다.
+</p>
 
 
 <div class="vspace size-2">&#160;</div>
 
 
-<h3>Hybrid widgets</h3>
+<h3>혼합 위젯</h3>
 
 <img style="float:right;" src="../media/widgets_hybrid.png">
-<p>While all widgets tend to gravitate towards one of the three types described above, many widgets in reality are hybrids that combine elements of different types.</p>
+<p>모든 위젯이 위의 세 기능 중 하나를 중심으로 삼긴 하지만, 실제 많은 위젯은 여러 기능을 조합하여 만들어집니다.</p>
 
-<p>For the purpose of your widget planning, center your widget around one of the base types and add elements of other types if needed.</p>
+<p>위젯 설계를 할 때에는 중심이 되는 기능을 하나 정한 다음 필요한 경우 다른 기능을 추가하세요.</p>
 
 <div class="figure-caption">
-A music player widget is primarily a control widget, but also keeps the user informed about what track is currently playing. It essentially combines a control widget with elements of an information widget type.
+음악 재생기 위젯은 기본적으로 제어 위젯이지만, 현재 재생중인 곡 정보를 함께 제공합니다.
+제어 위젯에 정보 위젯을 조합한 것으로 볼 수 있습니다.
 </div>
 
 
