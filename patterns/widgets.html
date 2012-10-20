@@ -114,51 +114,77 @@ title: 위젯
 </p>
 
 
-<h2>Design guidelines</h2>
+<h2>디자인 가이드라인</h2>
 
 
-<h3>Widget content</h3>
+<h3>위젯 컨텐츠</h3>
 
-<p>Widgets are a great mechanism to attract a user to your app by "advertising" new and interesting content that is available for consumption in your app.</p>
+<p>위젯은 여러분의 앱에 새롭고 흥미로운 정보가 있을 때 이를 사용자에게 "광고"하여 사용자의 주의를 끄는 장치입니다.</p>
 
-<p>Just like the teasers on the front page of a newspaper, widgets should consolidate and concentrate an app's information and then provide a connection to richer detail within the app; or in other words: the widget is the information "snack" while the app is the "meal." As a bottom line, always make sure that your app shows more detail about an information item than what the widget already displays.</p>
+<p>
+위젯은 신문 첫 페이지의 티저와 같이 앱의 정보를 통합하고 집중하여, 더 자세한 정보를 얻을 수 있는 연결을 제공해야 합니다.
+비유하자면 앱이 정보의 "식사"라면 위젯은 "간식"입니다.
+중요한 것은, 앱이 위젯보다 더 자세한 정보를 제공해야 한다는 것입니다.
+</p>
 
 
-<h3>Widget navigation</h3>
+<h3>위젯 내비게이션</h3>
 
-<p>Besides the pure information content, you should also consider to round out your widget's offering by providing navigation links to frequently used areas of your app. This lets users complete tasks quicker and extends the functional reach of the app to the home screen.</p>
+<p>
+위젯은 정보를 제공하는 기능 외에도, 앱에서 자주 사용하는 기능에 대한 단축 링크 기능을 제공할 수 있다는 것을 고려해야 합니다.
+사용자가 작업을 더 빠르게 처리할 수 있고, 홈 화면에서 할 수 있는 기능이 늘어납니다.
+</p>
 
-<p>Good candidates for navigation links to surface on widgets are:</p>
+<p>위젯 외관을 탭할 때 연결해줄 수 있는 후보의 예시는 다음과 같습니다.</p>
 
 <ul>
-<li>Generative functions: These are the functions that allow the user to create new content for an app, such as creating a new document or a new message.</li>
-  <li>Open application at top level: Tapping on an information element will usually navigate the user to a lower level detail screen. Providing access to the top level of your application provides more navigation flexibility and can replace a dedicated app shortcut that users would otherwise use to navigate to the app from the home screen. Using your application icon as an affordance can also provide your widget with a clear identity in case the data you're displaying is ambiguous.</li>
+<li>생성 기능: 문서나 메시지 등의 새로운 컨텐츠를 만드는 기능입니다.</li>
+  <li>
+  앱 최상위 화면 열기: 일반적으로 앱의 특정 정보 요소를 탭하면 그에 대응하는 하위 화면이 띄워집니다.
+  위젯이 앱의 최상위 화면으로 접근할 방법을 제공하면 앱 내의 이동성이 증가하며, 홈 화면에서 위젯이 앱 단축을 대체할 수 있습니다.
+  위젯 화면에 앱 아이콘을 넣으면 어떤 위젯이 어떤 앱에 대응하는지에 대한 애매함을 없앨 수 있습니다.
+  </li>
 </ul>
 <div class="layout-content-row">
   <div class="layout-content-col span-6">
-    <h3>Widget resizing</h3>
-    <p>With version 3.1, Android introduced resizable widgets to the platform. Resizing allows users to adjust the height and/or the width of a widget within the constraints of the home panel placement grid. You can decide if your widget is freely resizable or if it is constrained to horizontal or vertical size changes. You do not have to support resizing if your particular widget is inherently fixed-size.</p>
-    <p>Allowing users to resize widgets has important benefits:</p>
+    <h3>위젯 크기 조절</h3>
+    <p>
+    안드로이드 3.1에 위젯 크기를 조절할 수 있는 기능이 추가되었습니다.
+    사용자는 위젯이 화면을 넘지 않는 선에서 가로 및 세로 길이를 조절할 수 있습니다.
+    위젯을 만들 때, 위젯 크기를 바꿀 수 있는지 혹은 크기 조절에 제한을 둘 것인지 결정할 수 있습니다.
+    위젯 크기가 원래부터 고정되어 있다면 크기 조절을 지원할 필요는 없습니다.
+    </p>
+    <p>사용자에게 크기를 조절할 수 있도록 하면 다음의 장점이 있습니다.</p>
     <ul>
-<li>They can fine-tune how much information they want to see on each widget.</li>
-      <li>They can better influence the layout of widgets and shortcuts on their home panels.</li>
+<li>각 위젯이 제공하는 정보량을 직접 설정하는 것이 가능합니다.</li>
+      <li>홈 패널의 위젯/아이콘 레이아웃을 더 효율적으로 배치할 수 있습니다.</li>
     </ul>
 </div>
 
   <div class="layout-content-col span-7">
     <img src="../media/widgets_resizing01.png"><div class="figure-caption">
-      A long press and subsequent release sets resizable widgets into resize mode. Users can use the drag handles or the widget corners to set the desired size.
+      롱 프레스 후 떼는 제스처를 통해 위젯 크기를 조절할 수 있습니다.
+      손잡이나 모서리를 드래그하여 원하는 크기로 설정합니다.
     </div>
   </div>
 </div>
 
 
-<p>Planning a resize strategy for your widget depends on the type of widget you're creating. List or grid-based collection widgets are usually straightforward because resizing the widget will simply expand or contract the vertical scrolling area. Regardless of the of the widget's size, the user can still scroll all information elements into view. Information widgets on the other hand require a bit more hands-on planning, since they are not scrollable and all content has to fit within a given size. You will have to dynamically adjust your widget's content and layout to the size the user defined through the resize operation.</p>
+<p>
+위젯의 크기 조절을 지원하는 방식은 어떤 종류의 위젯인가에 따라 결정됩니다.
+리스트나 그리드 모음 위젯의 경우 단순하게 처리할 수 있는데, 크기를 조절하면 세로 스크롤 영역의 크기가 바뀝니다.
+위젯 크기와 관계없이 사용자는 뷰 내의 각 항목을 스크롤할 수 있습니다.
+정보 위젯은 스크롤 영역이 없으며 각 컨텐츠가 주어진 크기에 맞게 배치되어 있기 때문에, 조금 더 손이 가는 작업이 필요합니다.
+조절되는 크기에 따라 위젯 컨텐츠 및 배치를 동적으로 조절해야 합니다.
+</p>
 
 <img src="../media/widgets_resizing02.png">
-<p>In this simple example the user can horizontally resize a weather widget in 4 steps and expose richer information about the weather at the current location as the widget grows.</p>
+<p>이 예제에서는 날씨 위젯의 가로 길이를 4단계로 조절할 수 있으며 크기가 커질수록 더 풍부한 정보를 제공합니다.</p>
 
-<p>For each widget size determine how much of your app's information should surface. For smaller sizes concentrate on the essential and then add more contextual information as the widget grows horizontally and vertically.</p>
+<p>
+각 위젯 크기마다 앱의 어떤 정보가 표시되어야 하는지 정하세요.
+크기가 작으면 필수 정보에 집중하고, 공간이 커질수록 더 많은 맥락 정보를 추가하세요.
+</p>
 
 
 <h3>Layout considerations</h3>
