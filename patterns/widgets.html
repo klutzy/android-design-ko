@@ -187,13 +187,19 @@ title: 위젯
 </p>
 
 
-<h3>Layout considerations</h3>
+<h3>배치 고려사항</h3>
 
-<p>It will be tempting to layout your widgets according to the dimensions of the placement grid of a particular device that you own and develop with. This can be a useful initial approximation as you layout your widget, but keep the following in mind:</p>
+<p>
+위젯 내부를 배치할 때 여러분이 가진 개발 기기의 그리드 차원값을 기준으로 만들 수 있다면 솔깃할 겁니다.
+처음 구성할 때는 이런 방식이 어느정도 도움이 될 수도 있지만, 다음의 내용을 항상 주의해야 합니다.
+</p>
 
 <ul>
-<li>The number, size and spacing of cells can vary widely from device to device, and hence it is very important that your widget is flexible and can accommodate more or less space than anticipated.</li>
-  <li>In fact, as the user resizes a widget, the system will respond with a dp size range in which your widget can redraw itself. Planning your widget resizing strategy across "size buckets" rather than variable grid dimensions will give you the most reliable results.</li>
+<li>각 셀의 숫자, 크기나 간격은 기기마다 다를 수 있기 때문에, 위젯에 융통성을 주어 그 값들이 예상하는 것과 다소 차이가 있더라도 잘 동작하도록 해야 합니다.</li>
+  <li>
+  사실, 사용자가 위젯 크기를 변경할 때 시스템은 위젯이 변경할 수 있는 크기를 dp 값으로 보냅니다.
+  가장 확실한 결과를 얻으려면 상황에 따라 변할 수 있는 그리드 차원보다는 "단위 크기" 기준으로 변경하도록 계획해야 합니다.
+  </li>
 </ul>
 <h3>Widget configuration</h3>
 
