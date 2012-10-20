@@ -201,18 +201,30 @@ title: 위젯
   가장 확실한 결과를 얻으려면 상황에 따라 변할 수 있는 그리드 차원보다는 "단위 크기" 기준으로 변경하도록 계획해야 합니다.
   </li>
 </ul>
-<h3>Widget configuration</h3>
+<h3>위젯 환경설정</h3>
 
 <div class="layout-content-row">
   <div class="layout-content-col span-6">
-    <p>Sometimes widgets need to be setup before they can become useful. Think of an email widget for example, where you need to provide an account before the inbox can be displayed. Or a static photo widget where the user has to assign the picture that is to be displayed from the gallery.</p>
-    <p>Android widgets display their configuration choices right after the widget is dropped onto a home panel. Keep the widget configuration light and don't present more than 2-3 configuration elements. Use dialog-style instead of full-screen activities to present configuration choices and retain the user's context of place, even if doing so requires use of multiple dialogs.</p>
-<p>Once setup, there typically is not a lot of reason to revisit the setup. Therefore Android widgets do not show a "Setup" or "Configuration" button.</p>
+    <p>
+    가끔씩은 위젯을 쓰기 전에 설정이 필요한 경우도 있습니다.
+    이메일 위젯을 예로 들면, 메일함을 보여주기 전에 어떤 메일 계정을 쓸지 선택해야 합니다.
+    고정 사진 위젯의 경우 갤러리 내 어떤 그림을 쓸지 알려주어야 합니다.
+    </p>
+    <p>
+    안드로이드 위젯은 홈 패널에 처음 드롭될 때 설정 선택 화면을 띄웁니다.
+    설정 화면을 가볍게 만들고 설정 대상이 2~3개를 넘지 않도록 하세요.
+    설정 화면은 전체화면이 아니라 다이얼로그 화면을 사용하여 사용자가 현재 위치를 알 수 있도록 하세요. 여러 다이얼로그가 필요하더라도 그렇게 하는 것이 좋습니다.
+    </p>
+<p>
+한번 설정이 끝난 위젯을 다시 설정해야 할 이유는 별로 없습니다.
+Once setup, there typically is not a lot of reason to revisit the setup.
+따라서 안드로이드에서는 위젯에 "설정" 등의 버튼을 보여주지 않습니다.
+</p>
   </div>
 
   <div class="layout-content-col span-6">
     <img src="../media/widgets_config.png"><div class="figure-caption">
-      After adding a Play widget to a home panel, the widget asks the user to specify the type of media the widget should display.
+      구글 Play 위젯을 홈 패널에 추가한 다음, 위젯은 사용자에게 어떤 종류의 미디어를 표시할지 묻습니다.
     </div>
   </div>
 </div>
