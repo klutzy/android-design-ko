@@ -2,57 +2,6 @@
 layout: default
 title: 문체
 ---
-<style>
-
-/* UI tables */
-
-.ui_table {
-  width: 100%;
-  background: #282828;
-  color: #fff;
-  border-radius: 2px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.25);
-  border-collapse: separate;
-}
-
-.ui_table th,
-.ui_table td {
-  padding: 5px 10px;
-}
-
-.ui_table thead th {
-  font-weight: 600;
-}
-
-.ui_table tfoot td {
-  border-top: 1px solid #494949;
-  border-right: 1px solid #494949;
-  text-align: center;
-}
-
-.ui_table tfoot td:last-child {
-  border-right: 0;
-}
-
-.list_item_margins {
-  margin-left: 30px !important;
-}
-
-.example_label {
-  margin-bottom: 10px;
-  padding-left: 20px;
-  background: transparent none no-repeat scroll 0px 3px;
-}
-
-.example_label.bad {
-  background-image: url(http://developer.android.com/assets/design/ico_wrong.png);
-}
-
-.example_label.good {
-  background-image: url(http://developer.android.com/assets/design/ico_good.png);
-}
-
-</style>
 <p>앱에 들어갈 메시지를 만들 때에는,</p>
 
 <ol>
@@ -99,19 +48,19 @@ title: 문체
 <ol><li class="value-1">
 <strong>짧게 쓰세요.</strong> 설치 마법사의 경우:</li></ol>
 <div class="layout-content-row">
-  <div class="layout-content-col span-6 list_item_margins">
+  <div class="layout-content-col span-6 layout-with-list-item-margins">
 
-    <div class="example_label bad">너무 형식적이에요</div>
+    <div class="do-dont-label bad">너무 형식적이에요</div>
 
-    <table class="ui_table good"><tbody><tr><td>
+    <table class="ui-table good"><tbody><tr><td>
     자세한 설명을 위해서는 구입 시 첨부된 도움말 문서를 참고하십시오.
     </td></tr></tbody></table>
 </div>
   <div class="layout-content-col span-6">
 
-    <div class="example_label good">더 나은 방향</div>
+    <div class="do-dont-label good">더 나은 방향</div>
 
-    <table class="ui_table good"><tbody><tr><td>
+    <table class="ui-table good"><tbody><tr><td>
     구입 시 첨부된 도움말을 참고하십시오.
     </td></tr></tbody></table>
 </div>
@@ -124,11 +73,11 @@ title: 문체
 <ol><li class="value-2">
 <strong>간단하게 쓰세요.</strong> 위치 서비스 설정 화면의 경우:</li></ol>
 <div class="layout-content-row">
-  <div class="layout-content-col span-6 list_item_margins">
+  <div class="layout-content-col span-6 layout-with-list-item-margins">
 
-    <div class="example_label bad">혼란스러워요</div>
+    <div class="do-dont-label bad">혼란스러워요</div>
 
-    <table class="ui_table bad">
+    <table class="ui-table bad">
 <thead><tr>
 <th>
         GPS 위성 사용
@@ -144,9 +93,9 @@ title: 문체
 </div>
   <div class="layout-content-col span-6">
 
-    <div class="example_label good">더 나은 방향</div>
+    <div class="do-dont-label good">더 나은 방향</div>
 
-    <table class="ui_table good">
+    <table class="ui-table good">
 <thead><tr>
 <th>
         GPS
@@ -168,11 +117,11 @@ title: 문체
 <ol><li class="value-3">
 <strong>친근하게 대하세요.</strong> 앱이 죽었을 때 화면의 경우:</li></ol>
 <div class="layout-content-row">
-  <div class="layout-content-col span-6 list_item_margins">
+  <div class="layout-content-col span-6 layout-with-list-item-margins">
 
-    <div class="example_label bad">혼란스럽고 성가셔요: '죄송합니다'는 불난 집에 부채질할 뿐입니다.</div>
+    <div class="do-dont-label bad">혼란스럽고 성가셔요: '죄송합니다'는 불난 집에 부채질할 뿐입니다.</div>
 
-    <table class="ui_table bad">
+    <table class="ui-table bad">
 <thead><tr>
 <th colspan="3">
         죄송합니다.
@@ -192,10 +141,10 @@ title: 문체
 </div>
   <div class="layout-content-col span-6">
 
-    <div class="example_label good">짧게, 정확하게, 변명 없이:<br><br>
+    <div class="do-dont-label good">짧게, 정확하게, 변명 없이:<br><br>
 </div>
 
-    <table class="ui_table good">
+    <table class="ui-table good">
 <thead><tr>
 <th colspan="3">
         MyApp이 응답하지 않습니다.
@@ -221,19 +170,19 @@ title: 문체
 
 <ol><li class="value-4"><strong>가장 중요한 걸 맨 앞에 두세요.</strong></li></ol>
 <div class="layout-content-row">
-  <div class="layout-content-col span-6 list_item_margins">
+  <div class="layout-content-col span-6 layout-with-list-item-margins">
 
-    <div class="example_label bad">중요 내용이 맨 뒤에</div>
+    <div class="do-dont-label bad">중요 내용이 맨 뒤에</div>
 
-    <table class="ui_table bad"><tbody><tr><td>
+    <table class="ui-table bad"><tbody><tr><td>
     77명이 +1했고, Larry Page를 포함합니다.
     </td></tr></tbody></table>
 </div>
   <div class="layout-content-col span-6">
 
-    <div class="example_label good">중요 내용 먼저</div>
+    <div class="do-dont-label good">중요 내용 먼저</div>
 
-    <table class="ui_table good"><tbody><tr><td>
+    <table class="ui-table good"><tbody><tr><td>
     Larry Page and 77 others +1'd this.
     </td></tr></tbody></table>
 </div>
@@ -241,19 +190,19 @@ title: 문체
 
 
 <div class="layout-content-row">
-  <div class="layout-content-col span-6 list_item_margins">
+  <div class="layout-content-col span-6 layout-with-list-item-margins">
 
-    <div class="example_label bad">작업 설명이 맨 뒤에</div>
+    <div class="do-dont-label bad">작업 설명이 맨 뒤에</div>
 
-    <table class="ui_table bad"><tbody><tr><td>
+    <table class="ui-table bad"><tbody><tr><td>
     '다음'을 누르면 Wi-Fi 연결을 통해 설치를 완료합니다.
     </td></tr></tbody></table>
 </div>
   <div class="layout-content-col span-6">
 
-    <div class="example_label good">작업 설명을 먼저</div>
+    <div class="do-dont-label good">작업 설명을 먼저</div>
 
-    <table class="ui_table good"><tbody><tr><td>
+    <table class="ui-table good"><tbody><tr><td>
     설치를 Wi-Fi를 통해 완료하려면, '다음'을 누르세요.
     </td></tr></tbody></table>
 </div>
@@ -265,11 +214,11 @@ title: 문체
 
 <ol><li class="value-5"><strong>필요한 것 말고는 설명하지 마세요.</strong></li></ol>
 <div class="layout-content-row">
-  <div class="layout-content-col span-6 list_item_margins">
+  <div class="layout-content-col span-6 layout-with-list-item-margins">
 
-    <div class="example_label bad">설치 마법사</div>
+    <div class="do-dont-label bad">설치 마법사</div>
 
-    <table class="ui_table bad">
+    <table class="ui-table bad">
 <thead><tr>
 <th>
         로그인 중...
@@ -285,9 +234,9 @@ title: 문체
 </div>
   <div class="layout-content-col span-6">
 
-    <div class="example_label good">설치 마법사</div>
+    <div class="do-dont-label good">설치 마법사</div>
 
-    <table class="ui_table good">
+    <table class="ui-table good">
 <thead><tr>
 <th>
         로그인 중...
